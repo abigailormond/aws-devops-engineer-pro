@@ -1,7 +1,7 @@
-Week 1: September 21-25, 2026 | 4.5 hours
------------------------------------------
 
-**Monday, September 21: 63 minutes**
+
+Week 0: September 17-18, 2026 | 2.8 hours
+-----------------------------------------
 
 - Public Intro Video (Release v2) (3:09)
 - Scenario - Animals4life (13:28)
@@ -11,42 +11,35 @@ Week 1: September 21-25, 2026 | 4.5 hours
 - Multi-factor Authentication (MFA) (8:25)
 - [202511UPDATE] [DEMO] Adding MFA - General Account Root User (4:47)
 - Identity and Access Management (IAM) Basics (13:01)
-
-**Tuesday, September 22: 49 minutes**
-
 - [202511UPDATE] [DEMO] Creating IAMADMIN user & adding MFA (8:17)
 - IAM Access Keys (7:32)
 - [DEMO] Creating Access keys and setting up AWS CLI v2 tools (17:43)
 - [ASSOCIATESHARED] IAM Identity Policies (15:52)
-
-**Wednesday, September 23: 55 minutes**
-
 - [ASSOCIATESHARED] IAM Users and ARNs (13:49)
 - [ASSOCIATESHARED] [DEMO] Simple Identity Permissions in AWS (16:06)
 - [ASSOCIATESHARED] IAM Groups (7:48)
 - [ASSOCIATESHARED] [DEMO] Permissions control using IAM Groups (9:24)
 - [ASSOCIATESHARED] IAM Roles - The Tech (8:13)
 
-**Thursday, September 24: 53 minutes**
+
+Week 1: September 21-25, 2026 | 4.5 hours
+-----------------------------------------
+
+**Sunday, September 20: 53 minutes**
 
 - [ASSOCIATESHARED] When to use IAM Roles (15:27)
 - Service-linked Roles & PassRole (5:16)
 - [ASSOCIATESHARED] AWS Organizations (12:56)
 - [SHAREDALL] [DEMO] AWS Organizations (19:48)
 
-**Friday, September 25: 47 minutes**
+**Monday, September 21: 47 minutes**
 
 - [ASSOCIATESHARED] Service Control Policies (SCP) (12:44)
 - [SHAREDALL] [DEMO] Using Service Control Policies (16:45)
 - [ASSOCIATESHARED] CloudFormation Physical & Logical Resources (7:30)
 - [ASSOCIATESHARED] [DEMO] Simple Non Portable Template - PART1 (10:28)
 
----
-
-Week 2: September 28-October 2, 2026 | 4.5 hours
-------------------------------------------------
-
-**Monday, September 28: 55 minutes**
+**Tuesday, September 22: 55 minutes**
 
 - [ASSOCIATESHARED] [DEMO] Simple Non Portable Template - PART2 (11:28)
 - [ASSOCIATESHARED] CloudFormation Template and Pseudo Parameters (6:53)
@@ -55,7 +48,7 @@ Week 2: September 28-October 2, 2026 | 4.5 hours
 - [ASSOCIATESHARED] CloudFormation Outputs (3:37)
 - [ASSOCIATESHARED] [DEMO] Template v2 - Portable (13:34)
 
-**Tuesday, September 29: 60 minutes**
+**Wednesday, September 23: 60 minutes**
 
 - [ASSOCIATESHARED] CloudFormation Conditions (7:24)
 - [ASSOCIATESHARED] CloudFormation DependsOn (7:14)
@@ -64,7 +57,7 @@ Week 2: September 28-October 2, 2026 | 4.5 hours
 - [ASSOCIATESHARED] CloudFormation Cross-Stack References (10:05)
 - [ASSOCIATESHARED] CloudFormation Stack Sets (9:12)
 
-**Wednesday, September 30: 53 minutes**
+**Thursday, September 24: 53 minutes**
 
 - [ASSOCIATESHARED] CloudFormation Deletion Policy (5:24)
 - [ASSOCIATESHARED] CloudFormation Stack Roles (6:47)
@@ -73,7 +66,7 @@ Week 2: September 28-October 2, 2026 | 4.5 hours
 - [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART1 (12:51)
 - [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART2 (14:42)
 
-**Thursday, October 1: 64 minutes**
+**Friday, September 25: 64 minutes**
 
 - [ASSOCIATESHARED] CloudFormation ChangeSets (11:03)
 - [ASSOCIATESHARED] CloudFormation Custom Resources (11:03)
@@ -81,18 +74,18 @@ Week 2: September 28-October 2, 2026 | 4.5 hours
 - [ASSOCIATESHARED] [DEMO] CloudFormation Custom Resources-PART2 (13:27)
 - [DEMO] CloudFormation Drift Detection (19:38)
 
-**Friday, October 2: 41 minutes**
+---
+
+Week 2: September 28-October 2, 2026 | 1.8 hours
+------------------------------------------------
+
+**Wednesday, Sep 30: 41 minutes**
 
 - [ASSOCIATESHARED] Elastic Beanstalk (EB) - Architecture (18:12)
 - [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Application & Environment - PART1 (11:50)
 - [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Add additional environment and config options - PART2 (10:53)
 
----
-
-Week 3: October 5-9, 2026 | 4.4 hours
--------------------------------------
-
-**Monday, October 5: 54 minutes**
+**Thursday, Oct 1: 54 minutes**
 
 - [ASSOCIATESHARED] Elastic Beanstalk (EB) - Deployment Policies (11:40)
 - [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Deployment (8:30)
@@ -103,6 +96,12 @@ Week 3: October 5-9, 2026 | 4.4 hours
 - [ASSOCIATESHARED] Elastic Beanstalk (EB) - Docker (9:11)
 - [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Section Cleanup (1:40)
 - [ASSOCIATESHARED] CloudWatchEvents and EventBridge (6:54)
+
+---
+
+Week 3: October 5-9, 2026 | 3.5 hours
+-------------------------------------
+
 
 **Tuesday, October 6: 50 minutes**
 
