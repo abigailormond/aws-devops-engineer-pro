@@ -3,17 +3,17 @@
 Week 0: September 17-18, 2026 | 2.8 hours
 -----------------------------------------
 
-- [ ] Public Intro Video (Release v2) (3:09)
-- [ ] Scenario - Animals4life (13:28)
-- [ ] Connect with other students and your instructor (3:10)
-- [ ] AWS Accounts - The Basics (11:33)
-- [ ] [202511UPDATE] [DEMO] - Creating an AWS Account (5:16)
-- [ ] Multi-factor Authentication (MFA) (8:25)
-- [ ] [202511UPDATE] [DEMO] Adding MFA - General Account Root User (4:47)
-- [ ] Identity and Access Management (IAM) Basics (13:01)
-- [ ] [202511UPDATE] [DEMO] Creating IAMADMIN user & adding MFA (8:17)
-- [ ] IAM Access Keys (7:32)
-- [ ] [DEMO] Creating Access keys and setting up AWS CLI v2 tools (17:43)
+- [x] Public Intro Video (Release v2) (3:09)
+- [x] Scenario - Animals4life (13:28)
+- [x] Connect with other students and your instructor (3:10)
+- [x] AWS Accounts - The Basics (11:33)
+- [x] [202511UPDATE] [DEMO] - Creating an AWS Account (5:16)
+- [x] Multi-factor Authentication (MFA) (8:25)
+- [x] [202511UPDATE] [DEMO] Adding MFA - General Account Root User (4:47)
+- [x] Identity and Access Management (IAM) Basics (13:01)
+- [x] [202511UPDATE] [DEMO] Creating IAMADMIN user & adding MFA (8:17)
+- [x] IAM Access Keys (7:32)
+- [x] [DEMO] Creating Access keys and setting up AWS CLI v2 tools (17:43)
 - [ ] [ASSOCIATESHARED] IAM Identity Policies (15:52)
 - [ ] [ASSOCIATESHARED] IAM Users and ARNs (13:49)
 - [ ] [ASSOCIATESHARED] [DEMO] Simple Identity Permissions in AWS (16:06)
@@ -22,7 +22,7 @@ Week 0: September 17-18, 2026 | 2.8 hours
 - [ ] [ASSOCIATESHARED] IAM Roles - The Tech (8:13)
 
 
-Week 1: September 21-25, 2026 | 4.5 hours
+Week 1: September 21-25, 2026 | 5.5 hours
 -----------------------------------------
 
 **Sunday, September 20: 53 minutes**
