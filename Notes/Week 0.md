@@ -142,3 +142,15 @@ ARN
 - wildcard * -- refers to all
 - double colon :: -- when something doesn't need to be specified or isn't applicable 
 - 
+
+
+IAM Groups
+- containers for organizing IAM users
+	- can't log in, don't have credentials
+- can have inline and managed policices attached
+- No limit on # IAM Users in a group (except that there can only be 5000 users in an account)
+- No built-in all-users group in IAM, but you could make one, but you would have to manage it yourself
+- No group nesting
+- Limit of 300 groups per account, can be increased with support ticket
+* groups are not a true identity -- cannot be referenced as a principal in a policy. 
+* just organizing users and assigning policies to groups that the iam users will inherit
