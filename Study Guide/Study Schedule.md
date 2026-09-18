@@ -14,7 +14,7 @@ Week 0: September 17-18, 2026 | 2.8 hours
 - [x] [202511UPDATE] [DEMO] Creating IAMADMIN user & adding MFA (8:17)
 - [x] IAM Access Keys (7:32)
 - [x] [DEMO] Creating Access keys and setting up AWS CLI v2 tools (17:43)
-- [ ] [ASSOCIATESHARED] IAM Identity Policies (15:52)
+- [x] [ASSOCIATESHARED] IAM Identity Policies (15:52)
 - [ ] [ASSOCIATESHARED] IAM Users and ARNs (13:49)
 - [ ] [ASSOCIATESHARED] [DEMO] Simple Identity Permissions in AWS (16:06)
 - [ ] [ASSOCIATESHARED] IAM Groups (7:48)

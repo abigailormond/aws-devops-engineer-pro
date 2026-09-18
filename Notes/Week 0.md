@@ -78,3 +78,34 @@ IAM Access Keys
 		- access key id --> public part
 		- secret access key --> private part
 - 
+
+IAM Identity Policies
+- set of statements granting or denying access to aws resources, granting this to specific identities
+- attached to specific identities
+- IAM Policy Document ---> 1+ statements
+	- satements do the allow/denying
+- Elements of statement
+	- Sid -- statement ID -- describes whats going to be in the statement
+	- Effect -- allow/deny
+	- Action 
+		- format [service:resource]
+		- can list specific action, or wildcard * to match any action/operation
+		- or can be list of many specific actions
+	- Resource -- can be wildcard, or specific resource using AWS ARN
+- It is possible to be allowed and denied at same time!! 
+	- ex: full s3 allow, the statement afterwards has deny for specific bucket
+	- what happens? --> both of the statements are applied.
+	- RULES: (order of priority)
+		1. EXPLICIT DENY overrules everything else
+		2. EXPLICIT ALLOW -- these take effect unless there is also an explicit deny. The deny takes priority over the allow
+		3. DEFAULT DENY -- implicit -- denied unless specifically granted access
+- When an identity tries to access a resource, AWS gathers all statements that are related to that identity (user, any group policies, any service policies) and evaluates them all together 
+- Types of Policies
+	- Inline Policies -- applied to individual identity 
+		- used for special or exception access rights
+	- Managed policies -- create policy then attach the policy to any # of identities 
+		- reusable
+		- low management overhead
+		- 2 types
+			- AWS managed policies
+			- custom
