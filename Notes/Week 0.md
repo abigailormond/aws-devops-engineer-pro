@@ -109,3 +109,36 @@ IAM Identity Policies
 		- 2 types
 			- AWS managed policies
 			- custom
+
+
+**IAM Users and ARNs**
+
+
+IAM Users
+- Identity used for anything requiring long-term AWS access (humans, applications, or service accounts)
+- Principal -- entity trying to access an aws account. 
+	- must be authenticated and authorized 
+	- principal makes requiest to iam to be able to access resources
+- Authentication -- principal proves it is an identity that it claims to be
+	- long-term credentials: username/password, access keys
+- Authorization -- IAM checking statements that apply to that identity 
+* You can only have 5,000 IAM Users per account
+* an Iam User can be a member of 10 groups
+* IAM Roles & Identity Federation can address the above limitations
+
+ARN
+- Amazon Resource Name
+- uniquely identitfy resources within any AWS accountws
+- globally unique
+- format:
+	- arn:partition:service:region:account-id:resource-id
+	- arn:partition:service:region:account-id:resource-type/resource-id
+	- arn:partition:service:region:account-id:resource-type:resource-id
+- arn:aws:s3:::catgifs
+	- don't need to specify region or accountid because s3 bucket names are globally unique
+	- resource is the BUCKET
+- arn:aws:s3:::catgifs/* 
+	- resource is the OBJECTS IN THE BUCKET not the bucket itself
+- wildcard * -- refers to all
+- double colon :: -- when something doesn't need to be specified or isn't applicable 
+- 

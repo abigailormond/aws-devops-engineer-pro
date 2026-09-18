@@ -15,7 +15,7 @@ Week 0: September 17-18, 2026 | 2.8 hours
 - [x] IAM Access Keys (7:32)
 - [x] [DEMO] Creating Access keys and setting up AWS CLI v2 tools (17:43)
 - [x] [ASSOCIATESHARED] IAM Identity Policies (15:52)
-- [ ] [ASSOCIATESHARED] IAM Users and ARNs (13:49)
+- [x] [ASSOCIATESHARED] IAM Users and ARNs (13:49)
 - [ ] [ASSOCIATESHARED] [DEMO] Simple Identity Permissions in AWS (16:06)
 - [ ] [ASSOCIATESHARED] IAM Groups (7:48)
 - [ ] [ASSOCIATESHARED] [DEMO] Permissions control using IAM Groups (9:24)
