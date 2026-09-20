@@ -18,8 +18,8 @@ Week 0: September 17-18, 2026 | 2.8 hours
 - [x] [ASSOCIATESHARED] IAM Users and ARNs (13:49)
 - [x] [ASSOCIATESHARED] [DEMO] Simple Identity Permissions in AWS (16:06)
 - [x] [ASSOCIATESHARED] IAM Groups (7:48)
-- [ ] [ASSOCIATESHARED] [DEMO] Permissions control using IAM Groups (9:24)
-- [ ] [ASSOCIATESHARED] IAM Roles - The Tech (8:13)
+- [x] [ASSOCIATESHARED] [DEMO] Permissions control using IAM Groups (9:24)
+- [x] [ASSOCIATESHARED] IAM Roles - The Tech (8:13)
 
 
 Week 1: September 21-25, 2026 | 5.5 hours
@@ -27,7 +27,7 @@ Week 1: September 21-25, 2026 | 5.5 hours
 
 **Sunday, September 20: 53 minutes**
 
-- [ ] [ASSOCIATESHARED] When to use IAM Roles (15:27)
+- [x] [ASSOCIATESHARED] When to use IAM Roles (15:27)
 - [ ] Service-linked Roles & PassRole (5:16)
 - [ ] [ASSOCIATESHARED] AWS Organizations (12:56)
 - [ ] [SHAREDALL] [DEMO] AWS Organizations (19:48)
