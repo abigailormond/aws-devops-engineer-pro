@@ -239,6 +239,19 @@ AWS Organization
 - Service Control Policies (SCPs)
 - Can directly create new accounts within an organization -- skip step of invite + accept to become member account
 	- just need unique email 
+	- also automatically creates role within the member account that allows role switching from the management account: **OrganizationAccountAccessRole**
+		- the organizationAccountAccessRole
+			- principal: managemenet aws account
+			- action: sts:AssumeRole
+			- effect: allow
+			- can give it whatever permissions you want
+		steps to switch role for first time:
+			1. click username
+			2. click switch roles
+			3. type in aws account of account you want to switch into
+			4. type in name of role (default **OrganizationAccountAccessRole** unless you made something diff)
+			5. type display name to make shortcut to more easily access this role switch in future
+		in future, you can now just click on the shortcut to quickly switch roles
 - best architectural practice is to have one aws account handle identities
 	1. existing identity group authenticates through identities in one account
 	2. role switching to assume roles within other accounts in the org
@@ -262,4 +275,6 @@ Service Control Policies (SCPs)
 		- this is the default structure - full access, no boundaries on an aws account
 		- lower admin overhead
 	- allow list -> DEFAULT DENY , scp adds list of "allows"
+	- any additional policies follow (deny, allow, deny) regular policy priorities
 - ONLY something that is allowed by an SCP and granted access by identity policy would be actually allowed. middle of venn diagram 
+	- 

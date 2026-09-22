@@ -34,12 +34,12 @@ Week 1: September 21-25, 2026 | 5.5 hours
 - [x] [ASSOCIATESHARED] When to use IAM Roles (15:27)
 - [x] Service-linked Roles & PassRole (5:16) -- REVIEW
 - [x] [ASSOCIATESHARED] AWS Organizations (12:56)
-- [ ] [SHAREDALL] [DEMO] AWS Organizations (19:48)
+- [x] [SHAREDALL] [DEMO] AWS Organizations (19:48)
 
 **Monday, September 21: 47 minutes**
 
 - [x] [ASSOCIATESHARED] Service Control Policies (SCP) (12:44)
-- [ ] [SHAREDALL] [DEMO] Using Service Control Policies (16:45)
+- [x] [SHAREDALL] [DEMO] Using Service Control Policies (16:45)
 - [ ] [ASSOCIATESHARED] CloudFormation Physical & Logical Resources (7:30)
 - [ ] [ASSOCIATESHARED] [DEMO] Simple Non Portable Template - PART1 (10:28)
 
