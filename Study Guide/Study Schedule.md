@@ -40,7 +40,7 @@ Week 1: September 21-25, 2026 | 5.5 hours
 
 - [x] [ASSOCIATESHARED] Service Control Policies (SCP) (12:44)
 - [x] [SHAREDALL] [DEMO] Using Service Control Policies (16:45)
-- [ ] [ASSOCIATESHARED] CloudFormation Physical & Logical Resources (7:30)
+- [x] [ASSOCIATESHARED] CloudFormation Physical & Logical Resources (7:30)
 - [ ] [ASSOCIATESHARED] [DEMO] Simple Non Portable Template - PART1 (10:28)
 
 **Tuesday, September 22: 55 minutes**
