@@ -1,4 +1,8 @@
 
+-- REVIEW _marks lessons that need more attention_
+! _marks lessons that are extra important for exam_
+
+
 
 Week 0: September 17-18, 2026 | 2.8 hours
 -----------------------------------------
@@ -28,13 +32,13 @@ Week 1: September 21-25, 2026 | 5.5 hours
 **Sunday, September 20: 53 minutes**
 
 - [x] [ASSOCIATESHARED] When to use IAM Roles (15:27)
-- [ ] Service-linked Roles & PassRole (5:16)
-- [ ] [ASSOCIATESHARED] AWS Organizations (12:56)
+- [x] Service-linked Roles & PassRole (5:16) -- REVIEW
+- [x] [ASSOCIATESHARED] AWS Organizations (12:56)
 - [ ] [SHAREDALL] [DEMO] AWS Organizations (19:48)
 
 **Monday, September 21: 47 minutes**
 
-- [ ] [ASSOCIATESHARED] Service Control Policies (SCP) (12:44)
+- [x] [ASSOCIATESHARED] Service Control Policies (SCP) (12:44)
 - [ ] [SHAREDALL] [DEMO] Using Service Control Policies (16:45)
 - [ ] [ASSOCIATESHARED] CloudFormation Physical & Logical Resources (7:30)
 - [ ] [ASSOCIATESHARED] [DEMO] Simple Non Portable Template - PART1 (10:28)

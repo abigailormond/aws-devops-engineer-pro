@@ -210,7 +210,56 @@ Service-linked Roles & PassRole
 	- **cannot be deleted until its no longer required** AKA no longer used within that service
 	- Management
 		- DO NOT TRY TO GUESS THE SERVICE-NAME IN THE ARN OF A RESOURCE STEMENT it can differ and is case sensitive 
-
+	* add example  of role policy statements for service linked role 
 - PassRole
-	- method in AWS which give syou the ability to implement role sepearation 
+	- method in AWS which gives you the ability to implement role sepearation 
 	- can be used with service-linked roles 
+	- give passrole to user, then user can attach a role to a service? this can let bob pass a role to lambda and that role lambda has may have more permissions than bob himself has. 
+	- important aws security architecture
+
+
+AWS Organization
+- Steps to create
+	1. Log into standard AWS account (an account that is not already linked to an org)
+	2. Create an organization from within this AWS account. This organization isn't created INSIDE the account, the account is just used to create the organization
+	3. that account used to create it now becomes the Management Account (formerly master account) for the organization
+	4. Management account can now invite other standard aws accounts into the org
+	5. Those standard accounts must approve the invite to join the organization, and now become Member Accounts
+- Organization has 1 Management account and >=0 Member Accounts
+- Hierarchal structure 
+	- top of tree is root container, Organization Root 
+		- != account root user !!!!
+		- organization root is just container within an organization, which can contain aws accounts (member accounts or management account)
+	- Organization root can also contain Organizational Units (OU) that can contain accounts or more OUs
+- Consolidated Billing
+	- member accounts pass billing thru to the management account "payer account"
+		- management account = master account = payer account
+- Consolidation of reservations and volume discounts
+	- save $
+- Service Control Policies (SCPs)
+- Can directly create new accounts within an organization -- skip step of invite + accept to become member account
+	- just need unique email 
+- best architectural practice is to have one aws account handle identities
+	1. existing identity group authenticates through identities in one account
+	2. role switching to assume roles within other accounts in the org
+	- a lot of this happens behind the screen 
+
+Service Control Policies (SCPs)
+- feature of aws organizations
+- SCPs can be applied to organizations ("root container"), OUs, or to individual accounts
+- Mangagement accounts cannot be affected by SCPs
+	- avoid putting resources in here!
+- SCPs are account permission boundaries
+	- limit what account can do (including account root user)
+		- account root user always has full access over entire aws account, but you can restrict the allowed perms on the entire account via SCPs, which in effect also restricts account root user
+	- examples
+		- only certain size of ec2 instance allowed
+		- only certain regions allowed
+	- DON'T GRANT ANY PERMISSIONS - defines boundaries and limit permissions
+		- control what an account CAN and CANNOT grant via identity policies
+- ALLOW list vs DENY list
+	- deny list -> DEFAULT ALLOW, scp adds list of "denies"
+		- this is the default structure - full access, no boundaries on an aws account
+		- lower admin overhead
+	- allow list -> DEFAULT DENY , scp adds list of "allows"
+- ONLY something that is allowed by an SCP and granted access by identity policy would be actually allowed. middle of venn diagram 
