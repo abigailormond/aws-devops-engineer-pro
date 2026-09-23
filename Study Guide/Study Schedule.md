@@ -50,7 +50,7 @@ Week 1: September 21-25, 2026 | 5.5 hours
 - [x] [ASSOCIATESHARED] CloudFormation Intrinsic Functions (14:28)
 - [x] [ASSOCIATESHARED] CloudFormation Mappings (4:30)
 - [x] [ASSOCIATESHARED] CloudFormation Outputs (3:37)
-- [ ] [ASSOCIATESHARED] [DEMO] Template v2 - Portable (13:34)
+- [x] [ASSOCIATESHARED] [DEMO] Template v2 - Portable (13:34)
 
 **Wednesday, September 23: 60 minutes**
 

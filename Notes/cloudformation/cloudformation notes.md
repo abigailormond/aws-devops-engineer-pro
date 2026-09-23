@@ -100,6 +100,7 @@ CloudFormation Outputs
 - Configuring
 	- Description: is visible from CLI and console UI and passed back to parent if in nested stack
 	- 
-
+See below image
+dynamic parameter fault that will evaluate and show as default to user in parameter field 
 
 ![[Pasted image 20260922202654.png]]
