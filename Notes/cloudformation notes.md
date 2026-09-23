@@ -3,7 +3,7 @@ MISC
 
 ## CloudFormation Physical & Logical Resources
 - CloudFormation Template
-    - JSON or YAML
+	- `JSON` or `YAML`
     - contains logical resources
     - Templates used to create stacks (any #)
     - Reusable across regions and accounts
@@ -16,7 +16,7 @@ MISC
     - Contains resource properties
         - Once the logical resource moves to create_complete (physical resource is active) THEN the template logical resource can query attributes of the physical resource, like the ec2 ID
 - Creating a stack
-    - CreateStack uses template, parameters, and options to create a stack
+	- `CreateStack` uses template, parameters, and options to create a stack
 - A Stack creates, updates, deletes physical resources based on logical resources in the template
 
 
@@ -36,9 +36,9 @@ MISC
 - Pseudo Parameters
 	- injected values into the template & stack
 	- Examples
-		-  AWS:: Region -- always references the region the stack is being created in
-		- AWS::StackName and AWS::StackId match specific stack being created
-		- AWS::AccountId populated  by AWS to the actual account ID 
+		- `AWS::Region` -- always references the region the stack is being created in
+		- `AWS::StackName` and `AWS::StackId` match specific stack being created
+		- `AWS::AccountId` populated by AWS to the actual account ID
 - Both template & pseudo parameters can work in tandem
 - Best practice
 	- use defaults where possible, get values from aws, minimize manual input into the template parameters 
@@ -47,34 +47,34 @@ MISC
 
 ## CloudFormation Intrinsic Functions
 - allow you to gain access to data at runtime
-- Ref 
+- `Ref`
 	- reference
-	- !Ref on template or psuedo parameters returns their value. 
+	- `!Ref` on template or pseudo parameters returns their value.
 		- when used with logical resources, physical ID is usually returned.
-		- Ex: !Ref Instance --> i-123456asbcdef0
-- Fn::GetAtt
+		- Ex: `!Ref Instance` --> `i-123456asbcdef0`
+- `Fn::GetAtt`
 	- get attribute
 	- both allow you to reference value from one logical resource into another one
-	- !GetAtt LogicalResource.Attribute
+	- `!GetAtt LogicalResource.Attribute`
 		- retrieve any attribute associated with the resourece, like publicIP, or publicdns name
-- Fn::Join & Fn::Split
+- `Fn::Join` & `Fn::Split`
 	- Split
 		- takes string and outputs a list
 	- Join
 		- takes list and joins them to create a string
-- Fn::GetAZs 
+- `Fn::GetAZs`
 	- get list of availability zones in region, select from a list
 	- portable templates! hardcoding AZ is no no
-	- !GetAZs "us-east-1" or "" (current region)
-- Fn:: Select
+	- `!GetAZs "us-east-1"` or `!GetAZs ""` (current region)
+- `Fn::Select`
 	- allows you to reference an item in a list using an index
 - Conditions (if, and, equals, not, or)
-- Fn::Base64 
+- `Fn::Base64`
 	- base64 encoding, substitute within text 
 	- ex: if userdata requires base64, pass your normal text into Fn:Base64 then into your userdata
-- Fn:: Sub
+- `Fn::Sub`
 	- substitute in variables
-- Fn::Cidr
+- `Fn::Cidr`
 	- configure subnet ranges
 	- pass in:
 		- cidr block
@@ -88,9 +88,9 @@ MISC
 - Mappings object can contain many mappings
 - mappings map keys to values, allowing lookup
 - Can have one key, or Top & Second Level 
-	- !FindInMap \[ mapName, key ]
-	- !FindInMap \[ mapName, topLevelKey, secondLevelKey ]
-- Use !FindinMap Intrinsic function (commonly used to retrieve AMI for given region, architecture)
+	- `!FindInMap [mapName, key]`
+	- `!FindInMap [mapName, topLevelKey, secondLevelKey]`
+- Use `!FindInMap` intrinsic function (commonly used to retrieve an `AMI` for a given region and architecture)
 
 ## CloudFormation Outputs
 - optional, useful for providing status information 
