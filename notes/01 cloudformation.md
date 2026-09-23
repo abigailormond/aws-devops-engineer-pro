@@ -104,3 +104,101 @@ See below image
 dynamic parameter fault that will evaluate and show as default to user in parameter field 
 
 ![[Pasted image 20260922202654.png]]
+
+
+## CloudFormation Conditions
+- optional 'conditions' section of template -- can contain many conditions
+- conditions evaluated true or false
+- conditions process before resources are created
+- utilize intrinsic functions and, =, if, not, or
+- example use cases:
+	- control how many az's to create resources in, size of isntance, etc
+- when a condition is attached to a resource, that resource will only be created if the condition evaluates to true
+- process:
+	1. create a conditions block
+	2. when stack is being created, condition block is evaluated -- now that condition, ex `isProd` is evalued to true or false
+	3. proceeds to processing resources. if a condition is present in the resource block, it is compared agains the previously evaluated condition. if that condition is true, it will create the resource. if it is false, it will skip
+
+## CloudFormation DependsOn
+- cloudformation naturally does things in parallel (create, update, delete)
+	- attempts to determine dependency order automatically (vpc -> subnet -> ec2)
+		- implicit dependency: if ec2 references a subnet, cloudformation knows it needs to make the subnet first
+			- also affects deletion order, in reverse
+- DependsOn lets you explicitly define dependencies 
+	- why/ when?
+		- elastic IP requires an igw attached to a vpc to work, but there may not be an inherint internal dependency (!Ref) for that, best to add explicit dependency to prevent an error
+
+## CloudFormation Wait Conditions & cfn-signal
+- cloudformation 
+	logical resources in template -> stack -> stack creates physical resources -> tells logical resource CREATE_COMPLETE
+- problem: need more detailed signalling
+### cfn-signal
+- configure cloudformation to wait for # success signals, then CREATE_COMPLETE flagged to signal to the logical resource
+	- if failure signal received (max 12H) -> creation fails
+	- if timeout reached -> creation fails
+### Creation Groups
+- applies signal requirement -- stack needs # signals and has # amount of time to receive them
+- more detailed requirements for CREATE_COMPLETE or CREATE_FAILED
+### Wait Conditions
+- allow PAUSE AND WAIT between resource creation
+- its own logical resource that will ahve its own CREATE_COMPLET
+- can depend on other resources, and other resources can depend on it
+- implicit depends on another resource -- WaitHandle
+	- WaitHandle is its own resource
+	- generates presigned URL for resource signals to be sent to 
+
+
+## CloudFormation Nested Stacks
+- isolated cloudformation stack 
+	- has all the resources within itself and they all share a lifecycle
+	- LIMITS
+		- 500 resources per stack
+		- can't easily reuse resources e.g. VPC (can't reference in another stack)
+		- 
+- Nested Stack
+	- root stack -> created first, manually
+	- parent -> parent of any stacks that it immediately creates
+	- root stack will also be the parent of any nested stacks
+- Can create nested stack within template of parent stack
+	- must supply parameters for any values used to create child stack
+	- must supply URL to template ( * template is reusable )
+- outputs of child stack are returned to parent stack 
+- parent stack can't reference logical resources of child stack but CAN reference outputs from the child stack (same for sibling stacks)
+- nested stacks can depend on other sibling nested stacks to affect order of creation
+- root/parent stack won't be marked CREATE_COMPLETE until all its children are CREATE_COMPLETE
+- use nested stacks when 
+	- want to overcome 500 resource limit 
+	- want to modularize templates for code reuse
+	- make stack installation easier (apply root stack -> automatically create many nested stacks)
+* only use nested stacks when everything is lifecycle linked 
+	- created together, deleted together
+* nested stacks allow for reuse of templates
+
+## CloudFormation Cross-Stack References
+* can use when things are not lifecycle linked
+	- not created and deleted together
+	- ex: long lifecycle VPC, shorter lifecycle applications running on it
+- cfn stacks are designed to be isolated and self-container
+	- normally outputs are not visible between stacks (except nested stacks)
+- cross-stack references allow reuse of resources between stacks
+- outputs can be exported making them visible from other stacks 
+- exports must have unique name within the region
+- export vpc IDs, instance ID, etc
+- to use export, instead of using Ref!, use Fn::ImportValue with the export name to get the value from the export
+- exports are listed under outputs
+* cross-stack references allow reuse actual physical resources
+
+## CloudFormation Stack Sets
+- deploy cfn stacks across many accounts and region, without having to separately authenticate into each
+- StackSet = container in an admin account, container for stack instances
+	- ...contain stack instances, which reference one particular account in one particular region in one particular aws account
+	- if stack fails to create, stack instance remains
+	- stack instance = container for 1 stack
+- concurrent accoutns: defined value, the more you set, the faster resoureces are deployed. How many accounts can be deployed to at the same time
+	- ex: if you're deploying stackset into 10 accounts, concurrent account set to 2, then will be deploying 5 sets of 2 accounts at a time
+- failure tolerance: amount of individual deployments which can fail before stackset itself is viewed as failed
+- retain stacks: remove stack instances from a stackset, by default will delete the actual stacks themselves, but can change settings to keep the actual stack
+- uses
+	- enable AWS config
+	- create iam roles for cross-account access
+	- aws config rules - MFA, EIPS, EBS encryption

@@ -53,12 +53,12 @@ Week 1: September 21-25, 2026 | 5.5 hours
 
 **Wednesday, September 23: 60 minutes**
 
-- [ ] [ASSOCIATESHARED] CloudFormation Conditions (7:24)
-- [ ] [ASSOCIATESHARED] CloudFormation DependsOn (7:14)
-- [ ] [ASSOCIATESHARED] CloudFormation Wait Conditions & cfn-signal (11:52)
-- [ ] [ASSOCIATESHARED] CloudFormation Nested Stacks (13:55)
-- [ ] [ASSOCIATESHARED] CloudFormation Cross-Stack References (10:05)
-- [ ] [ASSOCIATESHARED] CloudFormation Stack Sets (9:12)
+- [x] [ASSOCIATESHARED] CloudFormation Conditions (7:24)
+- [x] [ASSOCIATESHARED] CloudFormation DependsOn (7:14)
+- [x] [ASSOCIATESHARED] CloudFormation Wait Conditions & cfn-signal (11:52)
+- [x] [ASSOCIATESHARED] CloudFormation Nested Stacks (13:55)
+- [x] [ASSOCIATESHARED] CloudFormation Cross-Stack References (10:05)
+- [x] [ASSOCIATESHARED] CloudFormation Stack Sets (9:12)
 
 **Thursday, September 24: 53 minutes**
 
