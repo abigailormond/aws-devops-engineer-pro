@@ -1,6 +1,5 @@
 
--- REVIEW _marks lessons that need more attention_
-! _marks lessons that are extra important for exam_
+! _marks lessons to be revisited_
 
 
 
@@ -32,7 +31,7 @@ Week 1: September 21-25, 2026 | 5.5 hours
 **Sunday, September 20: 53 minutes**
 
 - [x] [ASSOCIATESHARED] When to use IAM Roles (15:27)
-- [x] Service-linked Roles & PassRole (5:16) -- REVIEW
+- [x] Service-linked Roles & PassRole (5:16) !
 - [x] [ASSOCIATESHARED] AWS Organizations (12:56)
 - [x] [SHAREDALL] [DEMO] AWS Organizations (19:48)
 

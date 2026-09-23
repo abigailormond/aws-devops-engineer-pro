@@ -20,7 +20,7 @@ When changing the schedule:
 - Preserve the exact course-video sequence unless the user explicitly requests a schedule revision.
 - Keep each video assigned wholly to one study day.
 - Keep each week at or below its stated five-hour maximum unless the user explicitly approves an exception.
-- Preserve completion checkboxes and existing markers such as `REVIEW`, `NEEDS UPDATE`, `DOP-C02`, `DEMO`, `REFRESHER`, `MINIPROJECT`, and access labels such as `ASSOCIATESHARED` and `SHAREDALL`.
+- Preserve completion checkboxes and existing markers such as `!` (revisit), `NEEDS UPDATE`, `DOP-C02`, `DEMO`, `REFRESHER`, `MINIPROJECT`, and access labels such as `ASSOCIATESHARED` and `SHAREDALL`.
 - Preserve the existing week/day headings and duration format. Recalculate day and week totals when adding, removing, or moving videos.
 - Keep the revision notes at the end accurate after any schedule change.
 
