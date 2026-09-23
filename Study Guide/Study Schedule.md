@@ -41,15 +41,15 @@ Week 1: September 21-25, 2026 | 5.5 hours
 - [x] [ASSOCIATESHARED] Service Control Policies (SCP) (12:44)
 - [x] [SHAREDALL] [DEMO] Using Service Control Policies (16:45)
 - [x] [ASSOCIATESHARED] CloudFormation Physical & Logical Resources (7:30)
-- [ ] [ASSOCIATESHARED] [DEMO] Simple Non Portable Template - PART1 (10:28)
+- [x] [ASSOCIATESHARED] [DEMO] Simple Non Portable Template - PART1 (10:28)
 
 **Tuesday, September 22: 55 minutes**
 
-- [ ] [ASSOCIATESHARED] [DEMO] Simple Non Portable Template - PART2 (11:28)
-- [ ] [ASSOCIATESHARED] CloudFormation Template and Pseudo Parameters (6:53)
-- [ ] [ASSOCIATESHARED] CloudFormation Intrinsic Functions (14:28)
-- [ ] [ASSOCIATESHARED] CloudFormation Mappings (4:30)
-- [ ] [ASSOCIATESHARED] CloudFormation Outputs (3:37)
+- [x] [ASSOCIATESHARED] [DEMO] Simple Non Portable Template - PART2 (11:28)
+- [x] [ASSOCIATESHARED] CloudFormation Template and Pseudo Parameters (6:53)
+- [x] [ASSOCIATESHARED] CloudFormation Intrinsic Functions (14:28)
+- [x] [ASSOCIATESHARED] CloudFormation Mappings (4:30)
+- [x] [ASSOCIATESHARED] CloudFormation Outputs (3:37)
 - [ ] [ASSOCIATESHARED] [DEMO] Template v2 - Portable (13:34)
 
 **Wednesday, September 23: 60 minutes**
