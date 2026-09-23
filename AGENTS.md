@@ -34,9 +34,10 @@ When changing the schedule:
 - Use fenced code blocks for substantial YAML, JSON, policy documents, or commands. Keep inline AWS identifiers such as ARNs, actions, and intrinsic functions in backticks when adding new material.
 - Preserve existing Obsidian-style image embeds and do not invent replacement assets when an embedded image is unavailable.
 - Avoid storing credentials, access keys, account identifiers, or other secrets in notes.
+- Use AWS capitalization standards for service names, resource names, etc.
 
 ## Editing and Validation
-
+- When asked to revise with no additional information, read through all notes files (or, if specific files are noted, ONLY review those files) -- check for spelling errors, make capitalization of AWS service names, resource names, etc consistent with AWS documentation. Ensure headers, subheaders are consistent with note style convention.
 - Make focused edits and preserve unrelated user changes in the working tree.
 - Prefer the existing Markdown structure and naming conventions; avoid broad formatting churn.
 - Do not add application code, dependencies, or build tooling unless explicitly requested.

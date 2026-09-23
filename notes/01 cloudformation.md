@@ -41,7 +41,7 @@ MISC
 		- `AWS::AccountId` populated by AWS to the actual account ID
 - Both template & pseudo parameters can work in tandem
 - Best practice
-	- use defaults where possible, get values from aws, minimize manual input into the template parameters 
+	- use defaults where possible, get values from AWS, minimize manual input into the template parameters
 
 	
 
@@ -56,7 +56,7 @@ MISC
 	- get attribute
 	- both allow you to reference value from one logical resource into another one
 	- `!GetAtt LogicalResource.Attribute`
-		- retrieve any attribute associated with the resourece, like publicIP, or publicdns name
+		- retrieve any attribute associated with the resource, like publicIP, or publicdns name
 - `Fn::Join` & `Fn::Split`
 	- Split
 		- takes string and outputs a list
@@ -77,13 +77,13 @@ MISC
 - `Fn::Cidr`
 	- configure subnet ranges
 	- pass in:
-		- cidr block
+		- CIDR block
 		- how many subnets to generate from input VPC range
 		- bits per CIDR 
 	- outputs: 
 
 ## CloudFormation Mappings
-- feature of cloudformation that makes it easier to design portable templates
+- feature of CloudFormation that makes it easier to design portable templates
 - Templates can contain a Mappings object
 - Mappings object can contain many mappings
 - mappings map keys to values, allowing lookup
@@ -112,28 +112,28 @@ dynamic parameter fault that will evaluate and show as default to user in parame
 - conditions process before resources are created
 - utilize intrinsic functions and, =, if, not, or
 - example use cases:
-	- control how many az's to create resources in, size of isntance, etc
+	- control how many AZ's to create resources in, size of instance, etc
 - when a condition is attached to a resource, that resource will only be created if the condition evaluates to true
 - process:
 	1. create a conditions block
-	2. when stack is being created, condition block is evaluated -- now that condition, ex `isProd` is evalued to true or false
-	3. proceeds to processing resources. if a condition is present in the resource block, it is compared agains the previously evaluated condition. if that condition is true, it will create the resource. if it is false, it will skip
+	2. when stack is being created, condition block is evaluated -- now that condition, ex `isProd` is evaluated to true or false
+	3. proceeds to processing resources. if a condition is present in the resource block, it is compared against the previously evaluated condition. if that condition is true, it will create the resource. if it is false, it will skip
 
 ## CloudFormation DependsOn
-- cloudformation naturally does things in parallel (create, update, delete)
-	- attempts to determine dependency order automatically (vpc -> subnet -> ec2)
-		- implicit dependency: if ec2 references a subnet, cloudformation knows it needs to make the subnet first
+- CloudFormation naturally does things in parallel (create, update, delete)
+	- attempts to determine dependency order automatically (VPC -> subnet -> EC2)
+		- implicit dependency: if EC2 references a subnet, CloudFormation knows it needs to make the subnet first
 			- also affects deletion order, in reverse
 - DependsOn lets you explicitly define dependencies 
 	- why/ when?
-		- elastic IP requires an igw attached to a vpc to work, but there may not be an inherint internal dependency (!Ref) for that, best to add explicit dependency to prevent an error
+		- elastic IP requires an IGW attached to a VPC to work, but there may not be an inherent internal dependency (!Ref) for that, best to add explicit dependency to prevent an error
 
 ## CloudFormation Wait Conditions & cfn-signal
-- cloudformation 
+- CloudFormation
 	logical resources in template -> stack -> stack creates physical resources -> tells logical resource CREATE_COMPLETE
 - problem: need more detailed signalling
 ### cfn-signal
-- configure cloudformation to wait for # success signals, then CREATE_COMPLETE flagged to signal to the logical resource
+- configure CloudFormation to wait for # success signals, then CREATE_COMPLETE flagged to signal to the logical resource
 	- if failure signal received (max 12H) -> creation fails
 	- if timeout reached -> creation fails
 ### Creation Groups
@@ -141,7 +141,7 @@ dynamic parameter fault that will evaluate and show as default to user in parame
 - more detailed requirements for CREATE_COMPLETE or CREATE_FAILED
 ### Wait Conditions
 - allow PAUSE AND WAIT between resource creation
-- its own logical resource that will ahve its own CREATE_COMPLET
+- its own logical resource that will have its own CREATE_COMPLETE
 - can depend on other resources, and other resources can depend on it
 - implicit depends on another resource -- WaitHandle
 	- WaitHandle is its own resource
@@ -149,7 +149,7 @@ dynamic parameter fault that will evaluate and show as default to user in parame
 
 
 ## CloudFormation Nested Stacks
-- isolated cloudformation stack 
+- isolated CloudFormation stack
 	- has all the resources within itself and they all share a lifecycle
 	- LIMITS
 		- 500 resources per stack
@@ -183,7 +183,7 @@ dynamic parameter fault that will evaluate and show as default to user in parame
 - cross-stack references allow reuse of resources between stacks
 - outputs can be exported making them visible from other stacks 
 - exports must have unique name within the region
-- export vpc IDs, instance ID, etc
+- export VPC IDs, instance ID, etc
 - to use export, instead of using Ref!, use Fn::ImportValue with the export name to get the value from the export
 - exports are listed under outputs
 * cross-stack references allow reuse actual physical resources
@@ -191,14 +191,14 @@ dynamic parameter fault that will evaluate and show as default to user in parame
 ## CloudFormation Stack Sets
 - deploy cfn stacks across many accounts and region, without having to separately authenticate into each
 - StackSet = container in an admin account, container for stack instances
-	- ...contain stack instances, which reference one particular account in one particular region in one particular aws account
+	- ...contain stack instances, which reference one particular account in one particular region in one particular AWS account
 	- if stack fails to create, stack instance remains
 	- stack instance = container for 1 stack
-- concurrent accoutns: defined value, the more you set, the faster resoureces are deployed. How many accounts can be deployed to at the same time
+- concurrent accounts: defined value, the more you set, the faster resources are deployed. How many accounts can be deployed to at the same time
 	- ex: if you're deploying stackset into 10 accounts, concurrent account set to 2, then will be deploying 5 sets of 2 accounts at a time
 - failure tolerance: amount of individual deployments which can fail before stackset itself is viewed as failed
 - retain stacks: remove stack instances from a stackset, by default will delete the actual stacks themselves, but can change settings to keep the actual stack
 - uses
 	- enable AWS config
-	- create iam roles for cross-account access
-	- aws config rules - MFA, EIPS, EBS encryption
+	- create IAM roles for cross-account access
+	- AWS config rules - MFA, EIPS, EBS encryption

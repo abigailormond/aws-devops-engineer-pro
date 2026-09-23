@@ -1,8 +1,8 @@
 
 ## Scenario - Animals4life
 - Small on-prem datacenter
-- Based in brisbane, AUS
-- 3 other offices: london, NYC, seattle
+- Based in Brisbane, AUS
+- 3 other offices: London, NYC, Seattle
 - Current problems:
 	- legacy on prem hardware failing
 	- lack of HA and scalability
@@ -21,7 +21,7 @@
 	- initial user created
 	- full control over the entire account!! access can't be restricted
 	- BE CAREFUL
-	- best practice is to only use this for initial account setup, then use iam identity after that
+	- best practice is to only use this for initial account setup, then use IAM identity after that
 - IAM -> identity and access management, can be created and given full or limited access rights
 	- Users, groups, roles
 
@@ -37,31 +37,31 @@
 	- location --> where you are
 		- physical location, what network logged into 
 - In AWS, activate MFA for a user
-	- aws generates secret key & additional user information, this generates qr code, you scan that on mfa application, which adds key & info to app, now app can generate mfa codes to use 
+	- AWS generates secret key & additional user information, this generates qr code, you scan that on MFA application, which adds key & info to app, now app can generate MFA codes to use
 
 ## IAM Basics
 - Least Privilege Access
-- IAM = globally resilient service (any data always secure across all aws regions!)
+- IAM = globally resilient service (any data always secure across all AWS regions!)
 	- every account has their own dedicated instance of IAM
 - 3 types IAM identity objects:
 	- User = represent humans or applications that need access
 	- Group = collection of related users
-	- Role = can be used by aws services, or for granting external access to your account
+	- Role = can be used by AWS services, or for granting external access to your account
 		- generally used when # of entities granted access is uncertain (as opposed to users or groups)
 		- ex: role allowing `S3` access, grant that to `EC2` instances
 - Policy or policy document
 	- allow or deny access to AWS services ONLY when attached to IAM users, groups, and roles
 - 3 jobs of IAM
 	- manage identities -- ID provider (IDP)
-	- authenticate the identites 
+	- authenticate the identities
 	- authorize -- allow or deny access to resources
 - basics
 	- no cost
 	- global service & globally resilient
-	- ALLOW or DENY the identities on tis own account
+	- ALLOW or DENY the identities on this own account
 	- no direct control on external accounts or users 
 	- Identity federation & MFA
-		- identity federation -- use existing identities like workplace identities, facebook, etc
+		- identity federation -- use existing identities like workplace identities, Facebook, etc
 
 ## IAM Access Keys
 - Type of Long-Term Credentials
@@ -69,7 +69,7 @@
 - generally users use user/pass on console UI, access key in CLI
 - long-term indicates doesn't rotate or change often
 - IAM users have 1 username 1 password
-	- password optional! some iam users don't log in 
+	- password optional! some IAM users don't log in
 - IAM users can have 2 access keys (useful for rotating keys)
 - access keys 
 	- can be created, deleted, inactive, or active
@@ -80,10 +80,10 @@
 - 
 
 ## IAM Identity Policies
-- set of statements granting or denying access to aws resources, granting this to specific identities
+- set of statements granting or denying access to AWS resources, granting this to specific identities
 - attached to specific identities
 - IAM Policy Document ---> 1+ statements
-	- satements do the allow/denying
+	- statements do the allow/denying
 - Elements of statement
 	- `Sid` -- statement ID -- describes whats going to be in the statement
 	- `Effect` -- `allow`/`deny`
@@ -116,26 +116,26 @@
 
 IAM Users
 - Identity used for anything requiring long-term AWS access (humans, applications, or service accounts)
-- Principal -- entity trying to access an aws account. 
+- Principal -- entity trying to access an AWS account.
 	- must be authenticated and authorized 
-	- principal makes requiest to iam to be able to access resources
+	- principal makes request to IAM to be able to access resources
 - Authentication -- principal proves it is an identity that it claims to be
 	- long-term credentials: username/password, access keys
 - Authorization -- IAM checking statements that apply to that identity 
 * You can only have 5,000 IAM Users per account
-* an Iam User can be a member of 10 groups
+* an IAM User can be a member of 10 groups
 * IAM Roles & Identity Federation can address the above limitations
 
 ARN
 - Amazon Resource Name
-- uniquely identitfy resources within any AWS accountws
+- uniquely identify resources within any AWS accounts
 - globally unique
 - format:
 	- `arn:partition:service:region:account-id:resource-id`
 	- `arn:partition:service:region:account-id:resource-type/resource-id`
 	- `arn:partition:service:region:account-id:resource-type:resource-id`
 	- `arn:aws:s3:::catgifs`
-	- don't need to specify region or accountid because s3 bucket names are globally unique
+	- don't need to specify region or accountid because S3 bucket names are globally unique
 	- resource is the BUCKET
 - `arn:aws:s3:::catgifs/*`
 	- resource is the OBJECTS IN THE BUCKET not the bucket itself
@@ -147,15 +147,15 @@ ARN
 ## IAM Groups
 - containers for organizing IAM users
 	- can't log in, don't have credentials
-- can have inline and managed policices attached
+- can have inline and managed policies attached
 - No limit on # IAM Users in a group (except that there can only be 5000 users in an account)
 - No built-in all-users group in IAM, but you could make one, but you would have to manage it yourself
 - No group nesting
 - Limit of 300 groups per account, can be increased with support ticket
 * groups are not a true identity -- cannot be referenced as a principal in a policy. 
-* just organizing users and assigning policies to groups that the iam users will inherit
+* just organizing users and assigning policies to groups that the IAM users will inherit
 
-## DEMO - Perms IAM Grops
+## DEMO - Perms IAM Groups
 - cloudformation outputs vs parameters?
 
 
@@ -170,22 +170,22 @@ ARN
 	- Trust Policy
 		- what identities are allowed to assume the role 
 		- can reference other identities in the same account (users, other roles, services like `EC2`)
-		- Can reference identities in other aws accounts
-		- can allow other types of identities -- like google credentials
+		- Can reference identities in other AWS accounts
+		- can allow other types of identities -- like Google credentials
 	- Permissions Policy
 - When someone assumes a role, **temporary security credentials are generated by AWS STS** (Secure Token Service) -- `sts:AssumeRole`
 
-## When to User IAM Roles
+## When to use IAM Roles
 - AWS Services
-	- Most common use of roles: for aws services. services operate on your behalf and need access to do so
+	- Most common use of roles: for AWS services. Services operate on your behalf and need access to do so
 	- Ex: `Lambda`, like most AWS services, has no permissions inherently
 		- `Lambda Execution Role`
-			- Trust Policy that trusts the Lambda service --> lambda is allowed to assume that role whenever a function is executed
+			- Trust Policy that trusts the Lambda service --> Lambda is allowed to assume that role whenever a function is executed
 			- Permissions policy that allows access to other AWS services
 		 - When function runs...
 			 1. Uses `sts:AssumeRole` operation
 			 2. `STS` generates temporary security credentials for the `Lambda` runtime environment
-			 3. lambda runtime env uses these credentials to do whatever it needs to do
+			 3. Lambda runtime env uses these credentials to do whatever it needs to do
 		- If didn't use a role, would have to hardcode access keys, etc, for the function to use -- less secure
 - Emergency, out of usual situations
 	- "Break glass"
@@ -209,13 +209,13 @@ ARN
 		- or could get created within IAM
 	- **cannot be deleted until its no longer required** AKA no longer used within that service
 	- Management
-		- DO NOT TRY TO GUESS THE SERVICE-NAME IN THE ARN OF A RESOURCE STEMENT it can differ and is case sensitive 
+		- DO NOT TRY TO GUESS THE SERVICE-NAME IN THE ARN OF A RESOURCE STATEMENT it can differ and is case sensitive
 	* add example  of role policy statements for service linked role 
 - PassRole
-	- method in AWS which gives you the ability to implement role sepearation 
+	- method in AWS which gives you the ability to implement role separation
 	- can be used with service-linked roles 
-	- give passrole to user, then user can attach a role to a service? this can let bob pass a role to lambda and that role lambda has may have more permissions than bob himself has. 
-	- important aws security architecture
+	- give passrole to user, then user can attach a role to a service? this can let Bob pass a role to Lambda and that role Lambda has may have more permissions than Bob himself has.
+	- important AWS security architecture
 
 
 ## AWS Organization
@@ -223,13 +223,13 @@ ARN
 	1. Log into standard AWS account (an account that is not already linked to an org)
 	2. Create an organization from within this AWS account. This organization isn't created INSIDE the account, the account is just used to create the organization
 	3. that account used to create it now becomes the Management Account (formerly master account) for the organization
-	4. Management account can now invite other standard aws accounts into the org
+	4. Management account can now invite other standard AWS accounts into the org
 	5. Those standard accounts must approve the invite to join the organization, and now become Member Accounts
 - Organization has 1 Management account and >=0 Member Accounts
-- Hierarchal structure 
+- Hierarchical structure
 	- top of tree is root container, Organization Root 
 		- != account root user !!!!
-		- organization root is just container within an organization, which can contain aws accounts (member accounts or management account)
+		- organization root is just container within an organization, which can contain AWS accounts (member accounts or management account)
 	- Organization root can also contain Organizational Units (OU) that can contain accounts or more OUs
 - Consolidated Billing
 	- member accounts pass billing thru to the management account "payer account"
@@ -252,29 +252,29 @@ ARN
 			4. type in name of role (default `OrganizationAccountAccessRole` unless you made something diff)
 			5. type display name to make shortcut to more easily access this role switch in future
 		in future, you can now just click on the shortcut to quickly switch roles
-- best architectural practice is to have one aws account handle identities
+- best architectural practice is to have one AWS account handle identities
 		1. existing identity group authenticates through identities in one account
 		2. role switching to assume roles within other accounts in the org
 	- a lot of this happens behind the screen 
 
 ## Service Control Policies (SCPs)
-- feature of aws organizations
+- feature of AWS organizations
 	- SCPs can be applied to organizations ("root container"), `OUs`, or to individual accounts
-- Mangagement accounts cannot be affected by SCPs
+- Management accounts cannot be affected by SCPs
 	- avoid putting resources in here!
 - SCPs are account permission boundaries
 	- limit what account can do (including account root user)
-		- account root user always has full access over entire aws account, but you can restrict the allowed perms on the entire account via SCPs, which in effect also restricts account root user
+		- account root user always has full access over entire AWS account, but you can restrict the allowed perms on the entire account via SCPs, which in effect also restricts account root user
 	- examples
-		- only certain size of ec2 instance allowed
+		- only certain size of EC2 instance allowed
 		- only certain regions allowed
 	- DON'T GRANT ANY PERMISSIONS - defines boundaries and limit permissions
 		- control what an account CAN and CANNOT grant via identity policies
 - ALLOW list vs DENY list
-	- deny list -> DEFAULT ALLOW, scp adds list of "denies"
-		- this is the default structure - full access, no boundaries on an aws account
+	- deny list -> DEFAULT ALLOW, SCP adds list of "denies"
+		- this is the default structure - full access, no boundaries on an AWS account
 		- lower admin overhead
-	- allow list -> DEFAULT DENY , scp adds list of "allows"
+	- allow list -> DEFAULT DENY , SCP adds list of "allows"
 	- any additional policies follow (deny, allow, deny) regular policy priorities
 - ONLY something that is allowed by an SCP and granted access by identity policy would be actually allowed. middle of venn diagram 
 	- 
