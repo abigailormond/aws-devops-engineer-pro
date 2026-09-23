@@ -1,7 +1,7 @@
 MISC
 - AMI are specific to region
 
-CloudFormation Physical & Logical Resources
+## CloudFormation Physical & Logical Resources
 - CloudFormation Template
     - JSON or YAML
     - contains logical resources
@@ -20,7 +20,7 @@ CloudFormation Physical & Logical Resources
 - A Stack creates, updates, deletes physical resources based on logical resources in the template
 
 
-CloudFormation Template and Pseudo Parameters
+## CloudFormation Template and Pseudo Parameters
 - Template Parameters
 	- human or process can provide input when a stack is created or updated
 		- CLI
@@ -45,7 +45,7 @@ CloudFormation Template and Pseudo Parameters
 
 	
 
-CloudFormation Intrinsic Functions
+## CloudFormation Intrinsic Functions
 - allow you to gain access to data at runtime
 - Ref 
 	- reference
@@ -82,7 +82,7 @@ CloudFormation Intrinsic Functions
 		- bits per CIDR 
 	- outputs: 
 
-CloudFormation Mappings
+## CloudFormation Mappings
 - feature of cloudformation that makes it easier to design portable templates
 - Templates can contain a Mappings object
 - Mappings object can contain many mappings
@@ -92,7 +92,7 @@ CloudFormation Mappings
 	- !FindInMap \[ mapName, topLevelKey, secondLevelKey ]
 - Use !FindinMap Intrinsic function (commonly used to retrieve AMI for given region, architecture)
 
-CloudFormation Outputs
+## CloudFormation Outputs
 - optional, useful for providing status information 
 - declare values that will be used as output when using cli or console UI
 - can also be accessible from parent stack when using nesting
