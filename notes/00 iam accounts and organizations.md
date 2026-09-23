@@ -85,13 +85,13 @@
 - IAM Policy Document ---> 1+ statements
 	- satements do the allow/denying
 - Elements of statement
-	- Sid -- statement ID -- describes whats going to be in the statement
-	- Effect -- allow/deny
-	- Action 
+	- `Sid` -- statement ID -- describes whats going to be in the statement
+	- `Effect` -- `allow`/`deny`
+	- `Action`
 		- format `[service:resource]`
 			- can list specific action, or wildcard `*` to match any action/operation
 		- or can be list of many specific actions
-	- Resource -- can be wildcard, or specific resource using an AWS ARN
+	- `Resource` -- can be wildcard, or specific resource using an AWS ARN
 - It is possible to be allowed and denied at same time!! 
 	- ex: full `S3` allow, the statement afterwards has deny for specific bucket
 	- what happens? --> both of the statements are applied.
@@ -140,7 +140,7 @@ ARN
 - `arn:aws:s3:::catgifs/*`
 	- resource is the OBJECTS IN THE BUCKET not the bucket itself
 - wildcard `*` -- refers to all
-- double colon `::` -- when something doesn't need to be specified or isn't applicable 
+- double colon `::` -- when something doesn't need to be specified or isn't applicable
 - 
 
 
@@ -239,8 +239,8 @@ ARN
 - Service Control Policies (SCPs)
 - Can directly create new accounts within an organization -- skip step of invite + accept to become member account
 	- just need unique email 
-	- also automatically creates role within the member account that allows role switching from the management account: **OrganizationAccountAccessRole**
-		- the organizationAccountAccessRole
+	- also automatically creates role within the member account that allows role switching from the management account: `OrganizationAccountAccessRole`
+		- the `OrganizationAccountAccessRole`
 			- principal: management AWS account
 			- action: `sts:AssumeRole`
 			- effect: `allow`

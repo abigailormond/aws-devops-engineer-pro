@@ -14,7 +14,7 @@ MISC
 - Template
     - Has Logical Resource NAME and TYPE
     - Contains resource properties
-        - Once the logical resource moves to create_complete (physical resource is active) THEN the template logical resource can query attributes of the physical resource, like the ec2 ID
+		- Once the logical resource moves to `CREATE_COMPLETE` (physical resource is active) THEN the template logical resource can query attributes of the physical resource, like the `EC2` ID
 - Creating a stack
 	- `CreateStack` uses template, parameters, and options to create a stack
 - A Stack creates, updates, deletes physical resources based on logical resources in the template
@@ -25,7 +25,7 @@ MISC
 	- human or process can provide input when a stack is created or updated
 		- CLI
 		- API
-	- parameters can be referenced within logical resources, influencing physical resources / configuration'
+	- parameters can be referenced within logical resources, influencing physical resources / configuration
 	- Can be configured with:
 		- defaults
 		- allowedvalues
@@ -68,10 +68,10 @@ MISC
 	- `!GetAZs "us-east-1"` or `!GetAZs ""` (current region)
 - `Fn::Select`
 	- allows you to reference an item in a list using an index
-- Conditions (if, and, equals, not, or)
+- `Conditions` (`Fn::If`, `Fn::And`, `Fn::Equals`, `Fn::Not`, `Fn::Or`)
 - `Fn::Base64`
-	- base64 encoding, substitute within text 
-	- ex: if userdata requires base64, pass your normal text into Fn:Base64 then into your userdata
+	- base64 encoding, substitute within text
+	- ex: if `UserData` requires base64, pass your normal text into `Fn::Base64` then into your `UserData`
 - `Fn::Sub`
 	- substitute in variables
 - `Fn::Cidr`
