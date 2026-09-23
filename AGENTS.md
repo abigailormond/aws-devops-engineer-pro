@@ -6,14 +6,17 @@ This repository is a personal study workspace for the AWS Certified DevOps Engin
 
 ## Repository Map
 
-- `Study Guide/Study Schedule.md` is the source of truth for the study plan. It tracks video completion with Markdown checkboxes, groups videos by week and day, and records planned viewing time.
-- `Notes/` contains personal notes taken from the course videos. Notes are organized as quick-reference outlines rather than polished documentation.
+- `course-outline.md` is the source of truth for the course's contents: the full list of sections and videos, in course order. Any change to what videos exist or how they are titled/grouped should start here.
+- `schedule.md` takes the videos from `course-outline.md` and organizes them into a day-by-day study schedule. It tracks video completion with Markdown checkboxes, groups videos by week and day, and records planned viewing time. It does not introduce new videos or reorder the course; it schedules the outline's existing sequence.
+- `notes/` contains personal notes taken from the course videos. Notes are organized as quick-reference outlines rather than polished documentation.
+- Note files use a two-digit numeric prefix and lowercase filenames, such as `notes/00 iam accounts and organizations.md` and `notes/01 cloudformation.md`. Preserve the existing numeric sequence when adding or renaming course sections.
 - `.vscode/settings.json` contains local editor appearance settings; do not change it unless explicitly asked.
 
 ## Study Schedule Rules
 
 When changing the schedule:
 
+- Treat `course-outline.md` as authoritative for video existence, titles, and course order; the schedule should reflect it, not diverge from it.
 - Preserve the exact course-video sequence unless the user explicitly requests a schedule revision.
 - Keep each video assigned wholly to one study day.
 - Keep each week at or below its stated five-hour maximum unless the user explicitly approves an exception.
@@ -24,6 +27,7 @@ When changing the schedule:
 ## Notes Conventions
 
 - Keep notes concise, factual, and scannable with headings and nested bullets.
+- Use Markdown `##` headings for video or major lesson sections; keep supporting subtopics as plain text or nested list items unless the existing note structure calls for another level.
 - Preserve the author's terminology and emphasis. Fix typos or restructure notes only when asked, or when necessary to prevent a technical misunderstanding.
 - Distinguish course facts from personal reminders, open questions, and follow-up items. Do not silently turn uncertainty into a definitive AWS claim.
 - Retain useful exam distinctions, limits, policy evaluation rules, service relationships, and CLI or console workflow details.
