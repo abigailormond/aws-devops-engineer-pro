@@ -15,6 +15,7 @@ MISC
     - Has Logical Resource NAME and TYPE
     - Contains resource properties
 		- Once the logical resource moves to `CREATE_COMPLETE` (physical resource is active) THEN the template logical resource can query attributes of the physical resource, like the `EC2` ID
+      	- !!! How does the logical resource know when CREATE_COMPLETE? is there state somewhere?
 - Creating a stack
 	- `CreateStack` uses template, parameters, and options to create a stack
 - A Stack creates, updates, deletes physical resources based on logical resources in the template
