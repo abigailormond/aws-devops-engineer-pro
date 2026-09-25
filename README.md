@@ -1,7 +1,4 @@
 
-! _marks lessons to be revisited_
-
-
 
 Week 0: September 17-18, 2026 | 2.8 hours
 -----------------------------------------
