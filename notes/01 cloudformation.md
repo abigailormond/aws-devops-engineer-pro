@@ -15,7 +15,6 @@ MISC
     - Has Logical Resource NAME and TYPE
     - Contains resource properties
 		- Once the logical resource moves to `CREATE_COMPLETE` (physical resource is active) THEN the template logical resource can query attributes of the physical resource, like the `EC2` ID
-      	- !!! How does the logical resource know when CREATE_COMPLETE? is there state somewhere?
 - Creating a stack
 	- `CreateStack` uses template, parameters, and options to create a stack
 - A Stack creates, updates, deletes physical resources based on logical resources in the template
@@ -189,7 +188,7 @@ dynamic parameter fault that will evaluate and show as default to user in parame
 - exports are listed under outputs
 * cross-stack references allow reuse actual physical resources
 
-## CloudFormation Stack Sets
+## CloudFormation Stack Sets !
 - deploy cfn stacks across many accounts and region, without having to separately authenticate into each
 - StackSet = container in an admin account, container for stack instances
 	- ...contain stack instances, which reference one particular account in one particular region in one particular AWS account
@@ -203,3 +202,46 @@ dynamic parameter fault that will evaluate and show as default to user in parame
 	- enable AWS config
 	- create IAM roles for cross-account access
 	- AWS config rules - MFA, EIPS, EBS encryption
+
+## CloudFormation Deletion Policy
+- default action when logical resource is deleted is to DELETE
+- RETAIN -> won't delete physical resource if logical resource is deleted
+- SNAPSHOT -> will take snapshot then delete physical resource
+	- supported by ebs volume, elasticache, neptune, rds, redshift
+	- snapshot not tracked by cloudfront state
+- policies apply to DELETE operation only, not REPLACE (which is delete then recreate)
+
+## CloudFormation Stack Roles
+- CFN uses the permissions of the logged-in identity 
+	- YOU need the permissions to create, update, delete stacks AND permissions to create, update, delete any of the resources specified in your stack
+- CFN Stack Roles -> CFN can assume a role to gain the permissions, implementing role separation!
+- The identity creating the stack doesn't need the specific resource permissions, only PassRole and permissions to CREATE, UPDATE, DELETE stacks. 
+	- when creating the stack, select the Stack Role desired
+
+## CloudFormation Init (CFN-INIT) !
+- helper tool that runs once as a part of bootstrapping (ec2). loads metadata stored on logical resource  in cfn stack. desired state configuration tool -- 
+- runs ONCE as part of bootstrapping!! if you update the stack, cfn-init isn't rerun!!
+
+- CloudFormationInit lets you add configuration informatinon to an EC2 instance 
+	- simple configuration management system
+	- native cloudfomration feature -> configuration directives stored in template
+	- AWS::CloudFormation::Init part of logical resource 
+	- idempotent (if you apply multiple times, it doesn't changes state beyond initial application). defines DESIRED STATE (WHAT instead of HOW/procedural of userdata)
+	- as opposed to UserData which ...
+		- pass scripts into an ec2 instance
+		- not native cloudformation feature 
+		- procedural -> set of commands executed 1 by 1 on the instance operating system. tells instance HOW to bootstrap itself
+	- cfn-init -> helper script -> installed on the EC2 OS
+		- loads configuration directives and executes 
+	- have to also configure UserData???? to use cfn-init???
+
+## CloudFormation cfn-hup
+- cfn-init is only run once in bootstrapping
+- cfn-hup helper is a daemon which can be installed
+- detects changes in resource metadata 
+- when cfn-hup detects change, it can run configurable actions (could even rerun cfn-init)
+
+
+## [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART1
+
+## [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART2
