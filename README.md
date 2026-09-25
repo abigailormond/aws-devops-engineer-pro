@@ -59,10 +59,10 @@ Week 1: September 21-25, 2026 | 5.5 hours
 
 **Thursday, September 24: 53 minutes**
 
-- [ ] [ASSOCIATESHARED] CloudFormation Deletion Policy (5:24)
-- [ ] [ASSOCIATESHARED] CloudFormation Stack Roles (6:47)
-- [ ] [ASSOCIATESHARED] CloudFormation Init (CFN-INIT) (8:48)
-- [ ] [ASSOCIATESHARED] CloudFormation cfn-hup (4:13)
+- [x] [ASSOCIATESHARED] CloudFormation Deletion Policy (5:24)
+- [x] [ASSOCIATESHARED] CloudFormation Stack Roles (6:47)
+- [x] [ASSOCIATESHARED] CloudFormation Init (CFN-INIT) (8:48)
+- [x] [ASSOCIATESHARED] CloudFormation cfn-hup (4:13)
 - [ ] [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART1 (12:51)
 - [ ] [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART2 (14:42)
 
