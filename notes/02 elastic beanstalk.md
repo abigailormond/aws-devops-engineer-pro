@@ -1,0 +1,45 @@
+## Elastic Beanstalk (EB) - Architecture
+
+- EB = PaaS (plateform as a service) -- vendor handles all infrastructure, you manage the code
+- EB = developer focused product
+    - user provides app code & EB handles the environment/ infrastructure
+    - good for small developer teams, getting poc's up and running
+    - fully customizable. uses aws products and services
+- Platforms (/languages)
+    - Built-in and natively supported platforms
+        - go, java se, tomcat
+        - .NET core (linux and windows)
+        - Node.js, PHP, python, ruby
+    - Docker
+        - uses ecs behind the scenes        
+        - single container docker
+        - multicontainer docker
+        - preconfigured docker
+            - way beanstalk supports things before they're natively supported by beanstalk
+    - Custom Platforms
+        - custom via packer
+- Terminology
+    - Elastic Beanstalk Application = a collection of things relating to an application -- more of a container/ folder 
+    - Application Versions = specific labeled version of deployable code for an application. 
+    - Source bundle = zip files/ war files that hold an application version 
+        - source bundle = indicator referring to beanstalk 
+    - Environments = containers of infrastructure and configuration for a specific application version
+        - subcontainer inside the Application container
+        - environments actually contain the infrastructure
+        - each environment is either a web server tier or a worker tier
+        - web server tier = communicate with end users
+            - accept trafic from end user 
+        - worker tier = process work from the web tiers
+- Architecture
+    - application = top-level container
+    - environment = container inside application 
+        - each environment has a load balancer
+
+- Summary
+    - not free! must tweak app to get it to work with EB
+    - great for small dev teams 
+    - use docker for any platforms not supported natively by EB
+    - (almost) always provision and maintain DBs OUTSIDE of EB !!
+        - you can point EB at DBs outside of EB
+        - you can technically create DBs inside EB
+            - but the DB would be lost if the environment is deleted

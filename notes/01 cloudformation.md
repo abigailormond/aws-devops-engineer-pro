@@ -243,6 +243,7 @@ dynamic parameter fault that will evaluate and show as default to user in parame
 
 
 ## [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART1
+- if update is made to userdata of ec2 > "update with distruption" > instance is stopped then started again
 
 
 
@@ -284,4 +285,12 @@ dynamic parameter fault that will evaluate and show as default to user in parame
 		11. bucket is deleted successfully
 - 
 
-## [DEMO] CloudFormation Custom Resources-PART1
+## [DEMO] CloudFormation Drift Detection
+- Resource drift = when there is mismatch between logical and physical resource
+- Stack drift = 1+ resources in a stack have resource drift
+- Drift Detection
+	- Can go to stack in UI and click stack actions and click detect drift
+	- drift detection = see differences between logical and physical resources
+- Import
+	- match an existing physical resource to a logical resource in a template
+-
