@@ -244,4 +244,44 @@ dynamic parameter fault that will evaluate and show as default to user in parame
 
 ## [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART1
 
+
+
 ## [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART2
+
+## CloudFormation ChangeSets
+- When cloudformation is applied/updated to then apply change to physical resources there can be
+	- No interruption -> changes don't affect operation of existing resource
+	- Some interruption -> ex: ec2 instance rebooting
+	- Replacement -> creates new copy, removes old one. could result in data loss or loss of service
+- Change set -> preview different versions and potential changes (like a terraform plan)
+	- steps:
+		- navigate to stack
+		- click change sets
+		- click create change set
+		- Prepare template: choose use current template, upload new template, or edit template in designer
+	- creating changeset does not update original stack! you must EXECUTE the changeset
+
+
+## CloudFormation Custom Resources
+- CloudFormation doesn't support everything within AWS
+- CFN Custom Resources are a type of logical resoure that lets cfn integrate with things it doesn't natively support 
+- Custom resource must be backed with something?
+	- lambda
+	- sns topic
+- Use case: empty s3 bucket so stack can be torn down even with bucket with objects
+	- normally: sre make s3 bucket, sally uploads objects to bucket, sre tries to delete stack, deletion fail because bucket not empty
+	- w/ custom resource:
+		1. create template
+		2. crate bucket via template
+		3. create custom resource in template that invokes lambda function, which downloads objcts to the new s3 bucket
+		4. lambda returns event data upon success to the ResponseURL
+		5. stack marks logical resource CREATE COMPLETE
+		6. sally uploads extra objects to the bucket
+		7. sre tries to delete stack
+		8. stack runs delete operation on the custom resource
+		9. custom resource delete is confugred to delete all objects in the bucket
+		10. bucket is emptied
+		11. bucket is deleted successfully
+- 
+
+## [DEMO] CloudFormation Custom Resources-PART1

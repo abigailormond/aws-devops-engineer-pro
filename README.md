@@ -78,13 +78,13 @@ Week 3: October 5-9, 2026 | 3.1 hours (catch-up; Lambda content moved to Week 4)
 
 - [ ] [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART1 (12:51)
 - [ ] [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART2 (14:42)
-- [ ] [ASSOCIATESHARED] CloudFormation ChangeSets (11:03)
-- [ ] [ASSOCIATESHARED] CloudFormation Custom Resources (11:03)
-- [ ] [ASSOCIATESHARED] [DEMO] CloudFormation Custom Resources-PART1 (9:12)
+- [x] [ASSOCIATESHARED] CloudFormation ChangeSets (11:03)
+- [x] [ASSOCIATESHARED] CloudFormation Custom Resources (11:03)
+- [x] [ASSOCIATESHARED] [DEMO] CloudFormation Custom Resources-PART1 (9:12)
 
 **Thursday, October 8: 63 minutes**
 
-- [ ] [ASSOCIATESHARED] [DEMO] CloudFormation Custom Resources-PART2 (13:27)
+- [x] [ASSOCIATESHARED] [DEMO] CloudFormation Custom Resources-PART2 (13:27)
 - [ ] [DEMO] CloudFormation Drift Detection (19:38)
 - [ ] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Architecture (18:12)
 - [ ] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Application & Environment - PART1 (11:50)
