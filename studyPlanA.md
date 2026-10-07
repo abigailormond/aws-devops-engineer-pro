@@ -1,3 +1,5 @@
+
+
 Week 0: September 17-18, 2026 | 2.8 hours
 -----------------------------------------
 
@@ -20,7 +22,7 @@ Week 0: September 17-18, 2026 | 2.8 hours
 - [x] [ASSOCIATESHARED] IAM Roles - The Tech (8:13)
 
 
-Week 1: September 21-25, 2026 | 4.0 hours
+Week 1: September 21-25, 2026 | 5.5 hours
 -----------------------------------------
 
 **Sunday, September 20: 53 minutes**
@@ -55,43 +57,36 @@ Week 1: September 21-25, 2026 | 4.0 hours
 - [x] [ASSOCIATESHARED] CloudFormation Cross-Stack References (10:05)
 - [x] [ASSOCIATESHARED] CloudFormation Stack Sets (9:12)
 
-**Thursday, September 24: 25 minutes**
+**Thursday, September 24: 53 minutes**
 
 - [x] [ASSOCIATESHARED] CloudFormation Deletion Policy (5:24)
 - [x] [ASSOCIATESHARED] CloudFormation Stack Roles (6:47)
 - [x] [ASSOCIATESHARED] CloudFormation Init (CFN-INIT) (8:48)
 - [x] [ASSOCIATESHARED] CloudFormation cfn-hup (4:13)
-
----
-
-Week 2: September 28-October 2, 2026 | 0.0 hours
-------------------------------------------------
-
-All unfinished Week 2 content has been moved to the October 7-9 catch-up schedule below.
-
----
-
-Week 3: October 5-9, 2026 | 3.1 hours (catch-up; Lambda content moved to Week 4)
--------------------------------------
-
-**Wednesday, October 7: 59 minutes**
-
 - [ ] [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART1 (12:51)
 - [ ] [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART2 (14:42)
+
+**Friday, September 25: 64 minutes**
+
 - [ ] [ASSOCIATESHARED] CloudFormation ChangeSets (11:03)
 - [ ] [ASSOCIATESHARED] CloudFormation Custom Resources (11:03)
 - [ ] [ASSOCIATESHARED] [DEMO] CloudFormation Custom Resources-PART1 (9:12)
-
-**Thursday, October 8: 63 minutes**
-
 - [ ] [ASSOCIATESHARED] [DEMO] CloudFormation Custom Resources-PART2 (13:27)
 - [ ] [DEMO] CloudFormation Drift Detection (19:38)
+
+---
+
+Week 2: September 28-October 2, 2026 | 1.8 hours
+------------------------------------------------
+
+**Wednesday, Sep 30: 41 minutes**
+
 - [ ] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Architecture (18:12)
 - [ ] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Application & Environment - PART1 (11:50)
-
-**Friday, October 9: 65 minutes**
-
 - [ ] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Add additional environment and config options - PART2 (10:53)
+
+**Thursday, Oct 1: 54 minutes**
+
 - [ ] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Deployment Policies (11:40)
 - [ ] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Deployment (8:30)
 - [ ] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Environments and RDS (4:34)
@@ -104,21 +99,25 @@ Week 3: October 5-9, 2026 | 3.1 hours (catch-up; Lambda content moved to Week 4)
 
 ---
 
-Week 4: October 12-16, 2026 | 8.0 hours
----------------------------------------
+Week 3: October 5-9, 2026 | 3.5 hours
+-------------------------------------
 
-**Monday, October 12: 101 minutes**
+
+**Tuesday, October 6: 50 minutes**
 
 - [ ] [SHAREDALL] AWS Lambda - PART1 (11:25)
 - [ ] [SHAREDALL] AWS Lambda - PART2 (13:59)
 - [ ] [SHAREDALL] AWS Lambda - PART3 (17:03)
 - [ ] Lambda Handler Architecture & Overview - PART1 - Theory (7:52)
+
+**Wednesday, October 7: 51 minutes**
+
 - [ ] Lambda Handler Architecture & Overview - PART2 - Walkthrough (10:07)
 - [ ] [DEMO] S3 Events + Lambda (Pixelator) - PART1 (18:03)
 - [ ] [DEMO] S3 Events + Lambda (Pixelator) - PART2 (17:43)
 - [ ] Lambda Versions (4:58)
 
-**Tuesday, October 13: 90 minutes**
+**Thursday, October 8: 62 minutes**
 
 - [ ] Lambda Aliases (4:11)
 - [ ] [DEMO] Aliases and Versions (13:10)
@@ -126,42 +125,56 @@ Week 4: October 12-16, 2026 | 8.0 hours
 - [ ] Monitoring & Logging & Tracing Lambda Based Applications (13:24)
 - [ ] [DEMO] Accessing Private VPC Resources using Lambda w/ TheCatAPI!!!! - PART1 (7:53)
 - [ ] [DEMO] Accessing Private VPC Resources using Lambda w/ TheCatAPI!!!! - PART2 (16:19)
+
+**Friday, October 9: 44 minutes**
+
 - [ ] Lambda Layers (8:29)
 - [ ] Lambda Container Images (4:14)
 - [ ] Lambda & ALB Integration (5:21)
 - [ ] Lambda Resource Policy (9:52)
-
-**Wednesday, October 14: 97 minutes**
-
 - [ ] [SHAREDALL] API Gateway 101 (16:27)
+
+---
+
+Week 4: October 12-16, 2026 | 4.5 hours
+---------------------------------------
+
+**Monday, October 12: 65 minutes**
+
 - [ ] API Gateway - Methods and Resources (4:28)
 - [ ] API Gateway - Integrations (14:02)
 - [ ] API Gateway Stages and Deployments (6:25)
 - [ ] Open API & Swagger (7:56)
 - [ ] [ASSOCIATESHARED] Simple Notification Service (7:49)
 - [ ] [DOP-C02] [ADVDEMO] API Gateway Integrations - Mock, Lambda, AWS Service (23:55)
+
+**Tuesday, October 13: 47 minutes**
+
 - [ ] [ASSOCIATESHARED] Simple Queue Service (15:30)
-
-**Thursday, October 15: 103 minutes**
-
 - [ ] SQS Standard vs FIFO Queues (3:29)
 - [ ] SQS Extended Client Library (2:52)
 - [ ] SQS Delay Queues (4:38)
 - [ ] SQS Dead-Letter Queues (4:17)
 - [ ] [ASSOCIATESHARED] Step Functions (16:09)
+
+**Wednesday, October 14: 52 minutes**
+
 - [ ] [MINIPROJECT] Build A Serverless App - Pet-Cuddle-o-Tron - PART1 (5:01)
 - [ ] [MINIPROJECT] Build A Serverless App - Pet-Cuddle-o-Tron - PART2 (8:24)
 - [ ] [MINIPROJECT] Build A Serverless App - Pet-Cuddle-o-Tron - PART3 (12:26)
 - [ ] [MINIPROJECT] Build A Serverless App - Pet-Cuddle-o-Tron - PART4 (12:45)
 - [ ] [MINIPROJECT] Build A Serverless App - Pet-Cuddle-o-Tron - PART5 (13:31)
+
+**Thursday, October 15: 62 minutes**
+
 - [ ] [MINIPROJECT] Build A Serverless App - Pet-Cuddle-o-Tron - PART6 (2:38)
 - [ ] [ASSOCIATESHARED] Introduction to Containers (17:13)
-
-**Friday, October 16: 89 minutes**
-
 - [ ] [SHAREDALL] [DEMO] Creating 'container of cats' Docker Image (18:15)
 - [ ] [ASSOCIATESHARED] ECS - Concepts (10:25)
 - [ ] [ASSOCIATESHARED] ECS - Cluster Mode (13:09)
+
+**Friday, October 16: 47 minutes**
+
 - [ ] [SHAREDALL] [DEMO] - Deploying 'container of cats' using Fargate (13:13)
 - [ ] [SHAREDALL] Kubernetes 101 (11:27)
 - [ ] [SHAREDALL] Elastic Kubernetes Service (EKS) 101 (6:14)
@@ -449,6 +462,6 @@ Revision notes
 
 - [ ] Every video is assigned wholly to one day.
 - [ ] Videos remain in the exact sequence from the course outline.
-- [ ] Week 4 is 8.0 hours after the requested Week 3 move; all other weeks remain within the 5.0-hour target.
-- [ ] Week 10 is the heaviest week outside the Week 4 exception, at 4.9 hours.
+- [ ] No week exceeds 5.0 hours of video viewing.
+- [ ] Week 10 is the heaviest week at 4.9 hours.
 - [ ] The last Friday is intentionally longer so all remaining course content fits within the 10-week plan.
