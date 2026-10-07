@@ -87,7 +87,7 @@ Week 3: October 5-9, 2026 | 3.1 hours (catch-up; Lambda content moved to Week 4)
 - [x] [ASSOCIATESHARED] [DEMO] CloudFormation Custom Resources-PART2 (13:27)
 - [x] [DEMO] CloudFormation Drift Detection (19:38)
 - [x] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Architecture (18:12)
-- [ ] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Application & Environment - PART1 (11:50)
+- [x] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Application & Environment - PART1 (11:50)
 
 **Friday, October 9: 65 minutes**
 

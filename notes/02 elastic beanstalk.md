@@ -3,6 +3,7 @@
 - EB = PaaS (plateform as a service) -- vendor handles all infrastructure, you manage the code
 - EB = developer focused product
     - user provides app code & EB handles the environment/ infrastructure
+        - EB provisions these resources in your account! you can go in and see them under their respective resources
     - good for small developer teams, getting poc's up and running
     - fully customizable. uses aws products and services
 - Platforms (/languages)
@@ -48,3 +49,10 @@
         - you can point EB at DBs outside of EB
         - you can technically create DBs inside EB
             - but the DB would be lost if the environment is deleted
+
+
+## demo
+
+- under events, you can see all of the resources provisioning that are associated with the EB application 
+- logs > can see logs for each ec2 instance in the environment
+- health > overall health and individual instance health 
