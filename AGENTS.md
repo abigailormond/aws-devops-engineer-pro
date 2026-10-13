@@ -8,6 +8,7 @@ This repository is a personal study workspace for the AWS Certified DevOps Engin
 
 - `course-outline.md` is the source of truth for the course's contents: the full list of sections and videos, in course order. Any change to what videos exist or how they are titled/grouped should start here.
 - `schedule.md` takes the videos from `course-outline.md` and organizes them into a day-by-day study schedule. It tracks video completion with Markdown checkboxes, groups videos by week and day, and records planned viewing time. It does not introduce new videos or reorder the course; it schedules the outline's existing sequence.
+- `aws-docs/` contains source material copied directly from AWS's DOP-C02 certification documentation. Treat these files as the outline of exam scope and the reference for reviewing exam-topic coverage; they are not the course-video sequence. `aws-docs/main.md` is the exam guide overview and links to the six content domains in `aws-docs/content domain 1.md` through `aws-docs/content domain 6.md`.
 - `notes/` contains personal notes taken from the course videos. Notes are organized as quick-reference outlines rather than polished documentation.
 - Note files use a two-digit numeric prefix and lowercase filenames, such as `notes/00 iam accounts and organizations.md` and `notes/01 cloudformation.md`. Preserve the existing numeric sequence when adding or renaming course sections.
 - `anki/` contains Anki-importable flashcard decks generated from the notes, one CSV per note file, named to match its corresponding `notes/` file (e.g. `anki/01 cloudformation.csv` for `notes/01 cloudformation.md`).
@@ -36,6 +37,14 @@ When changing the schedule:
 - Preserve existing Obsidian-style image embeds and do not invent replacement assets when an embedded image is unavailable.
 - Avoid storing credentials, access keys, account identifiers, or other secrets in notes.
 - Use AWS capitalization standards for service names, resource names, etc.
+
+### Reviewing Completed Notes for Exam Coverage
+
+- When asked to review a completed note file, identify its subject and select the relevant AWS exam content-domain file under `aws-docs/`. A note may map to more than one domain; check each relevant domain rather than assuming a one-to-one mapping.
+- Compare the note's coverage against the domain's task statements and their **Knowledge of** and **Skills in** bullets. Identify applicable objectives or topics that appear missing or only lightly covered in the notes, and report them as potential coverage gaps.
+- Keep this exam-coverage comparison distinct from proofreading or technical fact-checking. The AWS content-domain files describe exam scope and are not an exhaustive checklist of every examinable fact; use judgment about relevance to the note's subject and avoid treating every example service as a required standalone note section.
+- Do not silently add material to a note during a coverage review. Summarize the gaps and suggested additions; make changes only when the user asks to update the notes.
+- Do not modify the copied files in `aws-docs/` during note reviews unless explicitly asked. Use them as the reference outline and preserve their source content.
 
 ## Flashcard (Anki) Conventions
 
