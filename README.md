@@ -67,17 +67,14 @@ Week 1: September 21-25, 2026 | 4.0 hours
 Week 2: September 28-October 2, 2026 | 0.0 hours
 ------------------------------------------------
 
-All unfinished Week 2 content has been moved to the October 7-9 catch-up schedule below.
+Any remaining Week 2 videos are included in the revised October 19-November 6 plan below.
 
 ---
 
-Week 3: October 5-9, 2026 | 3.1 hours (catch-up; Lambda content moved to Week 4)
+Week 3: October 5-9, 2026 | 1.6 hours completed
 -------------------------------------
 
-**Wednesday, October 7: 59 minutes**
-
-- [ ] [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART1 (12:51)
-- [ ] [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART2 (14:42)
+**Wednesday, October 7: 31 minutes**
 - [x] [ASSOCIATESHARED] CloudFormation ChangeSets (11:03)
 - [x] [ASSOCIATESHARED] CloudFormation Custom Resources (11:03)
 - [x] [ASSOCIATESHARED] [DEMO] CloudFormation Custom Resources-PART1 (9:12)
@@ -89,11 +86,26 @@ Week 3: October 5-9, 2026 | 3.1 hours (catch-up; Lambda content moved to Week 4)
 - [x] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Architecture (18:12)
 - [x] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Application & Environment - PART1 (11:50)
 
-**Friday, October 9: 65 minutes**
+---
 
-- [ ] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Add additional environment and config options - PART2 (10:53)
-- [ ] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Deployment Policies (11:40)
-- [ ] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Deployment (8:30)
+Week 4: October 12-16, 2026 | 0.0 hours (unfinished videos rescheduled below)
+-----------------------------------------------------------------------------
+
+---
+
+Week 5: October 19-23, 2026 | 3.6 hours
+---------------------------------------
+
+**Monday, October 19: 59 minutes**
+
+- [ ] [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART1 (12:51)
+- [ ] [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART2 (14:42)
+- [x] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Add additional environment and config options - PART2 (10:53)
+- [x] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Deployment Policies (11:40)
+- [x] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Deployment (8:30)
+
+**Tuesday, October 20: 59 minutes**
+
 - [ ] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Environments and RDS (4:34)
 - [ ] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Advanced Customisation via .ebextensions (4:52)
 - [ ] [ASSOCIATESHARED] Elastic Beanstalk (EB) - HTTPS (1:51)
@@ -101,52 +113,60 @@ Week 3: October 5-9, 2026 | 3.1 hours (catch-up; Lambda content moved to Week 4)
 - [ ] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Docker (9:11)
 - [ ] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Section Cleanup (1:40)
 - [ ] [ASSOCIATESHARED] CloudWatchEvents and EventBridge (6:54)
-
----
-
-Week 4: October 12-16, 2026 | 8.0 hours
----------------------------------------
-
-**Monday, October 12: 101 minutes**
-
 - [ ] [SHAREDALL] AWS Lambda - PART1 (11:25)
 - [ ] [SHAREDALL] AWS Lambda - PART2 (13:59)
+
+**Wednesday, October 21: 53 minutes**
+
 - [ ] [SHAREDALL] AWS Lambda - PART3 (17:03)
 - [ ] Lambda Handler Architecture & Overview - PART1 - Theory (7:52)
 - [ ] Lambda Handler Architecture & Overview - PART2 - Walkthrough (10:07)
 - [ ] [DEMO] S3 Events + Lambda (Pixelator) - PART1 (18:03)
+
+**Thursday, October 22: 47 minutes**
+
 - [ ] [DEMO] S3 Events + Lambda (Pixelator) - PART2 (17:43)
 - [ ] Lambda Versions (4:58)
-
-**Tuesday, October 13: 90 minutes**
-
 - [ ] Lambda Aliases (4:11)
 - [ ] [DEMO] Aliases and Versions (13:10)
 - [ ] Lambda Environment Variables (7:21)
+
+No study planned Friday, October 23.
+
+---
+
+Week 6: October 26-30, 2026 | 9.8 hours
+---------------------------------------
+
+**Monday, October 26: 56 minutes**
+
 - [ ] Monitoring & Logging & Tracing Lambda Based Applications (13:24)
 - [ ] [DEMO] Accessing Private VPC Resources using Lambda w/ TheCatAPI!!!! - PART1 (7:53)
 - [ ] [DEMO] Accessing Private VPC Resources using Lambda w/ TheCatAPI!!!! - PART2 (16:19)
 - [ ] Lambda Layers (8:29)
 - [ ] Lambda Container Images (4:14)
 - [ ] Lambda & ALB Integration (5:21)
+
+**Tuesday, October 27: 59 minutes**
+
 - [ ] Lambda Resource Policy (9:52)
-
-**Wednesday, October 14: 97 minutes**
-
 - [ ] [SHAREDALL] API Gateway 101 (16:27)
 - [ ] API Gateway - Methods and Resources (4:28)
 - [ ] API Gateway - Integrations (14:02)
 - [ ] API Gateway Stages and Deployments (6:25)
 - [ ] Open API & Swagger (7:56)
+
+**Wednesday, October 28: 58 minutes**
+
 - [ ] [ASSOCIATESHARED] Simple Notification Service (7:49)
 - [ ] [DOP-C02] [ADVDEMO] API Gateway Integrations - Mock, Lambda, AWS Service (23:55)
 - [ ] [ASSOCIATESHARED] Simple Queue Service (15:30)
-
-**Thursday, October 15: 103 minutes**
-
 - [ ] SQS Standard vs FIFO Queues (3:29)
 - [ ] SQS Extended Client Library (2:52)
 - [ ] SQS Delay Queues (4:38)
+
+**Thursday, October 29: 206 minutes**
+
 - [ ] SQS Dead-Letter Queues (4:17)
 - [ ] [ASSOCIATESHARED] Step Functions (16:09)
 - [ ] [MINIPROJECT] Build A Serverless App - Pet-Cuddle-o-Tron - PART1 (5:01)
@@ -156,9 +176,6 @@ Week 4: October 12-16, 2026 | 8.0 hours
 - [ ] [MINIPROJECT] Build A Serverless App - Pet-Cuddle-o-Tron - PART5 (13:31)
 - [ ] [MINIPROJECT] Build A Serverless App - Pet-Cuddle-o-Tron - PART6 (2:38)
 - [ ] [ASSOCIATESHARED] Introduction to Containers (17:13)
-
-**Friday, October 16: 89 minutes**
-
 - [ ] [SHAREDALL] [DEMO] Creating 'container of cats' Docker Image (18:15)
 - [ ] [ASSOCIATESHARED] ECS - Concepts (10:25)
 - [ ] [ASSOCIATESHARED] ECS - Cluster Mode (13:09)
@@ -166,30 +183,19 @@ Week 4: October 12-16, 2026 | 8.0 hours
 - [ ] [SHAREDALL] Kubernetes 101 (11:27)
 - [ ] [SHAREDALL] Elastic Kubernetes Service (EKS) 101 (6:14)
 - [ ] OpsWorks - Architecture (15:56)
-
----
-
-Week 5: October 19-23, 2026 | 4.5 hours
----------------------------------------
-
-**Monday, October 19: 51 minutes**
-
 - [ ] [ASSOCIATESHARED] SSM Parameter Store (17:00)
 - [ ] [ASSOCIATESHARED] Secrets Manager (7:47)
+
+**Friday, October 30: 209 minutes**
+
 - [ ] Security Token Service (STS) (6:53)
 - [ ] Policy Interpretation Deep Dive - Example 1 (10:23)
 - [ ] Policy Interpretation Deep Dive - Example 2 (9:11)
-
-**Tuesday, October 20: 55 minutes**
-
 - [ ] Policy Interpretation Deep Dive - Example 3 (10:59)
 - [ ] Permissions Boundaries & Use-cases (17:28)
 - [ ] AWS Permissions Evaluation (10:25)
 - [ ] Route53 Fundamentals (6:29)
 - [ ] [SHAREDALL] [DEMO] Registering a Domain with route53 (9:49)
-
-**Wednesday, October 21: 64 minutes**
-
 - [ ] DNS Record Types (13:25)
 - [ ] R53 Public Hosted Zones (6:28)
 - [ ] R53 Private Hosted Zones (5:10)
@@ -198,9 +204,6 @@ Week 5: October 19-23, 2026 | 4.5 hours
 - [ ] R53 Health Checks (12:41)
 - [ ] Failover Routing (1:53)
 - [ ] [SHAREDALL] [DEMO] Using R53 and Failover Routing-PART1 (16:41)
-
-**Thursday, October 22: 52 minutes**
-
 - [ ] [SHAREDALL] [DEMO] Using R53 and Failover Routing-PART2 (6:28)
 - [ ] Multi Value Routing (2:32)
 - [ ] Weighted Routing (3:24)
@@ -209,68 +212,51 @@ Week 5: October 19-23, 2026 | 4.5 hours
 - [ ] Geoproximity Routing (4:50)
 - [ ] R53 Interoperability (11:50)
 - [ ] [REFRESHER] CICD in AWS (14:54)
-
-**Friday, October 23: 52 minutes**
-
 - [ ] [WALKTHROUGH] Working with a Repo & Pushing to CodeCommit (11:46)
+
+---
+
+Week 7: November 2-6, 2026 | 9.7 hours
+--------------------------------------
+
+**Monday, November 2: 117 minutes**
+
 - [ ] [REFRESHER] CodePipeline - 101 (4:08)
 - [ ] [REFRESHER] CodeBuild - 101 (6:23)
 - [ ] [REFRESHER] CodeDeploy - 101 (10:21)
 - [ ] Elastic Container Registry (ECR) - Architecture (4:14)
 - [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE0 - INTRO (2:23)
 - [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE1 - CodeCommit (12:31)
-
----
-
-Week 6: October 26-30, 2026 | 4.3 hours
----------------------------------------
-
-**Monday, October 26: 44 minutes**
-
 - [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE2 - Build a Docker Image w/ CodeBuild - PART1 (13:40)
 - [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE2 - Build a Docker Image w/ CodeBuild - PART2 (15:02)
 - [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE3 - Joining the dots - pipeline (15:31)
-
-**Tuesday, October 27: 54 minutes**
-
 - [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE4 - Deploy our Container w/ CodeDeploy - PART1 (11:29)
 - [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE4 - Deploy our Container w/ CodeDeploy - PART2 (7:42)
 - [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE5 - CLEANUP (4:07)
 - [ ] CloudWatch - PART1 (9:45)
+
+**Tuesday, November 3: 116 minutes**
+
 - [ ] CloudWatch - PART2 (9:19)
 - [ ] [ASSOCIATESHARED] [DEMO] Logging and Metrics with CloudWatch Agent-PART1 (11:51)
-
-**Wednesday, October 28: 52 minutes**
-
 - [ ] [ASSOCIATESHARED] [DEMO] Logging and Metrics with CloudWatch Agent-PART2 (8:08)
 - [ ] CloudWatch Logs (13:44)
 - [ ] CloudTrail (11:40)
 - [ ] [SHAREDALL] [DEMO] Implementing an Organizational Trail (18:23)
-
-**Thursday, October 29: 57 minutes**
-
 - [ ] CloudTrail Logfile Integrity (6:28)
 - [ ] [ASSOCIATESHARED] Kinesis Data Streams (7:52)
 - [ ] [ASSOCIATESHARED] Kinesis Data Firehose (9:11)
 - [ ] [ASSOCIATESHARED] Kinesis Data Analytics (8:51)
 - [ ] MapReduce 101 (10:24)
+
+**Wednesday, November 4: 119 minutes**
+
 - [ ] EMR Architecture (13:51)
-
-**Friday, October 30: 49 minutes**
-
 - [ ] Amazon Redshift (11:32)
 - [ ] Amazon Quicksight (4:08)
 - [ ] Amazon Athena (8:19)
 - [ ] [DEMO] Amazon Athena - PART1 (13:31)
 - [ ] [DEMO] Amazon Athena - PART2 (11:37)
-
----
-
-Week 7: November 2-6, 2026 | 4.7 hours
---------------------------------------
-
-**Monday, November 2: 56 minutes**
-
 - [ ] SSM Architecture and Agent Activation (7:25)
 - [ ] SSM Run Command (4:47)
 - [ ] SSM Documents [NEEDS UPDATE] (7:31)
@@ -280,7 +266,7 @@ Week 7: November 2-6, 2026 | 4.7 hours
 - [ ] Inspector 101 (6:28)
 - [ ] GuardDuty 101 (4:14)
 
-**Tuesday, November 3: 61 minutes**
+**Thursday, November 5: 114 minutes**
 
 - [ ] Trusted Advisor 101 (8:54)
 - [ ] Elastic Block Store (EBS) Service Architecture (8:43)
@@ -289,23 +275,17 @@ Week 7: November 2-6, 2026 | 4.7 hours
 - [ ] EBS Volume Types - HDD-Based (4:32)
 - [ ] Instance Store Volumes - Architecture (9:00)
 - [ ] Storage Gateway - Volume Gateway (14:15)
-
-**Wednesday, November 4: 43 minutes**
-
 - [ ] Storage Gateway - Tape Gateway (VTL) (12:11)
 - [ ] Storage Gateway - File Gateway (12:15)
 - [ ] S3 Security (Resource Policies & ACLs) (18:19)
-
-**Thursday, November 5: 64 minutes**
-
 - [ ] S3 Static Hosting (10:36)
+
+**Friday, November 6: 113 minutes**
+
 - [ ] [Demo] Creating a static website with S3 (17:55)
 - [ ] Object Versioning & MFA Delete (7:56)
 - [ ] [DEMO] - S3 Versioning (15:45)
 - [ ] S3 Performance Optimization (11:42)
-
-**Friday, November 6: 60 minutes**
-
 - [ ] [DEMO] - S3 Performance (5:06)
 - [ ] Key Management Service (KMS) (18:38)
 - [ ] [DEMO] KMS - Encrypting the battleplans with KMS (12:43)
@@ -449,6 +429,6 @@ Revision notes
 
 - [ ] Every video is assigned wholly to one day.
 - [ ] Videos remain in the exact sequence from the course outline.
-- [ ] Week 4 is 8.0 hours after the requested Week 3 move; all other weeks remain within the 5.0-hour target.
-- [ ] Week 10 is the heaviest week outside the Week 4 exception, at 4.9 hours.
-- [ ] The last Friday is intentionally longer so all remaining course content fits within the 10-week plan.
+- [ ] The requested Oct 19, 20, 21, 22, 26, 27, and 28 study days are each capped at one hour; no study is planned for Oct 23.
+- [ ] Weeks 5, 6, and 7 total 3.6, 9.8, and 9.7 hours respectively, each below the 10-hour maximum.
+- [ ] Previously completed videos remain checked; all unchecked videos formerly scheduled through Nov 6 are redistributed in course order.
