@@ -148,7 +148,7 @@ dynamic parameter fault that will evaluate and show as default to user in parame
 	- generates presigned URL for resource signals to be sent to 
 
 
-## CloudFormation Nested Stacks
+## CloudFormation Nested Stacks (!)
 - isolated CloudFormation stack
 	- has all the resources within itself and they all share a lifecycle
 	- LIMITS
@@ -159,7 +159,7 @@ dynamic parameter fault that will evaluate and show as default to user in parame
 	- root stack -> created first, manually
 	- parent -> parent of any stacks that it immediately creates
 	- root stack will also be the parent of any nested stacks
-- Can create nested stack within template of parent stack
+- Can create nested stack within template of parent stack (!)
 	- must supply parameters for any values used to create child stack
 	- must supply URL to template ( * template is reusable )
 - outputs of child stack are returned to parent stack 
