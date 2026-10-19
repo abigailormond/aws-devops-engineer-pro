@@ -72,7 +72,7 @@ MISC
 - `Fn::Base64`
 	- base64 encoding, substitute within text
 	- ex: if `UserData` requires base64, pass your normal text into `Fn::Base64` then into your `UserData`
-- `Fn::Sub`
+- `Fn::Sub` (!)
 	- substitute in variables
 - `Fn::Cidr`
 	- configure subnet ranges
@@ -83,7 +83,7 @@ MISC
 	- outputs: 
 
 ## CloudFormation Mappings
-- feature of CloudFormation that makes it easier to design portable templates
+- feature of CloudFormation that makes it easier to design portable templates (!)
 - Templates can contain a Mappings object
 - Mappings object can contain many mappings
 - mappings map keys to values, allowing lookup
