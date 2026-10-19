@@ -56,3 +56,59 @@
 - under events, you can see all of the resources provisioning that are associated with the EB application 
 - logs > can see logs for each ec2 instance in the environment
 - health > overall health and individual instance health 
+
+## [DEMO] EB - Add additional environment and config options - PART 2
+- Environment configuration
+    - Environment presets
+        - single instance (free tier eligible)
+        - single instance (using spot instances)
+        - high availability
+            - 1-4 instances, configured to automatically recover if any instance receives failures
+        - high availability (spot & on-demand)
+            - can be either on-demand OR mix of spot/ on-demand w/ high availability
+        - custom configuration
+    - Optionally logs can send to s3
+    - select application code to upload or use sample application
+        - source bundle = app code
+    - Instance configuration
+        - size, ami, processor, AZs, scaling triggers, 
+    - Load balancer configuration
+        - choose between application load balancer, classic load balancer, and network load balancer
+            - app load balancer: application layer load balancer-- routing HTTP and HTTPS traffic based on protocol, port, and route to environment processes.
+            - classic load balancer: (previous generation) HTTP, HTTPS, and TCP
+            - Network load balancer: ultra-high performance and static IP addresses for your applicaiton
+        - can chooes dedicated for this EB env or LB that is already in your acct
+        - listeners
+    - monitoring
+    - db
+
+## Elastic Beanstalk (EB) - Deployment Policies (11:40)
+- All at once = deploy to all at once, brief outage
+    - good for test envs
+- Rolling = deploy in rolling batches
+    - batch size can be customized >= 1 (base this on how many instances you can tolerate being offline at one time)
+    - waits for current batch to finish, health checks to pass before moving to next batch
+    - loss in capacity because instances are removed from service while the deployment is happening (instances removed from service, upgraded, then returned to service)
+    - 2 versions running at same time
+- Rolling with additional batch = as above, with extra batch to maintain capacity during process
+    - better for production, customers won't see any drop in production. 
+    - 2 versions running at same time
+    - takes longer, costs more, but safer. 
+- immutable = all new instances with new version 
+    - new temp asg created with new instances running new app version
+    - once instances pass health check, moved to original asg, and original instances terminated, then temp asg removed
+    - high cost because uses double the instances, but easiest to roll back becaues the original instances are untouched until deplouyment is complete
+- traffic splitting = fresh instances, with a traffic split
+    - same idea as immutable, but adds traffic splitting between old and temp asg
+    - new temp asg created, instances created inside it with new version, but you can control distribution of traffic between old and new version.
+    - allows for a/b testing of versions
+    - no capacity drops
+- blue green
+    - one environment with version a, separate environment version b, running in parallel. can do testing in offline environment before switching dns to new active stack. can keep secondary env running as long as you want
+    - dns record can be adjusted to switch environments. simple rollbacks
+
+
+
+- [ ] [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART1 (12:51)
+- [ ] [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART2 (14:42)
+
