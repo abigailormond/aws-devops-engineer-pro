@@ -1,5 +1,7 @@
 MISC
 - AMI are specific to region
+- userdata only run once when instance is launched -- even if cloudformation udpates instance "with disruption" (stopping and starting) the userdata won't run again. 
+- STACK is what becomes create_complete 
 
 ## CloudFormation Physical & Logical Resources
 - CloudFormation Template
@@ -241,13 +243,32 @@ dynamic parameter fault that will evaluate and show as default to user in parame
 - detects changes in resource metadata 
 - when cfn-hup detects change, it can run configurable actions (could even rerun cfn-init)
 
+- cfn-hup is a general-purpose daemon that runs on an Amazon EC2 instance and polls the AWS CloudFormation DescribeStackResource or UpdateStack API to detect changes in resource metadata.
+- When it detects a change in the metadata, it executes user-defined hooks configured in /etc/cfn/hooks.d/ (or hooks.conf)
+- re-running cfn-init is most common user case
 
-## [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART1
-- if update is made to userdata of ec2 > "update with distruption" > instance is stopped then started again
+
+##  [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART1 (12:51)
+- example scenario: creating ec2 instance with cfn that has long-running userdata. the stack returns create_complete
+	since the instance created, but userdata isn't finished running. you try to open website and nothing shows up!
+- solution: use cfnsignal, have the very end of the userdata send the signal. then it won't show create_complete
+	until the userdata finishes running.
 
 
+## [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART2 (14:42)
+- demo cfninit
+- show how to debug cfn by looking at /var/log
+	- /cloud-init-output.log
+		- shows output of user data portion of bootstrapping process, shows all commands run in userdata
+	- /cfn-init-cmd.log
+		- shows output of cfn init portion of bootstrapping process, things that were done as part of the cfn-init command
+	- /cfn-init.log
+		- granular overview of exactly which desired state actions have taken place. actions taken by cfn-init process 
+- cfn-hup
+	- most common use case is re-running cfn init -- SOLVES problem of cfn-init only running once upon bootstrapping
+	- configuration is added to metadata, adds config files
+		- specifies interval, stack, which resource to monitor, what action to take if that resource changes
 
-## [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART2
 
 ## CloudFormation ChangeSets
 - When cloudformation is applied/updated to then apply change to physical resources there can be
@@ -294,3 +315,6 @@ dynamic parameter fault that will evaluate and show as default to user in parame
 - Import
 	- match an existing physical resource to a logical resource in a template
 -
+
+
+

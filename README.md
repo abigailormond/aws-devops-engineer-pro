@@ -98,8 +98,8 @@ Week 5: October 19-23, 2026 | 3.6 hours
 
 **Monday, October 19: 59 minutes**
 
-- [ ] [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART1 (12:51)
-- [ ] [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART2 (14:42)
+- [x] [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART1 (12:51)
+- [x] [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART2 (14:42)
 - [x] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Add additional environment and config options - PART2 (10:53)
 - [x] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Deployment Policies (11:40)
 - [x] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Deployment (8:30)
