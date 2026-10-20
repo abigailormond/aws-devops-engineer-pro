@@ -106,14 +106,14 @@ Week 5: October 19-23, 2026 | 3.6 hours
 
 **Tuesday, October 20: 59 minutes**
 
-- [ ] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Environments and RDS (4:34)
-- [ ] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Advanced Customisation via .ebextensions (4:52)
-- [ ] [ASSOCIATESHARED] Elastic Beanstalk (EB) - HTTPS (1:51)
-- [ ] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Cloning (4:44)
-- [ ] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Docker (9:11)
-- [ ] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Section Cleanup (1:40)
-- [ ] [ASSOCIATESHARED] CloudWatchEvents and EventBridge (6:54)
-- [ ] [SHAREDALL] AWS Lambda - PART1 (11:25)
+- [x] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Environments and RDS (4:34)
+- [x] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Advanced Customisation via .ebextensions (4:52)
+- [x] [ASSOCIATESHARED] Elastic Beanstalk (EB) - HTTPS (1:51)
+- [x] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Cloning (4:44)
+- [x] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Docker (9:11)
+- [x] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Section Cleanup (1:40)
+- [x] [ASSOCIATESHARED] CloudWatchEvents and EventBridge (6:54)
+- [x] [SHAREDALL] AWS Lambda - PART1 (11:25)
 - [ ] [SHAREDALL] AWS Lambda - PART2 (13:59)
 
 **Wednesday, October 21: 53 minutes**
