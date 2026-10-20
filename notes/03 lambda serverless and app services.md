@@ -64,4 +64,26 @@
                     - vpc endpoints can provide access to public aws services
                     - nat gateway in a pubilc subnet, then attach internet gateway to the vpc
         - lambda will need access to create network interfaces within your vpc (execution role policy)
+            - ec2 network permissions needed
     - vpc-based lambda functions don't actually run within your vpc??
+        - old method: aws lambda service vpc creates new elastic interface per function execution
+        - current method: 
+            - lambda functions in aws lambda service vpc
+            - aws analyze all functions running in region/account, build set of unique combos of unique security groups and subnets. for every unique pair an ENI is needed. for example, if all functions use one security group but 4 subnets, then 4 eni required -- 1 per subnet. 
+            - single eni is created connecting aws lambda service vpc and your vpc for each unique combiniation of security groups and subnets uesd by your lambda functions 
+            - these NETWORK INTERFACES are created when you configure the lambda funciton, may take 90s, but done once. so when you create the functino or update networking configuration, this is created/updated, so this doesn't have ot happen every time a function is invoked = no delay in function invocation
+            
+- security
+    - execution role -> what perms the function receives
+    - resource policy -> controls WHAT services and accounts can INVOKE lambda functions
+        - can allow external accts to invoke lambda
+
+- logging
+    - lambda uses cloudwatch, cloudwatch logs, and x-ray
+    - cloudwatch logs 
+        - logs from lambda executions -> errors, details on duration of execution , etc 
+        - require permissions via execution role (* if dont see logs in cw make sure perms are correct!!!)
+    - cloudwatch
+        - metrics like invocation success/failure, retries, latency, etc
+    - x-ray
+        - distributed tracing 

@@ -114,7 +114,7 @@ Week 5: October 19-23, 2026 | 3.6 hours
 - [x] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Section Cleanup (1:40)
 - [x] [ASSOCIATESHARED] CloudWatchEvents and EventBridge (6:54)
 - [x] [SHAREDALL] AWS Lambda - PART1 (11:25)
-- [ ] [SHAREDALL] AWS Lambda - PART2 (13:59)
+- [x] [SHAREDALL] AWS Lambda - PART2 (13:59)
 
 **Wednesday, October 21: 53 minutes**
 
