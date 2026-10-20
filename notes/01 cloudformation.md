@@ -264,10 +264,12 @@ dynamic parameter fault that will evaluate and show as default to user in parame
 		- shows output of cfn init portion of bootstrapping process, things that were done as part of the cfn-init command
 	- /cfn-init.log
 		- granular overview of exactly which desired state actions have taken place. actions taken by cfn-init process 
+	- /cfn-hup.log
 - cfn-hup
 	- most common use case is re-running cfn init -- SOLVES problem of cfn-init only running once upon bootstrapping
 	- configuration is added to metadata, adds config files
 		- specifies interval, stack, which resource to monitor, what action to take if that resource changes
+	
 
 
 ## CloudFormation ChangeSets
