@@ -61,6 +61,7 @@ When changing the schedule:
 
 ## Editing and Validation
 - When asked to revise with no additional information, read through all notes files (or, if specific files are noted, ONLY review those files) -- check for spelling errors, make capitalization of AWS service names, resource names, etc consistent with AWS documentation. Ensure headers, subheaders are consistent with note style convention.
+- If a note contains the marker `** copilot please fact check this` (or a close variant), fact-check the marked statement during the revision. Compare it against your own knowledge and current AWS documentation, and state in your response whether it was correct, incorrect, or only partly correct, with a brief explanation and the source consulted. State clearly if you could not verify it. Do not change the marked text unless asked; report the result instead.
 - Make focused edits and preserve unrelated user changes in the working tree.
 - Prefer the existing Markdown structure and naming conventions; avoid broad formatting churn.
 - Do not add application code, dependencies, or build tooling unless explicitly requested.

@@ -125,7 +125,7 @@ Week 5: October 19-24, 2026 | 3.6 hours
 **Thursday, October 22: 30 minutes**
 
 - [x] Lambda Versions (4:58)
-- [ ] Lambda Aliases (4:11)
+- [x] Lambda Aliases (4:11)
 - [ ] [DEMO] Aliases and Versions (13:10)
 - [ ] Lambda Environment Variables (7:21)
 

@@ -87,3 +87,87 @@
         - metrics like invocation success/failure, retries, latency, etc
     - x-ray
         - distributed tracing 
+
+
+## part 3
+
+- 3 methods for lambda invocation
+    - synchronous
+        - CLI/API direclty invoking lambda function
+        - CLI/API waitinf for response -- synchronous . waits for lambda to finish execution. lamnbda sends back with data or with failure 
+        - implications
+            - result returned during the request
+            - errors or retries have to be handled within the client 
+        - use case: generally when human is invoking the function 
+    - asynchronous
+        - example: s3 generates an event that triggers lambda. s3 isn't waiting for response. 
+        - lambda handles retry logic upon failure-- lambda will retry between 0 to 2 times (configurable retry value)
+        - function code MUST BE IDEMPOTENT due to retry logic (reprocessing a result should have same desired end state)
+        - use case: gernally whenm aws services invoke lambda functinos 
+        - asynchronous success/fail processing
+            - if repeated failed processing, events can be sent to DLQ (Dead Letter Queue)
+            - Destinations are newer alternative for async invocations, they can route success or failure to SQS, SNS, lambda, eventbridge, and are generally recommended over DLQ
+    - event source mappings
+        - use case: streams or queues which dojn't support event generation 
+        - ex: kinesis data stream 
+            - consumers can read from a stream, but doesn't generate event when data is added from producers
+            - Lambda Event Source mapping polls queues or streams looking for new data, getting back 'source batches' of data. 
+            - source batches are then broken up based on set batch size and sent to lambda function as event batches
+            - a single lambda invokation coudl in theory receive 100s of events in a batch 
+        - lambda has 15 min timeout!! control batch size to ensure function doesn't terminate before finishing batch
+        - event source mapping uses perms from lambda execution role to access source service 
+            - execution role may need osmething like kinesis permissions even if the lambda function itself never interacts with kinesis!!! good to keep in mind. event source mapipng will use execution role policy 
+        - any discarded failed event batches can be sent to sns queues or sns topics 
+
+- Lambda Versions 
+    - a version is a specific point in the code and configuration of the lambda function
+    - a version is immutable - doesn't change once published. has its own arn
+    - $latest = latest
+    - an alias (ex: dev, stg, prd) POINT at a version. the value it points at can be changed 
+
+- Lambda start up times
+    - lambda runs inside an execution context, or 'runtime environment' 
+        - a small container allocated an amount of resources that then runds your lambda code
+    - cold start = full creation and configuration of execution context including downloading fnuction code. can take significant time (100s of ms)
+    - warm start = if same function is invoked again without too much of a break, lambda may be able to use same execution environment without all the setup and download of code. it can receive event and immediately begin processing. 
+    - 1 invocation runs at a time per execution context -> concurrent executions will use multiple execution contexts 
+    - ways to improve performance 
+        - provisioned concurrency -> aws will create and keep X contexts warm and ready to use, improvin start speeds. 
+        - use /tmp to predownload stuff to potentially be reused. just define it outside of the lambda function handler. and dont EXPECT it to be predownloaded, jsut check during the function to see if its there already you can skip downloading it 
+
+
+## Lambda Function Handler
+- lambda executions have lifecycles
+    - INIT -> creates or unfreezes execution env
+        - composed of EXTENSION INIT, RUNTIME INIT, FUNCTION INIT
+        - FUNCTION INIT -> top part of lambda function
+            - this is run once every cold start during function init stage, or in advance if using provisioned concurrency
+            - lambda attemps to resuse execution environment if possible
+    - INVOKE -> runs function handlers (COLD START) - startup lag
+        - part of lambda function that is lambda_handler. what lambda passes event data into
+    - upon next INVOKE(s) -> WARM START - same env 
+        - skips init, just runs handler
+    - SHUTDOWN -> terminate env after period of inactivity, resulting in cold start next invocation
+        - composed of RUNTIME SHUTDOWN, EXTENSION SHUTDOWN
+- when creating lambda function, define name of handler function, default is lambda_function.lambda_handler
+
+
+## [DEMO] S3 Events + Lambda (Pixelator)
+
+
+## Lambda Versions 
+
+- an unpublished function can be changed and deployed ($LATEST)
+- functions can be published creating immutable version (NO EDITS!! that means u mister!!) makes an arn too wowWOWOW locking down function code, dependencies, runtime, settings, and env variables 
+- unqialified arn points at the function ($LATEST) not a specific version. can also be used in perm policies to refer to entire ffunciton
+- qualified arn points at a specific version 
+    - adds ':1' (or whatever version) to the end of the unqualified arn 
+- versions numbered automatically, are integer numbers ** copilot please fact check this 
+
+
+## Lambda Aliases
+- alias = pointer to a function version 
+- ex: pROD => myfunction:1 
+- each alias has unique arn which is FIXED for tha alias. BUTTT the alias can be updated to point at diff things!!! v helpful for blue/green, a/b testing, etc. 
+- alias routing -> send certain % at diff versions rather than have alias point at one version 
+    - need same role, same dlq, and can't be $LATEST
