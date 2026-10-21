@@ -126,10 +126,10 @@ Week 5: October 19-24, 2026 | 3.6 hours
 
 - [x] Lambda Versions (4:58)
 - [x] Lambda Aliases (4:11)
-- [ ] [DEMO] Aliases and Versions (13:10)
-- [ ] Lambda Environment Variables (7:21)
+- [x] [DEMO] Aliases and Versions (13:10)
 
 **Saturday, October 24: 36 minutes**
+- [ ] Lambda Environment Variables (7:21)
 - [ ] [DEMO] S3 Events + Lambda (Pixelator) - PART1 (18:03)
 - [ ] [DEMO] S3 Events + Lambda (Pixelator) - PART2 (17:43)
 
