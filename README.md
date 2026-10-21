@@ -93,7 +93,7 @@ Week 4: October 12-16, 2026 | 0.0 hours (unfinished videos rescheduled below)
 
 ---
 
-Week 5: October 19-23, 2026 | 3.6 hours
+Week 5: October 19-24, 2026 | 3.6 hours
 ---------------------------------------
 
 **Monday, October 19: 59 minutes**
@@ -116,22 +116,23 @@ Week 5: October 19-23, 2026 | 3.6 hours
 - [x] [SHAREDALL] AWS Lambda - PART1 (11:25)
 - [x] [SHAREDALL] AWS Lambda - PART2 (13:59)
 
-**Wednesday, October 21: 53 minutes**
+**Wednesday, October 21: 35 minutes**
 
 - [x] [SHAREDALL] AWS Lambda - PART3 (17:03)
 - [x] Lambda Handler Architecture & Overview - PART1 - Theory (7:52)
 - [x] Lambda Handler Architecture & Overview - PART2 - Walkthrough (10:07)
-- [ ] [DEMO] S3 Events + Lambda (Pixelator) - PART1 (18:03)
 
-**Thursday, October 22: 47 minutes**
+**Thursday, October 22: 30 minutes**
 
-- [ ] [DEMO] S3 Events + Lambda (Pixelator) - PART2 (17:43)
-- [ ] Lambda Versions (4:58)
+- [x] Lambda Versions (4:58)
 - [ ] Lambda Aliases (4:11)
 - [ ] [DEMO] Aliases and Versions (13:10)
 - [ ] Lambda Environment Variables (7:21)
 
-No study planned Friday, October 23.
+**Saturday, October 24: 36 minutes**
+- [ ] [DEMO] S3 Events + Lambda (Pixelator) - PART1 (18:03)
+- [ ] [DEMO] S3 Events + Lambda (Pixelator) - PART2 (17:43)
+
 
 ---
 
