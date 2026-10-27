@@ -129,7 +129,7 @@ Week 5: October 19-24, 2026 | 3.6 hours
 - [x] [DEMO] Aliases and Versions (13:10)
 
 **Saturday, October 24: 36 minutes**
-- [ ] Lambda Environment Variables (7:21)
+- [x] Lambda Environment Variables (7:21)
 - [ ] [DEMO] S3 Events + Lambda (Pixelator) - PART1 (18:03)
 - [ ] [DEMO] S3 Events + Lambda (Pixelator) - PART2 (17:43)
 
@@ -141,12 +141,12 @@ Week 6: October 26-30, 2026 | 5.5 hours
 
 **Monday, October 26: 56 minutes**
 
-- [ ] Monitoring & Logging & Tracing Lambda Based Applications (13:24)
+- [x] Monitoring & Logging & Tracing Lambda Based Applications (13:24)
 - [ ] [DEMO] Accessing Private VPC Resources using Lambda w/ TheCatAPI!!!! - PART1 (7:53)
 - [ ] [DEMO] Accessing Private VPC Resources using Lambda w/ TheCatAPI!!!! - PART2 (16:19)
-- [ ] Lambda Layers (8:29)
-- [ ] Lambda Container Images (4:14)
-- [ ] Lambda & ALB Integration (5:21)
+- [x] Lambda Layers (8:29)
+- [x] Lambda Container Images (4:14)
+- [x] Lambda & ALB Integration (5:21)
 
 **Tuesday, October 27: 59 minutes**
 

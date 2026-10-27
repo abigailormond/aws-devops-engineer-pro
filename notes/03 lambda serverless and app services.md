@@ -171,3 +171,109 @@
 - each alias has unique arn which is FIXED for tha alias. BUTTT the alias can be updated to point at diff things!!! v helpful for blue/green, a/b testing, etc. 
 - alias routing -> send certain % at diff versions rather than have alias point at one version 
     - need same role, same dlq, and can't be $LATEST
+
+
+## Lambda Environment Variables
+- key & value pairs
+- lambda function can have >=0 env vars
+- associated with $LATEST (can be edited)
+    - if you publish a lambda functino version the env vars become associated with that version and are immutable 
+- env variables can be access by laambda funcito while its running (accessed within execution environment)
+- can be encrypted w KMS
+- allows code execution to be adjusted based on variables (dev vs prd, etc)
+
+
+## Lambda Monitoring
+- telemetry -> automated collection of measurements and data from remote sources, transmitted to central location for monitoring/analysis
+
+- all lambda metrics auto avail in cloduwatacch 
+- can also view metrics via monitoring tab on specific function 
+- cloudwatch
+    - data avail w following dimensions:
+        - function name, resource (alias/version), executed version (weighted alias = combination ailas and version), ALL functions
+    - metrics on invocations, errors, duration, concurrent executions, deadlettererrors, destinationdeliveryfailrues
+- logging
+    - lambda execution logs go to cloudwatch logs 
+        - anything printed to stdout or stderr gets sent
+    - log groups -> /aws/lambda/FUNCTION-NAME
+    - log strem -> YYYY/MM/DD/[\$LATEST || VERSION#]...RANDOM
+    - default execution role gives basic logging permissions
+
+- tracing 
+    - x-ray shows the flow of requests through your application
+    - enable 'active tracing' on a function to make the x-ray product available in the lambda exeuction environment
+        - or via command line `aws lambda update-function-configuration --functino-name my-functino --tracing-config Mode=Active`
+    - make sure that the AWSXRayDaemonWriteAccess managed policy is available in the execution role to be able to use x-ray sdk within your function 
+    - env variable `AWS_XRAY_DAEMON_ADDRESS` provides connection details including port for the xray daemon
+
+## [DEMO] Accessing Private VPC Resources using Lambda w/ TheCatAPI!!!! 
+- 
+
+
+## Lambda Layers (8:29)
+- without layers, everything container in 1 deployment zip (function code, libraries)
+- with layers -> 2 functions using same libraries can use shared/reused library layer. will each have their own small function code zip
+- reused libraries extracted in /opt folder
+- deployment zips smaller and only contain specific function code. shared libraries externalized
+- how
+    - go to layers -> add layer
+         - can select an aws laeyr provided by aws, maintained by aws
+
+## Lambda Container Images (4:14)
+- why??
+    - companies often have containers & ci/cd processes built for containers to develop and test code
+    - no way of locally testing lambda functions before deployment 
+    - lambda container images allows use of containers to develop + test lambda functions
+- lambda container images is alternative way of packaging function code and using it with Lambda
+- Lambda Runtime API
+    - package that allows interaction between a container and lambda
+    - this api is included inside your container images
+    - requirement to use container image with lambda
+- RIE (AWS Lambda Runtime Interface Emulator) -- allows for local testing 
+    - emulates many interfaces of lambda so you can test your function without using lambda for realzies
+- example of how this works
+    - image used for local testing will include
+        - base layer
+        - dependencies
+        - RIE
+        - code
+    - image built for aws will include all above layers EXCEPT RIE emulation layer for obv reasons
+    - container image added to ecr
+    - when creating function, select the image from ecr 
+    
+
+## Lambda & ALB Integration (5:21)
+- way of invoking lambda via alb
+- steps
+    1. client sends HTTP/HTTPS request to alb
+    2. alb synchronously invokes lambda function
+        - sync = waits for response 
+        - translates HTTP(S) request into a lambda compatible event (JSON)
+    3. lambda invokes
+    4. lambda responds to alb in JSON
+    5. alb translates this back into HTTP(S) response to the client
+    
+
+- multi-value headers
+    - NOT using multi-value headers means, if a client sends a request to alb that has two key-value pairs with same key, the alb only sends the last value on to the lambda
+        - ex: http://webkinz.com &search=roffle &search=winkie
+        - 
+        `"queryStringParameters": {`
+        `"search": "winkie"`
+        `}`
+    - using multi-value headers: alb uses BOTH KEY VALUE sent by client. turns this into lambda event that includes query string parameters using `multiValueQueryStringParameters`
+        -  
+        `"multiValueQueryStringParameters": {`
+        `"search": ["roffle", "winkie"]`
+        `}`
+
+## Lambda Resource Policies
+-  2 forms of lambda security
+    - execution role 
+        - assumed by the function, determiens what the lambda function can do 
+    - resource poilcy
+        - who can do what with the lambda function (similar to s3 policy)
+- lambda resource policies
+    -
+
+## API Gateway 101
