@@ -188,24 +188,27 @@ Week 6: October 26-30, 2026 | 5.5 hours
 
 ---
 
-Week 7: November 2-6, 2026 | 6.7 hours
+Week 7: November 2-7, 2026 | 5.4 hours
 --------------------------------------
 
-**Monday, November 2: 84 minutes**
+**Monday, November 2: 54 minutes**
 
 - [ ] [SHAREDALL] Elastic Kubernetes Service (EKS) 101 (6:14)
 - [ ] OpsWorks - Architecture (15:56)
 - [ ] [ASSOCIATESHARED] SSM Parameter Store (17:00)
 - [ ] [ASSOCIATESHARED] Secrets Manager (7:47)
 - [ ] Security Token Service (STS) (6:53)
+
+**Tuesday, November 3: 58 minutes**
+
 - [ ] Policy Interpretation Deep Dive - Example 1 (10:23)
 - [ ] Policy Interpretation Deep Dive - Example 2 (9:11)
 - [ ] Policy Interpretation Deep Dive - Example 3 (10:59)
-
-**Tuesday, November 3: 77 minutes**
-
 - [ ] Permissions Boundaries & Use-cases (17:28)
 - [ ] AWS Permissions Evaluation (10:25)
+
+**Wednesday, November 4: 49 minutes**
+
 - [ ] Route53 Fundamentals (6:29)
 - [ ] [SHAREDALL] [DEMO] Registering a Domain with route53 (9:49)
 - [ ] DNS Record Types (13:25)
@@ -214,7 +217,7 @@ Week 7: November 2-6, 2026 | 6.7 hours
 - [ ] CNAME vs R53 Alias (5:19)
 - [ ] Simple Routing (2:17)
 
-**Wednesday, November 4: 83 minutes**
+**Thursday, November 5: 56 minutes**
 
 - [ ] R53 Health Checks (12:41)
 - [ ] Failover Routing (1:53)
@@ -225,22 +228,30 @@ Week 7: November 2-6, 2026 | 6.7 hours
 - [ ] Latency Routing (2:44)
 - [ ] Geolocation Routing (5:02)
 - [ ] Geoproximity Routing (4:50)
+
+**Friday, November 6: 59 minutes**
+
 - [ ] R53 Interoperability (11:50)
 - [ ] [REFRESHER] CICD in AWS (14:54)
-
-**Thursday, November 5: 80 minutes**
-
 - [ ] [WALKTHROUGH] Working with a Repo & Pushing to CodeCommit (11:46)
 - [ ] [REFRESHER] CodePipeline - 101 (4:08)
 - [ ] [REFRESHER] CodeBuild - 101 (6:23)
 - [ ] [REFRESHER] CodeDeploy - 101 (10:21)
+
+**Saturday, November 7: 48 minutes**
+
 - [ ] Elastic Container Registry (ECR) - Architecture (4:14)
 - [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE0 - INTRO (2:23)
 - [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE1 - CodeCommit (12:31)
 - [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE2 - Build a Docker Image w/ CodeBuild - PART1 (13:40)
 - [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE2 - Build a Docker Image w/ CodeBuild - PART2 (15:02)
 
-**Friday, November 6: 78 minutes**
+---
+
+Week 8: November 9-14, 2026 | 5.3 hours
+---------------------------------------
+
+**Monday, November 9: 58 minutes**
 
 - [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE3 - Joining the dots - pipeline (15:31)
 - [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE4 - Deploy our Container w/ CodeDeploy - PART1 (11:29)
@@ -248,40 +259,41 @@ Week 7: November 2-6, 2026 | 6.7 hours
 - [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE5 - CLEANUP (4:07)
 - [ ] CloudWatch - PART1 (9:45)
 - [ ] CloudWatch - PART2 (9:19)
+
+**Tuesday, November 10: 45 minutes**
+
 - [ ] [ASSOCIATESHARED] [DEMO] Logging and Metrics with CloudWatch Agent-PART1 (11:51)
 - [ ] [ASSOCIATESHARED] [DEMO] Logging and Metrics with CloudWatch Agent-PART2 (8:08)
-
----
-
-Week 8: November 9-13, 2026 | 6.6 hours
----------------------------------------
-
-**Monday, November 9: 76 minutes**
-
 - [ ] CloudWatch Logs (13:44)
 - [ ] CloudTrail (11:40)
+
+**Wednesday, November 11: 51 minutes**
+
 - [ ] [SHAREDALL] [DEMO] Implementing an Organizational Trail (18:23)
 - [ ] CloudTrail Logfile Integrity (6:28)
 - [ ] [ASSOCIATESHARED] Kinesis Data Streams (7:52)
 - [ ] [ASSOCIATESHARED] Kinesis Data Firehose (9:11)
 - [ ] [ASSOCIATESHARED] Kinesis Data Analytics (8:51)
 
-**Tuesday, November 10: 81 minutes**
+**Thursday, November 12: 48 minutes**
 
 - [ ] MapReduce 101 (10:24)
 - [ ] EMR Architecture (13:51)
 - [ ] Amazon Redshift (11:32)
 - [ ] Amazon Quicksight (4:08)
 - [ ] Amazon Athena (8:19)
+
+**Friday, November 13: 57 minutes**
+
 - [ ] [DEMO] Amazon Athena - PART1 (13:31)
 - [ ] [DEMO] Amazon Athena - PART2 (11:37)
 - [ ] SSM Architecture and Agent Activation (7:25)
-
-**Wednesday, November 11: 82 minutes**
-
 - [ ] SSM Run Command (4:47)
 - [ ] SSM Documents [NEEDS UPDATE] (7:31)
 - [ ] SSM Inventory & SSM Patching (11:57)
+
+**Saturday, November 14: 57 minutes**
+
 - [ ] AWS Config (6:14)
 - [ ] Service Catalog Overview (7:07)
 - [ ] Inspector 101 (6:28)
@@ -291,138 +303,177 @@ Week 8: November 9-13, 2026 | 6.6 hours
 - [ ] EBS Volume Types - General Purpose (9:23)
 - [ ] EBS Volume Types - Provisioned IOPS (6:15)
 
-**Thursday, November 12: 81 minutes**
+---
+
+Week 9: November 16-21, 2026 | 5.2 hours
+----------------------------------------
+
+**Monday, November 16: 52 minutes**
 
 - [ ] EBS Volume Types - HDD-Based (4:32)
 - [ ] Instance Store Volumes - Architecture (9:00)
 - [ ] Storage Gateway - Volume Gateway (14:15)
 - [ ] Storage Gateway - Tape Gateway (VTL) (12:11)
 - [ ] Storage Gateway - File Gateway (12:15)
+
+**Tuesday, November 17: 55 minutes**
+
 - [ ] S3 Security (Resource Policies & ACLs) (18:19)
 - [ ] S3 Static Hosting (10:36)
-
-**Friday, November 13: 77 minutes**
-
 - [ ] [Demo] Creating a static website with S3 (17:55)
 - [ ] Object Versioning & MFA Delete (7:56)
+
+**Wednesday, November 18: 51 minutes**
+
 - [ ] [DEMO] - S3 Versioning (15:45)
 - [ ] S3 Performance Optimization (11:42)
 - [ ] [DEMO] - S3 Performance (5:06)
 - [ ] Key Management Service (KMS) (18:38)
 
----
-
-Week 9: November 16-20, 2026 | 7.1 hours
-----------------------------------------
-
-**Monday, November 16: 86 minutes**
+**Thursday, November 19: 57 minutes**
 
 - [ ] [DEMO] KMS - Encrypting the battleplans with KMS (12:43)
 - [ ] S3 Object Encryption CSE/SSE (23:31)
 - [ ] [DEMO] Object Encryption and Role Separation (14:50)
 - [ ] S3 Bucket Keys (5:59)
+
+**Friday, November 20: 43 minutes**
+
 - [ ] S3 Object Storage Classes - PART1 (9:23)
 - [ ] S3 Object Storage Classes - PART2 (11:41)
 - [ ] S3 Lifecycle Configuration (8:13)
-
-**Tuesday, November 17: 86 minutes**
-
 - [ ] S3 Replication (13:59)
+
+**Saturday, November 21: 55 minutes**
+
 - [ ] [DEMO] Cross-Region Replication of an S3 Static Website (19:52)
 - [ ] S3 PreSigned URLs (11:11)
 - [ ] [DEMO] Creating and using PresignedURLs (18:23)
 - [ ] S3 Select and Glacier Select (5:32)
+
+---
+
+Week 10: November 23-28, 2026 | 5.3 hours
+-----------------------------------------
+
+**Monday, November 23: 47 minutes**
+
 - [ ] Cross-origin Resource Sharing (CORS) (9:26)
 - [ ] S3 Events (4:32)
 - [ ] S3 Access Logs (3:05)
-
-**Wednesday, November 18: 85 minutes**
-
 - [ ] S3 Object Lock (9:52)
 - [ ] S3 Access Points (5:52)
 - [ ] S3 Inventory (13:54)
+
+**Tuesday, November 24: 55 minutes**
+
 - [ ] [DOP-C02] [ADVDEMO] Multi-Region Access Points (20:25)
 - [ ] EFS Architecture (9:05)
 - [ ] FSx for Windows File Server (11:32)
 - [ ] FSx for Lustre (13:57)
 
-**Thursday, November 19: 91 minutes**
+**Wednesday, November 25: 49 minutes**
 
 - [ ] CloudFront - Architecture (14:56)
 - [ ] CloudFront (CF) - Behaviours (9:21)
 - [ ] CloudFront - TTL and Invalidations (13:48)
 - [ ] AWS Certificate Manager (ACM) (11:21)
+
+**Thursday, November 26: 54 minutes**
+
 - [ ] CloudFront - SSL/TLS & SNI (14:59)
 - [ ] CloudFront - Origin Types & Origin Architecture (10:20)
 - [ ] [DEMO] CloudFront - Adding a CDN to a static Website-PART1 (16:23)
-
-**Friday, November 20: 80 minutes**
-
 - [ ] [DEMO] CloudFront - Adding a CDN to a static Website-PART2 (12:24)
+
+**Friday, November 27: 57 minutes**
+
 - [ ] [DEMO] CloudFront - Adding an Alternate CNAME and SSL (11:12)
 - [ ] CloudFront - Security - OAI & Custom Origins (8:50)
 - [ ] CloudFront - Private Behaviours, Signed URL & Cookies (7:49)
 - [ ] [DEMO] CloudFront - Using Origin Access Control (OAC) (11:21)
 - [ ] CloudFront - Georestrictions (9:40)
 - [ ] CloudFront - Lambd@Edge (8:03)
+
+**Saturday, November 28: 57 minutes**
+
 - [ ] DynamoDB Architecture Basics (10:49)
-
----
-
-Week 10: November 23-27, 2026 | 6.9 hours
------------------------------------------
-
-**Monday, November 23: 85 minutes**
-
 - [ ] DynamoDB Operations, Consistency and Performance - PART1 (13:06)
 - [ ] DynamoDB Operations, Consistency and Performance - PART2 (11:24)
 - [ ] DynamoDB Indexes (LSI and GSI) (12:35)
 - [ ] DynamoDB Streams and Triggers (9:10)
+
+---
+
+Week 11: November 30, 2026 | 0.9 hours
+--------------------------------------
+
+**Monday, November 30: 56 minutes**
+
 - [ ] DynamoDB Accelerator (DAX) (10:58)
 - [ ] DynamoDB Global Tables (5:09)
 - [ ] DynamoDB Time-To-Live (TTL) (4:49)
 - [ ] High-Availability vs Fault-Tolerance vs Disaster Recovery (17:21)
-
-**Tuesday, November 24: 83 minutes**
-
 - [ ] Types of DR - Cold, Warm, PilotLight (17:41)
+
+---
+
+Week 12: December 7-11, 2026 | 4.2 hours
+----------------------------------------
+
+**Monday, December 7: 55 minutes**
+
 - [ ] DR Architecture - Storage (8:09)
 - [ ] DR Architecture - Compute (7:52)
 - [ ] DR Architecture - Database (10:20)
 - [ ] DR Architecture - Networking (8:22)
 - [ ] Launch Configuration and Templates (4:00)
 - [ ] Auto-Scaling Groups (16:01)
+
+**Tuesday, December 8: 46 minutes**
+
 - [ ] ASG Scaling Policies (10:23)
-
-**Wednesday, November 25: 83 minutes**
-
 - [ ] ASG Lifecycle Hooks (4:42)
 - [ ] ASG Health Checks EC2 vs ALB (3:38)
 - [ ] [REFRESHER] Load Balancing Evolution (4:10)
 - [ ] Elastic Load Balancer Architecture - PART1 (10:18)
 - [ ] Elastic Load Balancer Architecture - PART2 (12:32)
+
+**Wednesday, December 9: 48 minutes**
+
 - [ ] Application Load Balancing (ALB) vs Network Load Balancing (NLB) (16:20)
 - [ ] Session State (9:11)
 - [ ] Session Stickiness (9:25)
 - [ ] [DEMO] Seeing Session Stickiness in Action (12:57)
 
-**Thursday, November 26: 89 minutes**
+**Thursday, December 10: 52 minutes**
 
 - [ ] Gateway Load Balancer (GWLB) (13:40)
 - [ ] [AdvancedDemo] Architecture Evolution - STAGE1 - PART1 (14:24)
 - [ ] [AdvancedDemo] Architecture Evolution - STAGE1 - PART2 (10:43)
 - [ ] [AdvancedDemo] Architecture Evolution - STAGE2 (12:58)
+
+**Friday, December 11: 49 minutes**
+
 - [ ] [AdvancedDemo] Architecture Evolution - STAGE3 (19:30)
 - [ ] [AdvancedDemo] Architecture Evolution - STAGE4 (18:04)
-
-**Friday, November 27: 77 minutes**
-
 - [ ] [AdvancedDemo] Architecture Evolution - STAGE 5 - PART1 (11:31)
+
+---
+
+Week 13: December 14-15, 2026 | 1.1 hours
+-----------------------------------------
+
+**Monday, December 14: 51 minutes**
+
 - [ ] [AdvancedDemo] Architecture Evolution - STAGE 5 - PART2 (14:56)
 - [ ] [AdvancedDemo] Architecture Evolution - STAGE6 (5:48)
 - [ ] Connection Draining (3:46)
 - [ ] X-Forwarded-For & Proxy Protocol (7:16)
 - [ ] [DOP-C02] Web Application Firewall (WAF), WEBACLs, Rule Groups and Rules (19:18)
+
+**Tuesday, December 15: 14 minutes**
+
 - [ ] [DOP-C02] AWS Network Firewall - 101 (14:18)
 
 Revision notes
@@ -431,6 +482,8 @@ Revision notes
 - [ ] Every video is assigned wholly to one day.
 - [ ] Videos remain in the exact sequence from the course outline.
 - [ ] The requested Oct 19, 20, 21, 22, 26, 27, and 28 study days are each capped at one hour; no study is planned for Oct 23.
-- [ ] Weeks 5-10 total 3.6, 5.5, 6.7, 6.6, 7.1, and 6.9 hours respectively.
-- [ ] From Oct 29 onward, study days are balanced at roughly 75-91 minutes, below the approximate 120-minute daily limit.
-- [ ] Previously completed videos remain checked; all unchecked videos from Oct 29 onward are redistributed in course order.
+- [ ] Weeks 0-6 (through Nov 1) are unchanged and treated as fixed.
+- [ ] From Nov 2 onward, Monday-Friday are capped at 60 minutes of video, Saturdays at 60 minutes, and Sundays have no videos.
+- [ ] Dec 1-6 and Dec 12 are skipped (blacklisted); the schedule extends past Nov 27 and ends Dec 15.
+- [ ] Weeks 7-13 total 5.4, 5.3, 5.2, 5.3, 0.9, 4.2, and 1.1 hours respectively, all under the seven-hour weekly cap.
+- [ ] Previously completed videos remain checked; all unchecked videos from Nov 2 onward are redistributed in course order.

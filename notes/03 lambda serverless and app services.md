@@ -13,6 +13,8 @@
 - event -> json structure 
     - data in this can be used by the target. all this will be availble to the target 
 
+# Lambda
+
 ## AWS Lambda - PART1 (11:25)
 - Function-as-a-Service (FaaS) - you progvide specialized, short running
 - Lambda function = piece of code that lambda runs
@@ -302,6 +304,8 @@
     - required when cross-account access is used bc lambda has no trust
     - NOT required for identity in the same account
     - can perform limited edits in UI, full control via CLI/API
+
+# API Gateway
 
 ## API Gateway 101
 - basics:

@@ -1,0 +1,436 @@
+Week 0: September 17-18, 2026 | 2.8 hours
+-----------------------------------------
+
+- [x] Public Intro Video (Release v2) (3:09)
+- [x] Scenario - Animals4life (13:28)
+- [x] Connect with other students and your instructor (3:10)
+- [x] AWS Accounts - The Basics (11:33)
+- [x] [202511UPDATE] [DEMO] - Creating an AWS Account (5:16)
+- [x] Multi-factor Authentication (MFA) (8:25)
+- [x] [202511UPDATE] [DEMO] Adding MFA - General Account Root User (4:47)
+- [x] Identity and Access Management (IAM) Basics (13:01)
+- [x] [202511UPDATE] [DEMO] Creating IAMADMIN user & adding MFA (8:17)
+- [x] IAM Access Keys (7:32)
+- [x] [DEMO] Creating Access keys and setting up AWS CLI v2 tools (17:43)
+- [x] [ASSOCIATESHARED] IAM Identity Policies (15:52)
+- [x] [ASSOCIATESHARED] IAM Users and ARNs (13:49)
+- [x] [ASSOCIATESHARED] [DEMO] Simple Identity Permissions in AWS (16:06)
+- [x] [ASSOCIATESHARED] IAM Groups (7:48)
+- [x] [ASSOCIATESHARED] [DEMO] Permissions control using IAM Groups (9:24)
+- [x] [ASSOCIATESHARED] IAM Roles - The Tech (8:13)
+
+
+Week 1: September 21-25, 2026 | 4.0 hours
+-----------------------------------------
+
+**Sunday, September 20: 53 minutes**
+
+- [x] [ASSOCIATESHARED] When to use IAM Roles (15:27)
+- [x] Service-linked Roles & PassRole (5:16) !
+- [x] [ASSOCIATESHARED] AWS Organizations (12:56)
+- [x] [SHAREDALL] [DEMO] AWS Organizations (19:48)
+
+**Monday, September 21: 47 minutes**
+
+- [x] [ASSOCIATESHARED] Service Control Policies (SCP) (12:44)
+- [x] [SHAREDALL] [DEMO] Using Service Control Policies (16:45)
+- [x] [ASSOCIATESHARED] CloudFormation Physical & Logical Resources (7:30)
+- [x] [ASSOCIATESHARED] [DEMO] Simple Non Portable Template - PART1 (10:28)
+
+**Tuesday, September 22: 55 minutes**
+
+- [x] [ASSOCIATESHARED] [DEMO] Simple Non Portable Template - PART2 (11:28)
+- [x] [ASSOCIATESHARED] CloudFormation Template and Pseudo Parameters (6:53)
+- [x] [ASSOCIATESHARED] CloudFormation Intrinsic Functions (14:28)
+- [x] [ASSOCIATESHARED] CloudFormation Mappings (4:30)
+- [x] [ASSOCIATESHARED] CloudFormation Outputs (3:37)
+- [x] [ASSOCIATESHARED] [DEMO] Template v2 - Portable (13:34)
+
+**Wednesday, September 23: 60 minutes**
+
+- [x] [ASSOCIATESHARED] CloudFormation Conditions (7:24)
+- [x] [ASSOCIATESHARED] CloudFormation DependsOn (7:14)
+- [x] [ASSOCIATESHARED] CloudFormation Wait Conditions & cfn-signal (11:52)
+- [x] [ASSOCIATESHARED] CloudFormation Nested Stacks (13:55)
+- [x] [ASSOCIATESHARED] CloudFormation Cross-Stack References (10:05)
+- [x] [ASSOCIATESHARED] CloudFormation Stack Sets (9:12)
+
+**Thursday, September 24: 25 minutes**
+
+- [x] [ASSOCIATESHARED] CloudFormation Deletion Policy (5:24)
+- [x] [ASSOCIATESHARED] CloudFormation Stack Roles (6:47)
+- [x] [ASSOCIATESHARED] CloudFormation Init (CFN-INIT) (8:48)
+- [x] [ASSOCIATESHARED] CloudFormation cfn-hup (4:13)
+
+---
+
+Week 2: September 28-October 2, 2026 | 0.0 hours
+------------------------------------------------
+
+Any remaining Week 2 videos are included in the revised October 19-November 6 plan below.
+
+---
+
+Week 3: October 5-9, 2026 | 1.6 hours completed
+-------------------------------------
+
+**Wednesday, October 7: 31 minutes**
+- [x] [ASSOCIATESHARED] CloudFormation ChangeSets (11:03)
+- [x] [ASSOCIATESHARED] CloudFormation Custom Resources (11:03)
+- [x] [ASSOCIATESHARED] [DEMO] CloudFormation Custom Resources-PART1 (9:12)
+
+**Thursday, October 8: 63 minutes**
+
+- [x] [ASSOCIATESHARED] [DEMO] CloudFormation Custom Resources-PART2 (13:27)
+- [x] [DEMO] CloudFormation Drift Detection (19:38)
+- [x] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Architecture (18:12)
+- [x] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Application & Environment - PART1 (11:50)
+
+---
+
+Week 4: October 12-16, 2026 | 0.0 hours (unfinished videos rescheduled below)
+-----------------------------------------------------------------------------
+
+---
+
+Week 5: October 19-24, 2026 | 3.6 hours
+---------------------------------------
+
+**Monday, October 19: 59 minutes**
+
+- [x] [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART1 (12:51)
+- [x] [ASSOCIATESHARED] [DEMO] wait conditions, cfnsignal, cfninit and cfnhup-PART2 (14:42)
+- [x] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Add additional environment and config options - PART2 (10:53)
+- [x] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Deployment Policies (11:40)
+- [x] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Deployment (8:30)
+
+**Tuesday, October 20: 59 minutes**
+
+- [x] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Environments and RDS (4:34)
+- [x] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Advanced Customisation via .ebextensions (4:52)
+- [x] [ASSOCIATESHARED] Elastic Beanstalk (EB) - HTTPS (1:51)
+- [x] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Cloning (4:44)
+- [x] [ASSOCIATESHARED] Elastic Beanstalk (EB) - Docker (9:11)
+- [x] [ASSOCIATESHARED] [DEMO] Elastic Beanstalk (EB) - Section Cleanup (1:40)
+- [x] [ASSOCIATESHARED] CloudWatchEvents and EventBridge (6:54)
+- [x] [SHAREDALL] AWS Lambda - PART1 (11:25)
+- [x] [SHAREDALL] AWS Lambda - PART2 (13:59)
+
+**Wednesday, October 21: 35 minutes**
+
+- [x] [SHAREDALL] AWS Lambda - PART3 (17:03)
+- [x] Lambda Handler Architecture & Overview - PART1 - Theory (7:52)
+- [x] Lambda Handler Architecture & Overview - PART2 - Walkthrough (10:07)
+
+**Thursday, October 22: 30 minutes**
+
+- [x] Lambda Versions (4:58)
+- [x] Lambda Aliases (4:11)
+- [x] [DEMO] Aliases and Versions (13:10)
+
+**Saturday, October 24: 36 minutes**
+- [x] Lambda Environment Variables (7:21)
+- [ ] [DEMO] S3 Events + Lambda (Pixelator) - PART1 (18:03)
+- [ ] [DEMO] S3 Events + Lambda (Pixelator) - PART2 (17:43)
+
+
+---
+
+Week 6: October 26-30, 2026 | 5.5 hours
+---------------------------------------
+
+**Monday, October 26: 56 minutes**
+
+- [x] Monitoring & Logging & Tracing Lambda Based Applications (13:24)
+- [ ] [DEMO] Accessing Private VPC Resources using Lambda w/ TheCatAPI!!!! - PART1 (7:53)
+- [ ] [DEMO] Accessing Private VPC Resources using Lambda w/ TheCatAPI!!!! - PART2 (16:19)
+- [x] Lambda Layers (8:29)
+- [x] Lambda Container Images (4:14)
+- [x] Lambda & ALB Integration (5:21)
+
+**Thursday, October 29: 59 minutes**
+
+- [x] Lambda Resource Policy (9:52)
+- [ ] [SHAREDALL] API Gateway 101 (16:27) (timestmap: 8 min )
+- [ ] API Gateway - Methods and Resources (4:28)
+- [ ] API Gateway - Integrations (14:02)
+- [ ] API Gateway Stages and Deployments (6:25)
+- [ ] Open API & Swagger (7:56)
+
+**Friday, October 30: 58 minutes**
+
+- [ ] [ASSOCIATESHARED] Simple Notification Service (7:49)
+- [ ] [DOP-C02] [ADVDEMO] API Gateway Integrations - Mock, Lambda, AWS Service (23:55)
+- [ ] [ASSOCIATESHARED] Simple Queue Service (15:30)
+- [ ] SQS Standard vs FIFO Queues (3:29)
+- [ ] SQS Extended Client Library (2:52)
+- [ ] SQS Delay Queues (4:38)
+
+**Saturday, October 31: 75 minutes**
+
+- [ ] SQS Dead-Letter Queues (4:17)
+- [ ] [ASSOCIATESHARED] Step Functions (16:09)
+- [ ] [MINIPROJECT] Build A Serverless App - Pet-Cuddle-o-Tron - PART1 (5:01)
+- [ ] [MINIPROJECT] Build A Serverless App - Pet-Cuddle-o-Tron - PART2 (8:24)
+- [ ] [MINIPROJECT] Build A Serverless App - Pet-Cuddle-o-Tron - PART3 (12:26)
+- [ ] [MINIPROJECT] Build A Serverless App - Pet-Cuddle-o-Tron - PART4 (12:45)
+- [ ] [MINIPROJECT] Build A Serverless App - Pet-Cuddle-o-Tron - PART5 (13:31)
+- [ ] [MINIPROJECT] Build A Serverless App - Pet-Cuddle-o-Tron - PART6 (2:38)
+
+**Sunday, Nov 1: 84 minutes**
+
+- [ ] [ASSOCIATESHARED] Introduction to Containers (17:13)
+- [ ] [SHAREDALL] [DEMO] Creating 'container of cats' Docker Image (18:15)
+- [ ] [ASSOCIATESHARED] ECS - Concepts (10:25)
+- [ ] [ASSOCIATESHARED] ECS - Cluster Mode (13:09)
+- [ ] [SHAREDALL] [DEMO] - Deploying 'container of cats' using Fargate (13:13)
+- [ ] [SHAREDALL] Kubernetes 101 (11:27)
+
+---
+
+Week 7: November 2-6, 2026 | 6.7 hours
+--------------------------------------
+
+**Monday, November 2: 84 minutes**
+
+- [ ] [SHAREDALL] Elastic Kubernetes Service (EKS) 101 (6:14)
+- [ ] OpsWorks - Architecture (15:56)
+- [ ] [ASSOCIATESHARED] SSM Parameter Store (17:00)
+- [ ] [ASSOCIATESHARED] Secrets Manager (7:47)
+- [ ] Security Token Service (STS) (6:53)
+- [ ] Policy Interpretation Deep Dive - Example 1 (10:23)
+- [ ] Policy Interpretation Deep Dive - Example 2 (9:11)
+- [ ] Policy Interpretation Deep Dive - Example 3 (10:59)
+
+**Tuesday, November 3: 77 minutes**
+
+- [ ] Permissions Boundaries & Use-cases (17:28)
+- [ ] AWS Permissions Evaluation (10:25)
+- [ ] Route53 Fundamentals (6:29)
+- [ ] [SHAREDALL] [DEMO] Registering a Domain with route53 (9:49)
+- [ ] DNS Record Types (13:25)
+- [ ] R53 Public Hosted Zones (6:28)
+- [ ] R53 Private Hosted Zones (5:10)
+- [ ] CNAME vs R53 Alias (5:19)
+- [ ] Simple Routing (2:17)
+
+**Wednesday, November 4: 83 minutes**
+
+- [ ] R53 Health Checks (12:41)
+- [ ] Failover Routing (1:53)
+- [ ] [SHAREDALL] [DEMO] Using R53 and Failover Routing-PART1 (16:41)
+- [ ] [SHAREDALL] [DEMO] Using R53 and Failover Routing-PART2 (6:28)
+- [ ] Multi Value Routing (2:32)
+- [ ] Weighted Routing (3:24)
+- [ ] Latency Routing (2:44)
+- [ ] Geolocation Routing (5:02)
+- [ ] Geoproximity Routing (4:50)
+- [ ] R53 Interoperability (11:50)
+- [ ] [REFRESHER] CICD in AWS (14:54)
+
+**Thursday, November 5: 80 minutes**
+
+- [ ] [WALKTHROUGH] Working with a Repo & Pushing to CodeCommit (11:46)
+- [ ] [REFRESHER] CodePipeline - 101 (4:08)
+- [ ] [REFRESHER] CodeBuild - 101 (6:23)
+- [ ] [REFRESHER] CodeDeploy - 101 (10:21)
+- [ ] Elastic Container Registry (ECR) - Architecture (4:14)
+- [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE0 - INTRO (2:23)
+- [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE1 - CodeCommit (12:31)
+- [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE2 - Build a Docker Image w/ CodeBuild - PART1 (13:40)
+- [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE2 - Build a Docker Image w/ CodeBuild - PART2 (15:02)
+
+**Friday, November 6: 78 minutes**
+
+- [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE3 - Joining the dots - pipeline (15:31)
+- [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE4 - Deploy our Container w/ CodeDeploy - PART1 (11:29)
+- [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE4 - Deploy our Container w/ CodeDeploy - PART2 (7:42)
+- [ ] [DOP-C02] [AdvancedDemo] - CatPipeline - STAGE5 - CLEANUP (4:07)
+- [ ] CloudWatch - PART1 (9:45)
+- [ ] CloudWatch - PART2 (9:19)
+- [ ] [ASSOCIATESHARED] [DEMO] Logging and Metrics with CloudWatch Agent-PART1 (11:51)
+- [ ] [ASSOCIATESHARED] [DEMO] Logging and Metrics with CloudWatch Agent-PART2 (8:08)
+
+---
+
+Week 8: November 9-13, 2026 | 6.6 hours
+---------------------------------------
+
+**Monday, November 9: 76 minutes**
+
+- [ ] CloudWatch Logs (13:44)
+- [ ] CloudTrail (11:40)
+- [ ] [SHAREDALL] [DEMO] Implementing an Organizational Trail (18:23)
+- [ ] CloudTrail Logfile Integrity (6:28)
+- [ ] [ASSOCIATESHARED] Kinesis Data Streams (7:52)
+- [ ] [ASSOCIATESHARED] Kinesis Data Firehose (9:11)
+- [ ] [ASSOCIATESHARED] Kinesis Data Analytics (8:51)
+
+**Tuesday, November 10: 81 minutes**
+
+- [ ] MapReduce 101 (10:24)
+- [ ] EMR Architecture (13:51)
+- [ ] Amazon Redshift (11:32)
+- [ ] Amazon Quicksight (4:08)
+- [ ] Amazon Athena (8:19)
+- [ ] [DEMO] Amazon Athena - PART1 (13:31)
+- [ ] [DEMO] Amazon Athena - PART2 (11:37)
+- [ ] SSM Architecture and Agent Activation (7:25)
+
+**Wednesday, November 11: 82 minutes**
+
+- [ ] SSM Run Command (4:47)
+- [ ] SSM Documents [NEEDS UPDATE] (7:31)
+- [ ] SSM Inventory & SSM Patching (11:57)
+- [ ] AWS Config (6:14)
+- [ ] Service Catalog Overview (7:07)
+- [ ] Inspector 101 (6:28)
+- [ ] GuardDuty 101 (4:14)
+- [ ] Trusted Advisor 101 (8:54)
+- [ ] Elastic Block Store (EBS) Service Architecture (8:43)
+- [ ] EBS Volume Types - General Purpose (9:23)
+- [ ] EBS Volume Types - Provisioned IOPS (6:15)
+
+**Thursday, November 12: 81 minutes**
+
+- [ ] EBS Volume Types - HDD-Based (4:32)
+- [ ] Instance Store Volumes - Architecture (9:00)
+- [ ] Storage Gateway - Volume Gateway (14:15)
+- [ ] Storage Gateway - Tape Gateway (VTL) (12:11)
+- [ ] Storage Gateway - File Gateway (12:15)
+- [ ] S3 Security (Resource Policies & ACLs) (18:19)
+- [ ] S3 Static Hosting (10:36)
+
+**Friday, November 13: 77 minutes**
+
+- [ ] [Demo] Creating a static website with S3 (17:55)
+- [ ] Object Versioning & MFA Delete (7:56)
+- [ ] [DEMO] - S3 Versioning (15:45)
+- [ ] S3 Performance Optimization (11:42)
+- [ ] [DEMO] - S3 Performance (5:06)
+- [ ] Key Management Service (KMS) (18:38)
+
+---
+
+Week 9: November 16-20, 2026 | 7.1 hours
+----------------------------------------
+
+**Monday, November 16: 86 minutes**
+
+- [ ] [DEMO] KMS - Encrypting the battleplans with KMS (12:43)
+- [ ] S3 Object Encryption CSE/SSE (23:31)
+- [ ] [DEMO] Object Encryption and Role Separation (14:50)
+- [ ] S3 Bucket Keys (5:59)
+- [ ] S3 Object Storage Classes - PART1 (9:23)
+- [ ] S3 Object Storage Classes - PART2 (11:41)
+- [ ] S3 Lifecycle Configuration (8:13)
+
+**Tuesday, November 17: 86 minutes**
+
+- [ ] S3 Replication (13:59)
+- [ ] [DEMO] Cross-Region Replication of an S3 Static Website (19:52)
+- [ ] S3 PreSigned URLs (11:11)
+- [ ] [DEMO] Creating and using PresignedURLs (18:23)
+- [ ] S3 Select and Glacier Select (5:32)
+- [ ] Cross-origin Resource Sharing (CORS) (9:26)
+- [ ] S3 Events (4:32)
+- [ ] S3 Access Logs (3:05)
+
+**Wednesday, November 18: 85 minutes**
+
+- [ ] S3 Object Lock (9:52)
+- [ ] S3 Access Points (5:52)
+- [ ] S3 Inventory (13:54)
+- [ ] [DOP-C02] [ADVDEMO] Multi-Region Access Points (20:25)
+- [ ] EFS Architecture (9:05)
+- [ ] FSx for Windows File Server (11:32)
+- [ ] FSx for Lustre (13:57)
+
+**Thursday, November 19: 91 minutes**
+
+- [ ] CloudFront - Architecture (14:56)
+- [ ] CloudFront (CF) - Behaviours (9:21)
+- [ ] CloudFront - TTL and Invalidations (13:48)
+- [ ] AWS Certificate Manager (ACM) (11:21)
+- [ ] CloudFront - SSL/TLS & SNI (14:59)
+- [ ] CloudFront - Origin Types & Origin Architecture (10:20)
+- [ ] [DEMO] CloudFront - Adding a CDN to a static Website-PART1 (16:23)
+
+**Friday, November 20: 80 minutes**
+
+- [ ] [DEMO] CloudFront - Adding a CDN to a static Website-PART2 (12:24)
+- [ ] [DEMO] CloudFront - Adding an Alternate CNAME and SSL (11:12)
+- [ ] CloudFront - Security - OAI & Custom Origins (8:50)
+- [ ] CloudFront - Private Behaviours, Signed URL & Cookies (7:49)
+- [ ] [DEMO] CloudFront - Using Origin Access Control (OAC) (11:21)
+- [ ] CloudFront - Georestrictions (9:40)
+- [ ] CloudFront - Lambd@Edge (8:03)
+- [ ] DynamoDB Architecture Basics (10:49)
+
+---
+
+Week 10: November 23-27, 2026 | 6.9 hours
+-----------------------------------------
+
+**Monday, November 23: 85 minutes**
+
+- [ ] DynamoDB Operations, Consistency and Performance - PART1 (13:06)
+- [ ] DynamoDB Operations, Consistency and Performance - PART2 (11:24)
+- [ ] DynamoDB Indexes (LSI and GSI) (12:35)
+- [ ] DynamoDB Streams and Triggers (9:10)
+- [ ] DynamoDB Accelerator (DAX) (10:58)
+- [ ] DynamoDB Global Tables (5:09)
+- [ ] DynamoDB Time-To-Live (TTL) (4:49)
+- [ ] High-Availability vs Fault-Tolerance vs Disaster Recovery (17:21)
+
+**Tuesday, November 24: 83 minutes**
+
+- [ ] Types of DR - Cold, Warm, PilotLight (17:41)
+- [ ] DR Architecture - Storage (8:09)
+- [ ] DR Architecture - Compute (7:52)
+- [ ] DR Architecture - Database (10:20)
+- [ ] DR Architecture - Networking (8:22)
+- [ ] Launch Configuration and Templates (4:00)
+- [ ] Auto-Scaling Groups (16:01)
+- [ ] ASG Scaling Policies (10:23)
+
+**Wednesday, November 25: 83 minutes**
+
+- [ ] ASG Lifecycle Hooks (4:42)
+- [ ] ASG Health Checks EC2 vs ALB (3:38)
+- [ ] [REFRESHER] Load Balancing Evolution (4:10)
+- [ ] Elastic Load Balancer Architecture - PART1 (10:18)
+- [ ] Elastic Load Balancer Architecture - PART2 (12:32)
+- [ ] Application Load Balancing (ALB) vs Network Load Balancing (NLB) (16:20)
+- [ ] Session State (9:11)
+- [ ] Session Stickiness (9:25)
+- [ ] [DEMO] Seeing Session Stickiness in Action (12:57)
+
+**Thursday, November 26: 89 minutes**
+
+- [ ] Gateway Load Balancer (GWLB) (13:40)
+- [ ] [AdvancedDemo] Architecture Evolution - STAGE1 - PART1 (14:24)
+- [ ] [AdvancedDemo] Architecture Evolution - STAGE1 - PART2 (10:43)
+- [ ] [AdvancedDemo] Architecture Evolution - STAGE2 (12:58)
+- [ ] [AdvancedDemo] Architecture Evolution - STAGE3 (19:30)
+- [ ] [AdvancedDemo] Architecture Evolution - STAGE4 (18:04)
+
+**Friday, November 27: 77 minutes**
+
+- [ ] [AdvancedDemo] Architecture Evolution - STAGE 5 - PART1 (11:31)
+- [ ] [AdvancedDemo] Architecture Evolution - STAGE 5 - PART2 (14:56)
+- [ ] [AdvancedDemo] Architecture Evolution - STAGE6 (5:48)
+- [ ] Connection Draining (3:46)
+- [ ] X-Forwarded-For & Proxy Protocol (7:16)
+- [ ] [DOP-C02] Web Application Firewall (WAF), WEBACLs, Rule Groups and Rules (19:18)
+- [ ] [DOP-C02] AWS Network Firewall - 101 (14:18)
+
+Revision notes
+--------------
+
+- [ ] Every video is assigned wholly to one day.
+- [ ] Videos remain in the exact sequence from the course outline.
+- [ ] The requested Oct 19, 20, 21, 22, 26, 27, and 28 study days are each capped at one hour; no study is planned for Oct 23.
+- [ ] Weeks 5-10 total 3.6, 5.5, 6.7, 6.6, 7.1, and 6.9 hours respectively.
+- [ ] From Oct 29 onward, study days are balanced at roughly 75-91 minutes, below the approximate 120-minute daily limit.
+- [ ] Previously completed videos remain checked; all unchecked videos from Oct 29 onward are redistributed in course order.
