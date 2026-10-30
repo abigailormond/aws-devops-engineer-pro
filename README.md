@@ -148,16 +148,16 @@ Week 6: October 26-30, 2026 | 5.5 hours
 - [x] Lambda Container Images (4:14)
 - [x] Lambda & ALB Integration (5:21)
 
-**Tuesday, October 27: 59 minutes**
+**Thursday, October 29: 59 minutes**
 
-- [ ] Lambda Resource Policy (9:52)
-- [ ] [SHAREDALL] API Gateway 101 (16:27)
+- [x] Lambda Resource Policy (9:52)
+- [ ] [SHAREDALL] API Gateway 101 (16:27) (timestmap: 8 min )
 - [ ] API Gateway - Methods and Resources (4:28)
 - [ ] API Gateway - Integrations (14:02)
 - [ ] API Gateway Stages and Deployments (6:25)
 - [ ] Open API & Swagger (7:56)
 
-**Wednesday, October 28: 58 minutes**
+**Friday, October 30: 58 minutes**
 
 - [ ] [ASSOCIATESHARED] Simple Notification Service (7:49)
 - [ ] [DOP-C02] [ADVDEMO] API Gateway Integrations - Mock, Lambda, AWS Service (23:55)
@@ -166,7 +166,7 @@ Week 6: October 26-30, 2026 | 5.5 hours
 - [ ] SQS Extended Client Library (2:52)
 - [ ] SQS Delay Queues (4:38)
 
-**Thursday, October 29: 75 minutes**
+**Saturday, October 31: 75 minutes**
 
 - [ ] SQS Dead-Letter Queues (4:17)
 - [ ] [ASSOCIATESHARED] Step Functions (16:09)
@@ -177,7 +177,7 @@ Week 6: October 26-30, 2026 | 5.5 hours
 - [ ] [MINIPROJECT] Build A Serverless App - Pet-Cuddle-o-Tron - PART5 (13:31)
 - [ ] [MINIPROJECT] Build A Serverless App - Pet-Cuddle-o-Tron - PART6 (2:38)
 
-**Friday, October 30: 84 minutes**
+**Sunday, Nov 1: 84 minutes**
 
 - [ ] [ASSOCIATESHARED] Introduction to Containers (17:13)
 - [ ] [SHAREDALL] [DEMO] Creating 'container of cats' Docker Image (18:15)

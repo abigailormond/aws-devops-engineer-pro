@@ -274,6 +274,76 @@
     - resource poilcy
         - who can do what with the lambda function (similar to s3 policy)
 - lambda resource policies
-    -
+
+- trust via identity policy:
+    - lambda functino implicitly trusts the account
+    - account trusts identity via identity policy
+    - thus lambda function trusts the identity via transitive property
+- OR trust via resource policy:
+    - service directly trusts the identity via resource policy. doesn't need chain of trust.  
+      
+- cross account?
+    - account b and account a don't implicitly trust each other
+    - identity from account a has identity permissions sent request out (exit)
+    - but that identity is not trusted by the lambda function in acct b
+    - access denied
+    - IF we had a resource policy in acct b that explicityly trusts account a, then the identity in acct a would be granted access. 
+
+    - for cross account access
+        - source account needs to be allowed access out (exit) via identity policy
+        - AND dest account needs to allow access into its account (entry) via resource policy
+- same account -> identity OR resource policy needed
+- diff account -> identity AND resoruce policy needed
+
+
+- lambda will also need resource policy to grant access to servbices to use lambda (if that service can't or don't assume a role to get those perms, like s3 events)
+
+- lambda resource policy is required when a service needs to invoke lambda
+    - required when cross-account access is used bc lambda has no trust
+    - NOT required for identity in the same account
+    - can perform limited edits in UI, full control via CLI/API
 
 ## API Gateway 101
+- basics:
+    - create and manage APIs
+    - endpoint/ entry-point for applications
+    - sits between applications & integrations(services)
+    - It is
+        - highly available
+        - scalable
+    - handles 
+        - authorization
+        - throttling
+        - caching
+        - CORS
+        - transformations
+        - openAPI spec
+        - direct integration
+        - much more
+    - can connect to endpoints / services in AWS or on-prem
+    - HTTP APIs, REST APIs, and websocket APIs
+- architecture
+    - API gateway sits in between clients (mobile apps, other apis, websites, etc) and the integration (SNS, lambda, step functions, http endpoints, etc)
+    - 3 phases
+        1. Request -> authorizes, validates, and transforms incoming requests from the client into a form that the integration can handle
+        2. Integrations
+        3. Response-> takes response from integration, transofrms it, prepares it, and then returns it to the client. 
+    - integrates with cloudwatch to store and manage full stage rquest and respones logs. can store metrics for client and integration
+    - api gateway cache can be used to reduce # of calls to backend integration
+- AUTHENTICATION
+    -  you could have zero authentication if you wanted
+    - cognito
+        - client authenticates with cognito and receives cognito token in return 
+        - client then passes that token into api gateway with its request
+        - api gateway can nativbely validate cognito tokens 
+    - lambda-based authorization (formerly called custom authorization)
+        - customer has some kind of bearer token that asserts an identificaiton  
+        - passes that bearer token to api gateway with its request
+        - api gateway calls lambda authorizer
+        - lambda authorizer calls ID provider or some other check of the ID
+        - lambda returns iam ppolicy and principal identifier to api gateway 
+ - ENDPOINT TYPES
+    - 
+## API Gateway - Methods and Resources 
+
+##
