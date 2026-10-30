@@ -14,154 +14,155 @@ Most of this is Domain 5.1 (event sources), Domain 3.2 (serverless scaling) and 
 
 ## CloudWatchEvents and EventBridge (6:54)
 - Events are generated when things happen like an instance being created, starting, or stopping
-- EventBridge is replacing CloudWatch Events, but can also handle third-party and custom 
+- EventBridge is replacing CloudWatch Events, but can also handle third-party and custom events 
 - if x happens, or at y times... do z
-- one aws account will have a default event bus
+- one AWS account will have a default event bus
 - event bus -> stream of events that occur from any supported service within the account
-- in cloudwatch events the default bus is hte only bus
-- in eventbridge, you can create additional busses
+- in CloudWatch Events the default bus is the only bus
+- in EventBridge, you can create additional buses
 - rules pattern match to incoming events (or schedules in cron) -- when they see an event that matches, delivers that event to a target
-- routes event to >=1 targets (ex: lambda)
+- routes event to >=1 targets (ex: Lambda)
 - default account event bus has stream of all kinds of events
-- eventbridge sits on top of the busses, monitoring all the events
-- event -> json structure 
-    - data in this can be used by the target. all this will be availble to the target 
+- EventBridge sits on top of the buses, monitoring all the events
+- event -> JSON structure 
+    - data in this can be used by the target. all this will be available to the target 
 
 # Lambda
 
 ## AWS Lambda - PART1 (11:25)
-- Function-as-a-Service (FaaS) - you progvide specialized, short running
-- Lambda function = piece of code that lambda runs
-    - functions use a runtime (e.g. python 3.8)
+- Function-as-a-Service (FaaS) - you provide specialized, short-running
+- Lambda function = piece of code that Lambda runs
+    - functions use a runtime (e.g., Python 3.8)
 - functions are loaded and run in a runtime environment
-    - environment has a direct memory (indirect cpu) allocation 
-        - indirect cpu means don't get to choose, it's based on the amount of memory
+    - environment has a direct memory (indirect CPU) allocation 
+        - indirect CPU means you don't get to choose, it's based on the amount of memory
 - you are billed for the duration that a function runs 
 - step thru process
-    1. you create lambda function -> 
-        1. provide deployment package (code plus all associated wrappings and config) that lambda executes
+    1. you create Lambda function -> 
+        1. provide deployment package (code plus all associated wrappings and config) that Lambda executes
         2. select runtime env
-    2. when lambda function invoked, the deployment package is downloaded onto runtime environment and executed
+    2. when Lambda function is invoked, the deployment package is downloaded onto runtime environment and executed
 - runtimes
-    - common: python, ruby, java, go, c#, nodejs
-    - custom runtimes such as rust are possible via layers
-    * if you hear the term Docker ever, it will never refer to lambda!!
-    * you can use your existing build processes to build lambda images 
+    - common: Python, Ruby, Java, Go, C#, Node.js
+    - custom runtimes such as Rust are possible via layers
+    * if you hear the term Docker ever, it will never refer to Lambda!!
+    * you can use your existing build processes to build Lambda images 
 - stateless -> no data is left over from previous invocations 
     - assume brand-new env every time function is invoked
 - resources
     - memory -> you DEFINE this
-        - between 128-10240 MB in 1MB steps
+        - between 128-10240 MB in 1 MB steps
     - vCPU is indirectly allocated, scaling w/ memory allocation
     - storage
-        - 512MB storage available as /tmp, default but can scale up to 10240MB
+        - 512 MB storage available as /tmp, default but can scale up to 10240 MB
     - can run up to 15m (900s) before TIMEOUT !!!
-- Execution role -> gives lambda perms to interact w other aws services. attached to specific lambda function
+- Execution role -> gives Lambda perms to interact w other AWS services. Attached to specific Lambda function
 - common uses
-    - serverless applications (using maybe s3, api gateway, lambda)
-    - file processing (s3, s3 events, lambda) (generating watermark on image)
-    - database triggers (dynamodb, streams, lambda) (invoke anytime dynamodb table modified)
-    - serverless CRON (eventbridge/cweventsw + lambbda)
-    - realtime stream data processing (kineses + lambda) (trigger whenever data streamed into kinesis stream)
+    - serverless applications (using maybe S3, API Gateway, Lambda)
+    - file processing (S3, S3 events, Lambda) (generating watermark on image)
+    - database triggers (DynamoDB, streams, Lambda) (invoke anytime DynamoDB table modified)
+    - serverless cron (EventBridge/CloudWatch Events + Lambda)
+    - real-time stream data processing (Kinesis + Lambda) (trigger whenever data streamed into Kinesis stream)
     
 
 ### Possible corrections (generated by copilot)
 - Stateless: Lambda can reuse an execution environment, so globals and `/tmp` may persist between invocations. Don't rely on that for durable state, but it is why the `/tmp` caching and init-outside-handler tips work. "Assume a brand-new env every time" is the safe design assumption, not a guarantee of what happens.
 - Custom runtimes: can be shipped in a layer or with the function code, or via a container image or the `provided` OS-only runtime. Layers are not the only route.
+- Docker: "Docker will never refer to Lambda" is out of date. Lambda supports container images (see Lambda Container Images below).
 
 
 ## AWS Lambda - PART2 (13:59)
 
 - Public Lambda
-    - by default, lambda is given public entworking = can access public aws services and the public internet 
-    - public networking = best performance bc no customer-specific vpc netowkring required. lambda can run on aws shared hardawre and ntworking, not specific to a specific customer
-    - by default no access to services running within a vpc (unless vpc configured with public addressing + security rules to allow exteral access)
-- private lambda
-    - lambda configured to run inside a vpc
-        - obey all bvpc networking rules
-            - can access anything in vpc
-            - can't access stuff outside of vpc (dynamodb, public internet) unless vpc specifically configured to allow this
+    - by default, Lambda is given public networking = can access public AWS services and the public internet 
+    - public networking = best performance bc no customer-specific VPC networking required. Lambda can run on AWS shared hardware and networking, not specific to a specific customer
+    - by default no access to services running within a VPC (unless VPC configured with public addressing + security rules to allow external access)
+- Private Lambda
+    - Lambda configured to run inside a VPC
+        - obey all VPC networking rules
+            - can access anything in VPC
+            - can't access stuff outside of VPC (DynamoDB, public internet) unless VPC specifically configured to allow this
                 - how to configure to allow this access?
-                    - vpc endpoints can provide access to public aws services
-                    - nat gateway in a pubilc subnet, then attach internet gateway to the vpc
-        - lambda will need access to create network interfaces within your vpc (execution role policy)
-            - ec2 network permissions needed
-    - vpc-based lambda functions don't actually run within your vpc??
-        - old method: aws lambda service vpc creates new elastic interface per function execution
+                    - VPC endpoints can provide access to public AWS services
+                    - NAT gateway in a public subnet, then attach internet gateway to the VPC
+        - Lambda will need access to create network interfaces within your VPC (execution role policy)
+            - EC2 network permissions needed
+    - VPC-based Lambda functions don't actually run within your VPC??
+        - old method: AWS Lambda service VPC creates new elastic network interface per function execution
         - current method: 
-            - lambda functions in aws lambda service vpc
-            - aws analyze all functions running in region/account, build set of unique combos of unique security groups and subnets. for every unique pair an ENI is needed. for example, if all functions use one security group but 4 subnets, then 4 eni required -- 1 per subnet. 
-            - single eni is created connecting aws lambda service vpc and your vpc for each unique combiniation of security groups and subnets uesd by your lambda functions 
-            - these NETWORK INTERFACES are created when you configure the lambda funciton, may take 90s, but done once. so when you create the functino or update networking configuration, this is created/updated, so this doesn't have ot happen every time a function is invoked = no delay in function invocation
+            - Lambda functions in AWS Lambda service VPC
+            - AWS analyzes all functions running in Region/account, builds set of unique combos of unique security groups and subnets. For every unique pair an ENI is needed. For example, if all functions use one security group but 4 subnets, then 4 ENIs required -- 1 per subnet. 
+            - single ENI is created connecting AWS Lambda service VPC and your VPC for each unique combination of security groups and subnets used by your Lambda functions 
+            - these NETWORK INTERFACES are created when you configure the Lambda function, may take 90s, but done once. So when you create the function or update networking configuration, this is created/updated, so this doesn't have to happen every time a function is invoked = no delay in function invocation
             
 - security
     - execution role -> what perms the function receives
-    - resource policy -> controls WHAT services and accounts can INVOKE lambda functions
-        - can allow external accts to invoke lambda
+    - resource policy -> controls WHAT services and accounts can INVOKE Lambda functions
+        - can allow external accts to invoke Lambda
 
 - logging
-    - lambda uses cloudwatch, cloudwatch logs, and x-ray
-    - cloudwatch logs 
-        - logs from lambda executions -> errors, details on duration of execution , etc 
-        - require permissions via execution role (* if dont see logs in cw make sure perms are correct!!!)
-    - cloudwatch
+    - Lambda uses CloudWatch, CloudWatch Logs, and X-Ray
+    - CloudWatch Logs 
+        - logs from Lambda executions -> errors, details on duration of execution, etc. 
+        - require permissions via execution role (* if don't see logs in CloudWatch make sure perms are correct!!!)
+    - CloudWatch
         - metrics like invocation success/failure, retries, latency, etc
-    - x-ray
+    - X-Ray
         - distributed tracing 
 
 
 ### Possible corrections (generated by copilot)
 - Internet access: a VPC-attached function loses its default internet access, and selecting a public subnet does not restore it. Use private subnets routed to a NAT gateway (the NAT gateway sits in a public subnet), or VPC endpoints for AWS services.
 - ENI permissions: `AWSLambdaVPCAccessExecutionRole` is the managed policy that covers the EC2 network interface permissions the execution role needs.
-- ENIs: Lambda shares Hyperplane ENIs across functions that use the same subnet and security group combination. The ENI is created when the function is configured (the function stays Pending until it is ready), not per invocation.
+- ENIs: Lambda shares Hyperplane ENIs across functions that use the same subnet and security group combination. The ENI is created when the function is configured (the function stays Pending until it is ready, which AWS documents as potentially several minutes rather than ~90 seconds), not per invocation.
 - Logging permissions: CloudWatch Logs needs `logs:CreateLogGroup`, `logs:CreateLogStream` and `logs:PutLogEvents` on the execution role (in `AWSLambdaBasicExecutionRole`). Metrics need no execution role permissions.
 
 
-## part 3
+## AWS Lambda - PART3 (17:03)
 
-- 3 methods for lambda invocation
+- 3 methods for Lambda invocation
     - synchronous
-        - CLI/API direclty invoking lambda function
-        - CLI/API waitinf for response -- synchronous . waits for lambda to finish execution. lamnbda sends back with data or with failure 
+        - CLI/API directly invoking Lambda function
+        - CLI/API waiting for response -- synchronous. Waits for Lambda to finish execution. Lambda sends back data or failure 
         - implications
             - result returned during the request
             - errors or retries have to be handled within the client 
         - use case: generally when human is invoking the function 
     - asynchronous
-        - example: s3 generates an event that triggers lambda. s3 isn't waiting for response. 
-        - lambda handles retry logic upon failure-- lambda will retry between 0 to 2 times (configurable retry value)
+        - example: S3 generates an event that triggers Lambda. S3 isn't waiting for response. 
+        - Lambda handles retry logic upon failure -- Lambda will retry between 0 and 2 times (configurable retry value)
         - function code MUST BE IDEMPOTENT due to retry logic (reprocessing a result should have same desired end state)
-        - use case: gernally whenm aws services invoke lambda functinos 
+        - use case: generally when AWS services invoke Lambda functions 
         - asynchronous success/fail processing
             - if repeated failed processing, events can be sent to DLQ (Dead Letter Queue)
-            - Destinations are newer alternative for async invocations, they can route success or failure to SQS, SNS, lambda, eventbridge, and are generally recommended over DLQ
+            - Destinations are newer alternative for async invocations, they can route success or failure to SQS, SNS, Lambda, EventBridge, and are generally recommended over DLQ
     - event source mappings
-        - use case: streams or queues which dojn't support event generation 
-        - ex: kinesis data stream 
+        - use case: streams or queues which don't support event generation 
+        - ex: Kinesis data stream 
             - consumers can read from a stream, but doesn't generate event when data is added from producers
-            - Lambda Event Source mapping polls queues or streams looking for new data, getting back 'source batches' of data. 
-            - source batches are then broken up based on set batch size and sent to lambda function as event batches
-            - a single lambda invokation coudl in theory receive 100s of events in a batch 
-        - lambda has 15 min timeout!! control batch size to ensure function doesn't terminate before finishing batch
-        - event source mapping uses perms from lambda execution role to access source service 
-            - execution role may need osmething like kinesis permissions even if the lambda function itself never interacts with kinesis!!! good to keep in mind. event source mapipng will use execution role policy 
-        - any discarded failed event batches can be sent to sns queues or sns topics 
+            - Lambda event source mapping polls queues or streams looking for new data, getting back 'source batches' of data. 
+            - source batches are then broken up based on set batch size and sent to Lambda function as event batches
+            - a single Lambda invocation could in theory receive 100s of events in a batch 
+        - Lambda has 15 min timeout!! control batch size to ensure function doesn't terminate before finishing batch
+        - event source mapping uses perms from Lambda execution role to access source service 
+            - execution role may need something like Kinesis permissions even if the Lambda function itself never interacts with Kinesis!!! Good to keep in mind. Event source mapping will use execution role policy 
+        - any discarded failed event batches can be sent to SQS queues or SNS topics 
 
 - Lambda Versions 
-    - a version is a specific point in the code and configuration of the lambda function
-    - a version is immutable - doesn't change once published. has its own arn
-    - $latest = latest
+    - a version is a specific point in the code and configuration of the Lambda function
+    - a version is immutable - doesn't change once published. Has its own ARN
+    - $LATEST = latest
     - an alias (ex: dev, stg, prd) POINT at a version. the value it points at can be changed 
 
 - Lambda start up times
-    - lambda runs inside an execution context, or 'runtime environment' 
-        - a small container allocated an amount of resources that then runds your lambda code
-    - cold start = full creation and configuration of execution context including downloading fnuction code. can take significant time (100s of ms)
-    - warm start = if same function is invoked again without too much of a break, lambda may be able to use same execution environment without all the setup and download of code. it can receive event and immediately begin processing. 
+    - Lambda runs inside an execution context, or 'runtime environment' 
+        - a small container allocated an amount of resources that then runs your Lambda code
+    - cold start = full creation and configuration of execution context including downloading function code. Can take significant time (100s of ms)
+    - warm start = if same function is invoked again without too much of a break, Lambda may be able to use same execution environment without all the setup and download of code. It can receive event and immediately begin processing. 
     - 1 invocation runs at a time per execution context -> concurrent executions will use multiple execution contexts 
     - ways to improve performance 
-        - provisioned concurrency -> aws will create and keep X contexts warm and ready to use, improvin start speeds. 
-        - use /tmp to predownload stuff to potentially be reused. just define it outside of the lambda function handler. and dont EXPECT it to be predownloaded, jsut check during the function to see if its there already you can skip downloading it 
+        - provisioned concurrency -> AWS will create and keep X contexts warm and ready to use, improving start speeds. 
+        - use /tmp to predownload stuff to potentially be reused. Just define it outside of the Lambda function handler. And don't EXPECT it to be predownloaded, just check during the function to see if it's there already, you can skip downloading it 
 
 
 ### Possible corrections (generated by copilot)
@@ -169,24 +170,24 @@ Most of this is Domain 5.1 (event sources), Domain 3.2 (serverless scaling) and 
 - Asynchronous: retry attempts are configurable 0–2 (default 2), and max event age is configurable up to 6 hours. Lambda queues the event and returns success immediately.
 - Idempotency: needed because async invocations and event source mappings are at-least-once, so duplicates can occur even without errors. This is a design precaution, not only a retry side effect.
 - DLQ vs destinations: a DLQ supports standard SQS or SNS only. Destinations support SQS, SNS, Lambda and EventBridge (and S3 for on-failure only). Neither supports FIFO queues/topics.
-- Failed event batches: "sns queues" should be SQS queues or SNS topics. For SQS sources, configure the DLQ on the source queue (redrive policy), not on the function.
+- Failed event batches: For SQS sources, configure the DLQ on the source queue (redrive policy), not on the function.
 - Event source mapping retries: stream sources retry the whole batch until it succeeds or the records expire, which blocks the affected shard. Batching is bounded by batch size, a batching window (0–300 seconds) and a 6 MB payload.
 
 
 ## Lambda Function Handler
-- lambda executions have lifecycles
+- Lambda executions have lifecycles
     - INIT -> creates or unfreezes execution env
         - composed of EXTENSION INIT, RUNTIME INIT, FUNCTION INIT
-        - FUNCTION INIT -> top part of lambda function
+        - FUNCTION INIT -> top part of Lambda function
             - this is run once every cold start during function init stage, or in advance if using provisioned concurrency
-            - lambda attemps to resuse execution environment if possible
+            - Lambda attempts to reuse execution environment if possible
     - INVOKE -> runs function handlers (COLD START) - startup lag
-        - part of lambda function that is lambda_handler. what lambda passes event data into
+        - part of Lambda function that is lambda_handler. What Lambda passes event data into
     - upon next INVOKE(s) -> WARM START - same env 
         - skips init, just runs handler
     - SHUTDOWN -> terminate env after period of inactivity, resulting in cold start next invocation
         - composed of RUNTIME SHUTDOWN, EXTENSION SHUTDOWN
-- when creating lambda function, define name of handler function, default is lambda_function.lambda_handler
+- when creating Lambda function, define name of handler function, default is lambda_function.lambda_handler
 
 
 ## [DEMO] S3 Events + Lambda (Pixelator)
@@ -195,19 +196,19 @@ Most of this is Domain 5.1 (event sources), Domain 3.2 (serverless scaling) and 
 ## Lambda Versions 
 
 - an unpublished function can be changed and deployed ($LATEST)
-- functions can be published creating immutable version (NO EDITS!! that means u mister!!) makes an arn too wowWOWOW locking down function code, dependencies, runtime, settings, and env variables 
-- unqialified arn points at the function ($LATEST) not a specific version. can also be used in perm policies to refer to entire ffunciton
-- qualified arn points at a specific version 
-    - adds ':1' (or whatever version) to the end of the unqualified arn 
+- functions can be published creating immutable version (NO EDITS!! that means u mister!!) makes an ARN too wowWOWOW locking down function code, dependencies, runtime, settings, and env variables 
+- unqualified ARN points at the function ($LATEST), not a specific version. Can also be used in perm policies to refer to entire function
+- qualified ARN points at a specific version 
+    - adds ':1' (or whatever version) to the end of the unqualified ARN 
 - versions numbered automatically, are integer numbers ** copilot please fact check this 
 
 
 ## Lambda Aliases
 - alias = pointer to a function version 
-- ex: pROD => myfunction:1 
-- each alias has unique arn which is FIXED for tha alias. BUTTT the alias can be updated to point at diff things!!! v helpful for blue/green, a/b testing, etc. 
+- ex: PROD => myfunction:1 
+- each alias has unique ARN which is FIXED for that alias. BUTTT the alias can be updated to point at diff things!!! v helpful for blue/green, A/B testing, etc. 
 - alias routing -> send certain % at diff versions rather than have alias point at one version 
-    - need same role, same dlq, and can't be $LATEST
+    - need same role, same DLQ, and can't be $LATEST
 
 
 ### Possible corrections (generated by copilot)
@@ -218,10 +219,10 @@ Most of this is Domain 5.1 (event sources), Domain 3.2 (serverless scaling) and 
 
 ## Lambda Environment Variables
 - key & value pairs
-- lambda function can have >=0 env vars
+- Lambda function can have >=0 env vars
 - associated with $LATEST (can be edited)
-    - if you publish a lambda functino version the env vars become associated with that version and are immutable 
-- env variables can be access by laambda funcito while its running (accessed within execution environment)
+    - if you publish a Lambda function version the env vars become associated with that version and are immutable 
+- env variables can be accessed by Lambda function while it's running (accessed within execution environment)
 - can be encrypted w KMS
 - allows code execution to be adjusted based on variables (dev vs prd, etc)
 
@@ -234,28 +235,27 @@ Most of this is Domain 5.1 (event sources), Domain 3.2 (serverless scaling) and 
 ## Lambda Monitoring
 - telemetry -> automated collection of measurements and data from remote sources, transmitted to central location for monitoring/analysis
 
-- all lambda metrics auto avail in cloduwatacch 
+- all Lambda metrics auto avail in CloudWatch 
 - can also view metrics via monitoring tab on specific function 
-- cloudwatch
+- CloudWatch
     - data avail w following dimensions:
-        - function name, resource (alias/version), executed version (weighted alias = combination ailas and version), ALL functions
-    - metrics on invocations, errors, duration, concurrent executions, deadlettererrors, destinationdeliveryfailrues
+        - function name, resource (alias/version), executed version (weighted alias = combination alias and version), ALL functions
+    - metrics on invocations, errors, duration, concurrent executions, DeadLetterErrors, DestinationDeliveryFailures
 - logging
-    - lambda execution logs go to cloudwatch logs 
+    - Lambda execution logs go to CloudWatch Logs 
         - anything printed to stdout or stderr gets sent
     - log groups -> /aws/lambda/FUNCTION-NAME
-    - log strem -> YYYY/MM/DD/[\$LATEST || VERSION#]...RANDOM
+    - log stream -> YYYY/MM/DD/[\$LATEST || VERSION#]...RANDOM
     - default execution role gives basic logging permissions
 
 - tracing 
-    - x-ray shows the flow of requests through your application
-    - enable 'active tracing' on a function to make the x-ray product available in the lambda exeuction environment
-        - or via command line `aws lambda update-function-configuration --functino-name my-functino --tracing-config Mode=Active`
-    - make sure that the AWSXRayDaemonWriteAccess managed policy is available in the execution role to be able to use x-ray sdk within your function 
-    - env variable `AWS_XRAY_DAEMON_ADDRESS` provides connection details including port for the xray daemon
+    - X-Ray shows the flow of requests through your application
+    - enable 'active tracing' on a function to make the X-Ray product available in the Lambda execution environment
+        - or via command line `aws lambda update-function-configuration --function-name my-function --tracing-config Mode=Active`
+    - make sure that the AWSXRayDaemonWriteAccess managed policy is available in the execution role to be able to use X-Ray SDK within your function 
+    - env variable `AWS_XRAY_DAEMON_ADDRESS` provides connection details including port for the X-Ray daemon
 
 ### Possible corrections (generated by copilot)
-- Typos in the CLI example: `--functino-name` should be `--function-name` and `my-functino` should be `my-function`.
 - X-Ray permissions: `xray:PutTraceSegments` and `xray:PutTelemetryRecords` (included in `AWSXRayDaemonWriteAccess`). The console adds these when you enable active tracing.
 - Without active tracing, Lambda runs in PassThrough mode: it propagates the trace header to downstream services but doesn't send traces itself.
 
@@ -265,35 +265,35 @@ Most of this is Domain 5.1 (event sources), Domain 3.2 (serverless scaling) and 
 
 
 ## Lambda Layers (8:29)
-- without layers, everything container in 1 deployment zip (function code, libraries)
+- without layers, everything contained in 1 deployment zip (function code, libraries)
 - with layers -> 2 functions using same libraries can use shared/reused library layer. will each have their own small function code zip
 - reused libraries extracted in /opt folder
 - deployment zips smaller and only contain specific function code. shared libraries externalized
 - how
     - go to layers -> add layer
-         - can select an aws laeyr provided by aws, maintained by aws
+         - can select an AWS layer provided by AWS, maintained by AWS
 
 ## Lambda Container Images (4:14)
 - why??
-    - companies often have containers & ci/cd processes built for containers to develop and test code
-    - no way of locally testing lambda functions before deployment 
-    - lambda container images allows use of containers to develop + test lambda functions
-- lambda container images is alternative way of packaging function code and using it with Lambda
+    - companies often have containers & CI/CD processes built for containers to develop and test code
+    - no way of locally testing Lambda functions before deployment 
+    - Lambda container images allow use of containers to develop + test Lambda functions
+- Lambda container images are an alternative way of packaging function code and using it with Lambda
 - Lambda Runtime API
-    - package that allows interaction between a container and lambda
-    - this api is included inside your container images
-    - requirement to use container image with lambda
+    - package that allows interaction between a container and Lambda
+    - this API is included inside your container images
+    - requirement to use container image with Lambda
 - RIE (AWS Lambda Runtime Interface Emulator) -- allows for local testing 
-    - emulates many interfaces of lambda so you can test your function without using lambda for realzies
+    - emulates many interfaces of lambda so you can test your function without using Lambda for realzies
 - example of how this works
     - image used for local testing will include
         - base layer
         - dependencies
         - RIE
         - code
-    - image built for aws will include all above layers EXCEPT RIE emulation layer for obv reasons
-    - container image added to ecr
-    - when creating function, select the image from ecr 
+    - image built for AWS will include all above layers EXCEPT RIE emulation layer for obv reasons
+    - container image added to ECR
+    - when creating function, select the image from ECR 
     
 
 ### Possible corrections (generated by copilot)
@@ -302,25 +302,25 @@ Most of this is Domain 5.1 (event sources), Domain 3.2 (serverless scaling) and 
 
 
 ## Lambda & ALB Integration (5:21)
-- way of invoking lambda via alb
+- way of invoking Lambda via ALB
 - steps
-    1. client sends HTTP/HTTPS request to alb
-    2. alb synchronously invokes lambda function
+    1. client sends HTTP/HTTPS request to ALB
+    2. ALB synchronously invokes Lambda function
         - sync = waits for response 
-        - translates HTTP(S) request into a lambda compatible event (JSON)
-    3. lambda invokes
-    4. lambda responds to alb in JSON
-    5. alb translates this back into HTTP(S) response to the client
+        - translates HTTP(S) request into a Lambda-compatible event (JSON)
+    3. Lambda invokes
+    4. Lambda responds to ALB in JSON
+    5. ALB translates this back into HTTP(S) response to the client
     
 
 - multi-value headers
-    - NOT using multi-value headers means, if a client sends a request to alb that has two key-value pairs with same key, the alb only sends the last value on to the lambda
+    - NOT using multi-value headers means, if a client sends a request to ALB that has two key-value pairs with same key, the ALB only sends the last value on to the Lambda
         - ex: http://webkinz.com &search=roffle &search=winkie
         - 
         `"queryStringParameters": {`
         `"search": "winkie"`
         `}`
-    - using multi-value headers: alb uses BOTH KEY VALUE sent by client. turns this into lambda event that includes query string parameters using `multiValueQueryStringParameters`
+    - using multi-value headers: ALB uses BOTH KEY VALUE sent by client. Turns this into Lambda event that includes query string parameters using `multiValueQueryStringParameters`
         -  
         `"multiValueQueryStringParameters": {`
         `"search": ["roffle", "winkie"]`
@@ -332,38 +332,38 @@ Most of this is Domain 5.1 (event sources), Domain 3.2 (serverless scaling) and 
 
 
 ## Lambda Resource Policies
--  2 forms of lambda security
+-  2 forms of Lambda security
     - execution role 
-        - assumed by the function, determiens what the lambda function can do 
-    - resource poilcy
-        - who can do what with the lambda function (similar to s3 policy)
-- lambda resource policies
+        - assumed by the function, determines what the Lambda function can do 
+    - resource policy
+        - who can do what with the Lambda function (similar to S3 policy)
+- Lambda resource policies
 
 - trust via identity policy:
-    - lambda functino implicitly trusts the account
+    - Lambda function implicitly trusts the account
     - account trusts identity via identity policy
-    - thus lambda function trusts the identity via transitive property
+    - thus Lambda function trusts the identity via transitive property
 - OR trust via resource policy:
     - service directly trusts the identity via resource policy. doesn't need chain of trust.  
       
 - cross account?
-    - account b and account a don't implicitly trust each other
-    - identity from account a has identity permissions sent request out (exit)
-    - but that identity is not trusted by the lambda function in acct b
+    - Account B and Account A don't implicitly trust each other
+    - identity from Account A has identity permissions sent request out (exit)
+    - but that identity is not trusted by the Lambda function in Account B
     - access denied
-    - IF we had a resource policy in acct b that explicityly trusts account a, then the identity in acct a would be granted access. 
+    - IF we had a resource policy in Account B that explicitly trusts Account A, then the identity in Account A would be granted access. 
 
     - for cross account access
         - source account needs to be allowed access out (exit) via identity policy
         - AND dest account needs to allow access into its account (entry) via resource policy
 - same account -> identity OR resource policy needed
-- diff account -> identity AND resoruce policy needed
+- diff account -> identity AND resource policy needed
 
 
-- lambda will also need resource policy to grant access to servbices to use lambda (if that service can't or don't assume a role to get those perms, like s3 events)
+- Lambda will also need resource policy to grant access to services to use Lambda (if that service can't or doesn't assume a role to get those perms, like S3 events)
 
-- lambda resource policy is required when a service needs to invoke lambda
-    - required when cross-account access is used bc lambda has no trust
+- Lambda resource policy is required when a service needs to invoke Lambda
+    - required when cross-account access is used bc Lambda has no trust
     - NOT required for identity in the same account
     - can perform limited edits in UI, full control via CLI/API
 
@@ -389,31 +389,31 @@ Most of this is Domain 5.1 (event sources), Domain 3.2 (serverless scaling) and 
         - caching
         - CORS
         - transformations
-        - openAPI spec
+        - OpenAPI spec
         - direct integration
         - much more
     - can connect to endpoints / services in AWS or on-prem
-    - HTTP APIs, REST APIs, and websocket APIs
+    - HTTP APIs, REST APIs, and WebSocket APIs
 - architecture
-    - API gateway sits in between clients (mobile apps, other apis, websites, etc) and the integration (SNS, lambda, step functions, http endpoints, etc)
+    - API Gateway sits in between clients (mobile apps, other APIs, websites, etc.) and the integration (SNS, Lambda, Step Functions, HTTP endpoints, etc.)
     - 3 phases
         1. Request -> authorizes, validates, and transforms incoming requests from the client into a form that the integration can handle
         2. Integrations
-        3. Response-> takes response from integration, transofrms it, prepares it, and then returns it to the client. 
-    - integrates with cloudwatch to store and manage full stage rquest and respones logs. can store metrics for client and integration
-    - api gateway cache can be used to reduce # of calls to backend integration
+        3. Response-> takes response from integration, transforms it, prepares it, and then returns it to the client. 
+    - integrates with CloudWatch to store and manage full stage request and response logs. Can store metrics for client and integration
+    - API Gateway cache can be used to reduce # of calls to backend integration
 - AUTHENTICATION
     -  you could have zero authentication if you wanted
-    - cognito
-        - client authenticates with cognito and receives cognito token in return 
-        - client then passes that token into api gateway with its request
-        - api gateway can nativbely validate cognito tokens 
-    - lambda-based authorization (formerly called custom authorization)
-        - customer has some kind of bearer token that asserts an identificaiton  
-        - passes that bearer token to api gateway with its request
-        - api gateway calls lambda authorizer
-        - lambda authorizer calls ID provider or some other check of the ID
-        - lambda returns iam ppolicy and principal identifier to api gateway 
+    - Cognito
+        - client authenticates with Cognito and receives Cognito token in return 
+        - client then passes that token into API Gateway with its request
+        - API Gateway can natively validate Cognito tokens 
+    - Lambda-based authorization (formerly called custom authorization)
+        - customer has some kind of bearer token that asserts an identification  
+        - passes that bearer token to API Gateway with its request
+        - API Gateway calls Lambda authorizer
+        - Lambda authorizer calls ID provider or some other check of the ID
+        - Lambda returns IAM policy and principal identifier to API Gateway 
  - ENDPOINT TYPES
     - 
 ## API Gateway - Methods and Resources 
